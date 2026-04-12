@@ -4,105 +4,101 @@
   <meta charset="UTF-8">
   <title>LUCALE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
-  overflow-x: hidden;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-/* fondo */
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://raw.githubusercontent.com/lucalemusic/lucalemusic/main/fondo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-}
+    /* fondo */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://raw.githubusercontent.com/lucalemusic/lucalemusic/main/fondo.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -2;
+    }
 
-/* oscuridad */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: -1;
-}
+    /* oscuridad */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
 
-/* header */
-header {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-/* textos */
-h1 {
-  font-size: 4rem;
-  margin: 0;
-}
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
 
-p {
-  opacity: 0.7;
-}
+    p {
+      opacity: 0.7;
+    }
 
-/* botón */
-.btn {
-  margin-top: 20px;
-  padding: 15px 30px;
-  border: 1px solid white;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
+    .btn {
+      margin-top: 20px;
+      padding: 15px 30px;
+      border: 1px solid white;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
 
-.btn:hover {
-  background: black;
-}
+    .btn:hover {
+      background: black;
+    }
 
-/* secciones */
-section {
-  padding: 60px 20px;
-}
+    section {
+      padding: 60px 20px;
+    }
 
-/* grid */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-/* cards */
-.card {
-  border: 1px solid #333;
-  padding: 20px;
-  width: 250px;
-}
+    .card {
+      border: 1px solid #333;
+      padding: 20px;
+      width: 250px;
+    }
 
-/* footer */
-footer {
-  padding: 30px;
-  font-size: 0.8rem;
-  opacity: 0.5;
-}
+    footer {
+      padding: 30px;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
 
-/* smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
 
 <div class="background"></div>
 <div class="overlay"></div>
@@ -116,7 +112,7 @@ html {
 </header>
 
 <a href="https://www.youtube.com/watch?v=5XYEefGguyw" target="_blank">
-  <img src="https://img.youtube.com/vi/5XYEefGguyw/hqdefault.jpg" 
+  <img src="https://img.youtube.com/vi/5XYEefGguyw/hqdefault.jpg"
        style="width:80%; max-width:500px; margin-top:20px;">
 </a>
 
@@ -140,38 +136,42 @@ html {
 <section>
   <h2>Servicios</h2>
   <div class="grid">
+
     <div class="card">
-  <a href="https://wa.me/5491130157350" target="_blank" style="color:white; text-decoration:none;">
-    Letras
-  </a>
-</div>
+      <a href="https://wa.me/5491130157350" target="_blank" style="color:white; text-decoration:none;">
+        Letras
+      </a>
+    </div>
+
     <div class="card">
-  <a href="https://wa.me/5491130157350" target="_blank" style="color:white; text-decoration:none;">
-    Colaboraciones
-  </a>
-</div>
+      <a href="https://wa.me/5491130157350" target="_blank" style="color:white; text-decoration:none;">
+        Colaboraciones
+      </a>
+    </div>
+
   </div>
 </section>
 
 <section>
   <h2>Contacto</h2>
+
   <p>
- <p>
-  <a href="https://mail.google.com/mail/?view=cm&to=lucalemusic@gmail.com" target="_blank" style="color:white; text-decoration:none;">
-    lucalemusic@gmail.com
-  </a>
-</p>
-</p>
+    <a href="https://mail.google.com/mail/?view=cm&to=lucalemusic@gmail.com" target="_blank" style="color:white;">
+      lucalemusic@gmail.com
+    </a>
+  </p>
+
   <p>
-  <a href="https://www.instagram.com/lucale.music" target="_blank" style="color:white; text-decoration:none;">
-    Instagram: @lucale.music
-  </a>
-</p>
+    <a href="https://www.instagram.com/lucale.music" target="_blank" style="color:white;">
+      Instagram: @lucale.music
+    </a>
+  </p>
+
   <p>
-  <a href="https://wa.me/5491130157350?text=Hola%20vengo%20desde%20tu%20web" target="_blank" style="color:white; text-decoration:none;">
-    WhatsApp
-  </a>
-</p>
+    <a href="https://wa.me/5491130157350?text=Hola%20vengo%20desde%20tu%20web" target="_blank" style="color:white;">
+      WhatsApp
+    </a>
+  </p>
 </section>
 
 <footer>
