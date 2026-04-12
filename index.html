@@ -7,12 +7,41 @@
   
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: black;
-      color: white;
-      text-align: center;
-    }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* fondo */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+/* oscuridad */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+/* contenido arriba */
+header, section, footer {
 
     header {
       height: 100vh;
@@ -83,12 +112,15 @@
 
 <body>
 
+<div class="background"></div>
+<div class="overlay"></div>
+
 <header>
   <h1>LUCALE</h1>
-  <p>El Lìmite es el cielo</p>
+  <p>El Límite es el cielo</p>
   <a href="https://open.spotify.com/intl-es/artist/44Mmk92PgcbqGzO1oxVk6z" target="_blank" class="btn">
-  Escuchar en Spotify
-</a>
+    Escuchar en Spotify
+  </a>
 </header>
 
 <a href="https://www.youtube.com/watch?v=5XYEefGguyw" target="_blank">
