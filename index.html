@@ -6,12 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <style>
-    body {
+body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: white;
   text-align: center;
-  position: relative;
   overflow-x: hidden;
 }
 
@@ -40,77 +39,70 @@
   z-index: -1;
 }
 
-/* contenido arriba */
-header, section, footer {
+/* header */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+/* textos */
+h1 {
+  font-size: 4rem;
+  margin: 0;
+}
 
-    h1 {
-      font-size: 4rem;
-      margin: 0;
-    }
+p {
+  opacity: 0.7;
+}
 
-    p {
-      opacity: 0.7;
-    }
+/* botón */
+.btn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
 
-    .btn {
-      margin-top: 20px;
-      padding: 15px 30px;
-      border: 1px solid white;
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
-    }
+.btn:hover {
+  background: black;
+}
 
-    .btn:hover {
-      background: black;
-      color: white;
-    }
+/* secciones */
+section {
+  padding: 60px 20px;
+}
 
-    section {
-      padding: 60px 20px;
-    }
+/* grid */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
-    iframe {
-      width: 80%;
-      max-width: 500px;
-      height: 300px;
-      border: none;
-      margin-top: 20px;
-    }
+/* cards */
+.card {
+  border: 1px solid #333;
+  padding: 20px;
+  width: 250px;
+}
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+/* footer */
+footer {
+  padding: 30px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
 
-    .card {
-      border: 1px solid #333;
-      padding: 20px;
-      width: 250px;
-    }
-
-    footer {
-      padding: 30px;
-      font-size: 0.8rem;
-      opacity: 0.5;
-    }
-    html {
+/* smooth scroll */
+html {
   scroll-behavior: smooth;
 }
-  </style>
-</head>
-
-<body>
 
 <div class="background"></div>
 <div class="overlay"></div>
