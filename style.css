@@ -35,11 +35,16 @@ header, section, footer {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-content {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  text-align: left;
+  max-width: 600px;
 }
 
 h1 {
