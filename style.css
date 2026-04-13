@@ -142,3 +142,10 @@ img {
     height: 90vh;
   }
 }
+.video {
+  width: 80%;
+  max-width: 600px;
+  height: 340px;
+  border: none;
+  margin-top: 20px;
+}
