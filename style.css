@@ -118,3 +118,8 @@ section {
     height: 200px;
   }
 }
+
+.bg-video {
+  filter: brightness(0.4);
+}
+
