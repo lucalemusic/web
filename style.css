@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background: #0a0a0a;
+}
+
+/* HEADER PRINCIPAL */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TITULO */
+h1 {
+  font-size: 5rem;
+  margin: 0;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 25px rgba(255,255,255,0.15);
+}
+
+/* SUBTITULO */
+p {
+  opacity: 0.6;
+  letter-spacing: 2px;
+}
+
+/* BOTONES PRINCIPALES */
+.btn {
+  margin-top: 20px;
+  padding: 14px 28px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* SECCIONES */
+section {
+  padding: 90px 20px;
+}
+
+/* GRID */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* CARDS MINIMALISTAS */
+.card {
+  border: 1px solid #222;
+  padding: 25px;
+  width: 250px;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(6px);
+}
+
+/* LINKS DENTRO DE CARDS */
+.card a {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.card a:hover {
+  background: white;
+  color: black;
+}
+
+/* IMAGEN VIDEO */
+.video-thumb {
+  width: 80%;
+  max-width: 500px;
+  margin-top: 25px;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  font-size: 0.8rem;
+  opacity: 0.4;
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
