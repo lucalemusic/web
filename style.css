@@ -149,3 +149,22 @@ img {
   opacity: 0.9;
   pointer-events: none;
 }
+.hiena {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 90vh;
+  width: auto;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hiena {
+    height: 60vh;
+    right: -50px;
+    opacity: 0.4;
+  }
+}
