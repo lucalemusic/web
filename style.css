@@ -102,3 +102,43 @@ footer {
     font-size: 3.5rem;
   }
 }
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .btn, .buttons a {
+    width: 80%;
+    display: block;
+    margin: 10px auto;
+  }
+
+  section {
+    padding: 60px 15px;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  header {
+    height: 90vh;
+  }
+}
