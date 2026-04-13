@@ -147,3 +147,33 @@ section {
     padding: 60px 15px;
   }
 }
+
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.press-card {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 20px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  background: rgba(0,0,0,0.3);
+}
+
+.press-card:hover {
+  transform: scale(1.05);
+  border-color: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .press-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
