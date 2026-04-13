@@ -149,3 +149,9 @@ img {
   border: none;
   margin-top: 20px;
 }
+.banner-top {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
