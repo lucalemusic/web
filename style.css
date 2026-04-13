@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+/* VIDEO */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* OSCURECER */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+header, section, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 0;
+}
+
+/* ANIMACIONES */
+.fade {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+.delay { animation-delay: 0.5s; }
+.delay2 { animation-delay: 1s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* BOTONES */
+.buttons a, .btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 22px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.buttons a:hover, .btn:hover {
+  background: white;
+  color: black;
+}
+
+/* SECCIONES */
+section {
+  padding: 100px 20px;
+}
+
+/* VIDEO */
+.video {
+  width: 80%;
+  max-width: 600px;
+  height: 340px;
+  border: none;
+}
+
+/* GALERÍA */
+.grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.grid img {
+  width: 250px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .bg-video {
+    display: none;
+  }
+
+  body {
+    background: url("fondo.jpg") center/cover no-repeat;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .video {
+    width: 100%;
+    height: 200px;
+  }
+}
