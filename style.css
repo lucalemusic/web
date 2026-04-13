@@ -139,3 +139,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+.hiena {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 90vh;
+  width: auto;
+  z-index: 0;
+  opacity: 0.9;
+  pointer-events: none;
+}
