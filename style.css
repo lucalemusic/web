@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #0a0a0a;
   color: white;
   text-align: center;
-  background: #0a0a0a;
 }
 
-/* HEADER PRINCIPAL */
+/* HEADER IMPACTO */
 header {
   height: 100vh;
   display: flex;
@@ -15,30 +15,26 @@ header {
   align-items: center;
 }
 
-/* TITULO */
 h1 {
-  font-size: 5rem;
+  font-size: 6rem;
+  letter-spacing: 6px;
   margin: 0;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  text-shadow: 0 0 25px rgba(255,255,255,0.15);
 }
 
-/* SUBTITULO */
 p {
   opacity: 0.6;
   letter-spacing: 2px;
 }
 
-/* BOTONES PRINCIPALES */
+/* BOTONES INDUSTRIA */
 .btn {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 14px 28px;
   border: 1px solid white;
   color: white;
   text-decoration: none;
-  transition: 0.3s ease;
   display: inline-block;
+  transition: 0.3s;
 }
 
 .btn:hover {
@@ -47,74 +43,40 @@ p {
   transform: scale(1.05);
 }
 
+.secondary {
+  opacity: 0.7;
+}
+
 /* SECCIONES */
 section {
-  padding: 90px 20px;
+  padding: 100px 20px;
 }
 
-/* GRID */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* CARDS MINIMALISTAS */
-.card {
-  border: 1px solid #222;
-  padding: 25px;
-  width: 250px;
-  background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(6px);
-}
-
-/* LINKS DENTRO DE CARDS */
-.card a {
-  display: inline-block;
-  padding: 12px 18px;
-  border: 1px solid white;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.card a:hover {
-  background: white;
-  color: black;
-}
-
-/* IMAGEN VIDEO */
-.video-thumb {
+/* VIDEO */
+.video {
   width: 80%;
-  max-width: 500px;
-  margin-top: 25px;
+  max-width: 600px;
+  margin-top: 20px;
+  border: 1px solid #222;
+}
+
+/* CONTACTO */
+.contact .btn {
+  display: block;
+  margin: 10px auto;
+  width: 200px;
 }
 
 /* FOOTER */
 footer {
   padding: 40px;
-  font-size: 0.8rem;
   opacity: 0.4;
-}
-
-/* SCROLL SUAVE */
-html {
-  scroll-behavior: smooth;
+  font-size: 12px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.8rem;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  .grid {
-    flex-direction: column;
-    align-items: center;
+    font-size: 3rem;
   }
 }
