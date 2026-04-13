@@ -1,33 +1,60 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: black;
   color: white;
+  text-align: center;
+
+  background-image: url("fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-/* HERO CINEMÁTICO */
+/* overlay oscuro */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+/* contenido arriba del overlay */
+header, section, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
 
+/* TITULO */
 h1 {
-  font-size: 7rem;
-  letter-spacing: 10px;
+  font-size: 5rem;
+  letter-spacing: 5px;
   margin: 0;
+  position: relative;
+  z-index: 10;
 }
 
+/* SUBTITULO */
 p {
   opacity: 0.6;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
-/* BOTONES GLOBAL */
+/* BOTONES */
 .buttons {
   margin-top: 20px;
+  position: relative;
+  z-index: 10;
 }
 
 .buttons a {
@@ -48,20 +75,13 @@ p {
 
 /* SECCIONES */
 section {
-  padding: 120px 20px;
-  text-align: center;
+  padding: 100px 20px;
 }
 
-/* IMAGEN */
+/* MUSICA / IMAGEN */
 .music img {
   width: 80%;
   max-width: 700px;
-  border: 1px solid #222;
-  transition: 0.3s;
-}
-
-.music img:hover {
-  transform: scale(1.02);
 }
 
 /* IDENTIDAD */
@@ -99,87 +119,23 @@ footer {
 /* MOBILE */
 @media (max-width: 768px) {
   h1 {
-    font-size: 3.5rem;
-  }
-}
-@media (max-width: 768px) {
-
-  h1 {
     font-size: 3rem;
     letter-spacing: 3px;
-  }
-
-  p {
-    font-size: 0.9rem;
-    padding: 0 10px;
-  }
-
-  .grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  .btn, .buttons a {
-    width: 80%;
-    display: block;
-    margin: 10px auto;
   }
 
   section {
     padding: 60px 15px;
   }
+
+  .buttons a {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
 }
+
+/* IMAGEN RESPONSIVE GLOBAL */
 img {
   max-width: 100%;
   height: auto;
-}
-@media (max-width: 768px) {
-  header {
-    height: 90vh;
-  }
-}
-.video {
-  width: 80%;
-  max-width: 600px;
-  height: 340px;
-  border: none;
-  margin-top: 20px;
-}
-.banner-top {
-  width: 100%;
-  max-width: 900px;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-.banner-top,
-.banner-bottom {
-  width: 100%;
-  max-height: 180px;
-  object-fit: cover;
-  opacity: 0.4;
-  display: block;
-}
-h1 {
-  position: relative;
-  z-index: 10;
-  font-size: 5rem;
-  letter-spacing: 3px;
-}
-.buttons {
-  position: relative;
-  z-index: 10;
-  margin-top: 20px;
 }
