@@ -5,26 +5,35 @@
   box-sizing: border-box;
 }
 
-/* BODY */
-body {
+/* BASE */
+html, body {
+  height: 100%;
   font-family: Arial, sans-serif;
-  color: white;
   background: black;
+  color: white;
   overflow-x: hidden;
 }
 
-/* VIDEO FONDO */
+/* VIDEO FONDO (FIX TOTAL) */
 .bg-video {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: -2;
 }
 
-/* OSCURECER VIDEO */
+/* FIX BUG VIDEO */
+video {
+  display: block;
+}
+
+/* OVERLAY PRO (más cinematográfico) */
 body::after {
   content: "";
   position: fixed;
@@ -32,7 +41,12 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.8)
+  );
   z-index: -1;
 }
 
@@ -45,12 +59,15 @@ body::after {
   text-align: center;
 }
 
-/* TEXTO PRINCIPAL */
+/* TITULO PRINCIPAL */
 .hero h1 {
-  font-size: 7vw;
-  letter-spacing: 10px;
+  font-size: 8vw;
+  letter-spacing: 12px;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
+/* SUBTITULO */
 .hero p {
   margin-top: 10px;
   opacity: 0.7;
@@ -59,35 +76,38 @@ body::after {
 
 /* BOTONES */
 .buttons {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .buttons a {
   margin: 10px;
-  padding: 12px 25px;
+  padding: 12px 30px;
   border: 1px solid white;
   text-decoration: none;
   color: white;
   transition: 0.3s;
+  letter-spacing: 2px;
 }
 
-/* EFECTO PRO */
+/* HOVER MÁS PRO */
 .buttons a:hover {
   background: white;
   color: black;
   transform: scale(1.1);
+  box-shadow: 0 0 20px white;
 }
 
 /* SECCIONES */
 section {
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
 }
 
 /* TITULOS */
 h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
 }
 
 /* VIDEO */
@@ -96,13 +116,14 @@ h2 {
   max-width: 700px;
   height: 400px;
   margin-top: 20px;
+  border: none;
 }
 
 /* BOTÓN SPOTIFY */
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
+  margin-top: 30px;
+  padding: 12px 35px;
   border: 1px solid white;
   text-decoration: none;
   color: white;
@@ -112,26 +133,33 @@ h2 {
 .btn:hover {
   background: white;
   color: black;
+  box-shadow: 0 0 20px white;
 }
 
 /* BIO */
 .bio {
   max-width: 900px;
   margin: auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
 /* GALERIA */
 .grid {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
 .grid img {
   width: 300px;
   border: 2px solid white;
+  transition: 0.3s;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
 }
 
 /* TRAYECTORIA */
@@ -139,20 +167,26 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .press-card {
   border: 1px solid white;
-  padding: 20px;
-  width: 220px;
+  padding: 25px;
+  width: 230px;
+  transition: 0.3s;
+}
+
+.press-card:hover {
+  background: white;
+  color: black;
 }
 
 /* CONTACTO */
 .contact a {
   display: inline-block;
   margin: 10px;
-  padding: 12px 20px;
+  padding: 12px 25px;
   border: 1px solid white;
   text-decoration: none;
   color: white;
@@ -162,15 +196,17 @@ h2 {
 .contact a:hover {
   background: white;
   color: black;
+  box-shadow: 0 0 20px white;
 }
 
 /* FOOTER */
 footer {
-  padding: 30px;
+  padding: 40px;
   opacity: 0.5;
+  font-size: 0.9rem;
 }
 
-/* FIX MOBILE */
+/* 📱 MOBILE FIX TOTAL */
 @media (max-width: 768px) {
 
   .bg-video {
@@ -185,13 +221,17 @@ footer {
   }
 
   body::after {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.75);
   }
 
   .hero h1 {
-    font-size: 12vw;
+    font-size: 14vw;
+    letter-spacing: 5px;
+  }
+
+  .video {
+    height: 250px;
   }
 
 }
-
 
