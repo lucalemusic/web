@@ -1,8 +1,15 @@
-body {
+/* RESET */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
   font-family: Arial, sans-serif;
   color: white;
-  text-align: center;
+  background: black;
   overflow-x: hidden;
 }
 
@@ -14,171 +21,151 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.4);
   z-index: -2;
 }
 
-/* CAPA OSCURA */
-body::before {
+/* OSCURECER VIDEO */
+body::after {
   content: "";
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
   z-index: -1;
 }
 
-header, section, footer {
-  position: relative;
-  z-index: 1;
-}
-
 /* HERO */
 .hero {
-  position: relative;
   height: 100vh;
-  overflow: hidden;
-}
-.hero-content {
-  position: absolute;
-  bottom: 15%;
-  left: 8%;
-  text-align: left;
-  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-h1 {
-  font-size: 6rem;
-  letter-spacing: 8px;
-  margin: 0;
+/* TEXTO PRINCIPAL */
+.hero h1 {
+  font-size: 7vw;
+  letter-spacing: 10px;
 }
 
-p {
+.hero p {
+  margin-top: 10px;
   opacity: 0.7;
+  font-size: 1.2rem;
 }
 
 /* BOTONES */
-.buttons a, .btn {
-  display: inline-block;
+.buttons {
+  margin-top: 30px;
+}
+
+.buttons a {
   margin: 10px;
-  padding: 12px 22px;
+  padding: 12px 25px;
   border: 1px solid white;
-  color: white;
   text-decoration: none;
+  color: white;
   transition: 0.3s;
 }
 
-.buttons a:hover, .btn:hover {
+/* EFECTO PRO */
+.buttons a:hover {
   background: white;
   color: black;
+  transform: scale(1.1);
 }
 
 /* SECCIONES */
 section {
-  padding: 80px 20px;
+  padding: 100px 20px;
+  text-align: center;
 }
 
-/* VIDEO YOUTUBE */
+/* TITULOS */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* VIDEO */
 .video {
-  width: 80%;
-  max-width: 600px;
-  height: 340px;
-  border: none;
+  width: 90%;
+  max-width: 700px;
+  height: 400px;
+  margin-top: 20px;
 }
 
-/* GALERÍA (ARREGLADA) */
+/* BOTÓN SPOTIFY */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/* BIO */
+.bio {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* GALERIA */
 .grid {
   display: flex;
-  gap: 15px;
   justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .grid img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
+  width: 300px;
+  border: 2px solid white;
 }
 
-/* LISTA */
-.press ul {
-  list-style: none;
-  padding: 0;
-}
-
-.press li {
-  margin: 10px 0;
-}
-
-/* MOBILE PRO REAL */
-@media (max-width: 768px) {
-
-  /* 🔥 MATAMOS EL VIDEO */
-  .bg-video {
-    display: none;
-  }
-
-  body {
-    background: url("fondo.jpg") center/cover no-repeat;
-  }
-
-  .hero {
-    min-height: auto;
-    padding-top: 100px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-
-  .buttons a {
-    width: 90%;
-    display: block;
-    margin: 10px auto;
-  }
-
-  .video {
-    width: 100%;
-    height: 200px;
-  }
-
-  section {
-    padding: 60px 15px;
-  }
-}
-
+/* TRAYECTORIA */
 .press-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  max-width: 900px;
-  margin: auto;
 }
 
 .press-card {
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid white;
   padding: 20px;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  width: 220px;
+}
+
+/* CONTACTO */
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
   transition: 0.3s;
-  background: rgba(0,0,0,0.3);
 }
 
-.press-card:hover {
-  transform: scale(1.05);
-  border-color: white;
+.contact a:hover {
+  background: white;
+  color: black;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .press-grid {
-    grid-template-columns: 1fr;
-  }
+/* FOOTER */
+footer {
+  padding: 30px;
+  opacity: 0.5;
 }
-
