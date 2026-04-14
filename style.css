@@ -225,9 +225,9 @@ footer {
   }
 
   .hero h1 {
-    font-size: 14vw;
-    letter-spacing: 5px;
-  }
+  font-size: clamp(40px, 10vw, 90px);
+  letter-spacing: 3px;
+}
 
   .video {
     height: 250px;
