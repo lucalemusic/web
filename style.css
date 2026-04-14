@@ -14,39 +14,30 @@ html, body {
   overflow-x: hidden;
 }
 
-/* VIDEO FONDO (FIX TOTAL) */
+/* VIDEO FONDO (CINEMATIC FIX) */
 .bg-video {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: auto;
-  height: auto;
   min-width: 100%;
   min-height: 100%;
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: -2;
+  filter: brightness(0.6) contrast(1.2);
 }
 
-/* FIX BUG VIDEO */
+/* EVITA BUGS */
 video {
   display: block;
 }
 
-/* OVERLAY PRO (más cinematográfico) */
+/* OVERLAY PROFESIONAL (PROFUNDO) */
 body::after {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.7),
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.8)
-  );
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
   z-index: -1;
 }
 
@@ -59,19 +50,24 @@ body::after {
   text-align: center;
 }
 
-/* TITULO PRINCIPAL */
+/* LOGO / NOMBRE */
 .hero h1 {
-  font-size: 8vw;
+  font-size: clamp(50px, 8vw, 110px);
   letter-spacing: 12px;
   font-weight: bold;
-  text-shadow: 0 0 20px rgba(255,255,255,0.2);
+  text-transform: uppercase;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.2),
+    0 0 30px rgba(255,255,255,0.1);
+  animation: fadeIn 2s ease forwards;
 }
 
-/* SUBTITULO */
+/* SUBTEXTO */
 .hero p {
   margin-top: 10px;
   opacity: 0.7;
   font-size: 1.2rem;
+  letter-spacing: 2px;
 }
 
 /* BOTONES */
@@ -82,32 +78,35 @@ body::after {
 .buttons a {
   margin: 10px;
   padding: 12px 30px;
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,0.6);
   text-decoration: none;
   color: white;
-  transition: 0.3s;
+  transition: 0.4s;
   letter-spacing: 2px;
+  backdrop-filter: blur(4px);
 }
 
-/* HOVER MÁS PRO */
+/* HOVER ESTILO ARTISTA */
 .buttons a:hover {
   background: white;
   color: black;
   transform: scale(1.1);
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 25px rgba(255,255,255,0.6);
 }
 
 /* SECCIONES */
 section {
   padding: 120px 20px;
   text-align: center;
+  animation: fadeUp 1s ease;
 }
 
 /* TITULOS */
 h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 /* VIDEO */
@@ -117,14 +116,15 @@ h2 {
   height: 400px;
   margin-top: 20px;
   border: none;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
 
-/* BOTÓN SPOTIFY */
+/* BOTON SPOTIFY */
 .btn {
   display: inline-block;
   margin-top: 30px;
   padding: 12px 35px;
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,0.6);
   text-decoration: none;
   color: white;
   transition: 0.3s;
@@ -133,15 +133,16 @@ h2 {
 .btn:hover {
   background: white;
   color: black;
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 25px white;
 }
 
 /* BIO */
 .bio {
   max-width: 900px;
   margin: auto;
-  line-height: 1.7;
+  line-height: 1.8;
   font-size: 1.05rem;
+  opacity: 0.9;
 }
 
 /* GALERIA */
@@ -154,12 +155,14 @@ h2 {
 
 .grid img {
   width: 300px;
-  border: 2px solid white;
-  transition: 0.3s;
+  border: 2px solid rgba(255,255,255,0.6);
+  transition: 0.4s;
+  filter: grayscale(20%);
 }
 
 .grid img:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
+  filter: grayscale(0%);
 }
 
 /* TRAYECTORIA */
@@ -171,15 +174,17 @@ h2 {
 }
 
 .press-card {
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,0.6);
   padding: 25px;
   width: 230px;
-  transition: 0.3s;
+  transition: 0.4s;
+  backdrop-filter: blur(4px);
 }
 
 .press-card:hover {
   background: white;
   color: black;
+  transform: translateY(-5px);
 }
 
 /* CONTACTO */
@@ -187,7 +192,7 @@ h2 {
   display: inline-block;
   margin: 10px;
   padding: 12px 25px;
-  border: 1px solid white;
+  border: 1px solid rgba(255,255,255,0.6);
   text-decoration: none;
   color: white;
   transition: 0.3s;
@@ -206,7 +211,18 @@ footer {
   font-size: 0.9rem;
 }
 
-/* 📱 MOBILE FIX TOTAL */
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(50px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* 📱 MOBILE PRO */
 @media (max-width: 768px) {
 
   .bg-video {
@@ -217,17 +233,16 @@ footer {
     background-image: url("fondo.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
   }
 
   body::after {
-    background: rgba(0,0,0,0.75);
+    background: rgba(0,0,0,0.8);
   }
 
   .hero h1 {
-  font-size: clamp(40px, 10vw, 90px);
-  letter-spacing: 3px;
-}
+    font-size: clamp(40px, 10vw, 70px);
+    letter-spacing: 4px;
+  }
 
   .video {
     height: 250px;
