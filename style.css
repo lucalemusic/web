@@ -169,3 +169,29 @@ footer {
   padding: 30px;
   opacity: 0.5;
 }
+
+/* FIX MOBILE */
+@media (max-width: 768px) {
+
+  .bg-video {
+    display: none;
+  }
+
+  body {
+    background-image: url("fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  body::after {
+    background: rgba(0,0,0,0.7);
+  }
+
+  .hero h1 {
+    font-size: 12vw;
+  }
+
+}
+
+
