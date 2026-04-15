@@ -1,185 +1,230 @@
-/* IMPORTAR FUENTE MODERNA */
+/* =========================================
+   1. IMPORTACIÓN Y CONFIGURACIÓN BASE
+   ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
-/* RESET */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* BASE */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  height: 100%;
-  font-family: 'Inter', sans-serif;
-  background: #000;
-  color: #fff;
-  overflow-x: hidden;
-  line-height: 1.6;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: #000; /* Fondo negro sólido siempre */
+    color: #fff;
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* VIDEO FONDO (CINEMATIC) */
+/* =========================================
+   2. VIDEO Y CAPAS DE FONDO
+   ========================================= */
 .bg-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: -2;
-  filter: brightness(0.4) contrast(1.1); /* Bajé el brillo para que resalte el texto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.4) contrast(1.1);
 }
 
-/* OVERLAY PROFUNDO */
+/* Overlay para dar profundidad y mejorar lectura */
 body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.9) 100%);
-  z-index: -1;
-  pointer-events: none;
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.8) 100%);
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.hero h1 {
-  font-size: clamp(60px, 12vw, 150px); /* Más grande para impacto */
-  font-weight: 900;
-  letter-spacing: -2px; /* Letras más juntas = estilo trap moderno */
-  text-transform: uppercase;
-  line-height: 0.9;
-  margin-bottom: 10px;
-  animation: fadeIn 1.5s ease-out forwards;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  opacity: 0.6;
-  margin-bottom: 30px;
-}
-
-/* BOTONES ESTILO PREMIUM */
-.buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.buttons a, .btn, .contact a {
-  padding: 15px 35px;
-  border: 1px solid rgba(255,255,255,0.3);
-  text-decoration: none;
-  color: white;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.buttons a:hover, .btn:hover, .contact a:hover {
-  background: #fff;
-  color: #000;
-  border-color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255,255,255,0.2);
-}
-
-/* SECCIONES */
+/* =========================================
+   3. SECCIONES PRINCIPALES
+   ========================================= */
 section {
-  padding: 100px 10vw;
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
+    padding: 100px 10vw;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 h2 {
-  font-size: clamp(30px, 5vw, 50px);
-  margin-bottom: 50px;
-  font-weight: 900;
-  letter-spacing: -1px;
-  text-transform: uppercase;
+    font-size: clamp(30px, 5vw, 50px);
+    margin-bottom: 50px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: uppercase;
 }
 
-/* BIO TEXTO */
+/* HERO (Inicio) */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 12vw, 150px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   4. BOTONES (ESTILO PREMIUM)
+   ========================================= */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.buttons a, .btn, .contact a {
+    padding: 15px 35px;
+    border: 1px solid rgba(255,255,255,0.3);
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.buttons a:hover, .btn:hover, .contact a:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+}
+
+/* =========================================
+   5. CONTENIDO ESPECÍFICO
+   ========================================= */
+
+/* Biografía */
 .bio p {
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto 25px auto;
-  text-align: left; /* Biografía justificada o a la izquierda es más legible */
-  color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 25px auto;
+    text-align: left;
+    color: rgba(255,255,255,0.8);
 }
 
-/* GALERIA & TRAYECTORIA */
+/* Galería y Trayectoria */
 .grid, .press-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .grid img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border: 1px solid rgba(255,255,255,0.1);
-  filter: grayscale(100%);
-  transition: 0.5s;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.1);
+    filter: grayscale(100%);
+    transition: 0.5s;
 }
 
 .grid img:hover {
-  filter: grayscale(0%);
-  border-color: #fff;
+    filter: grayscale(0%);
+    border-color: #fff;
 }
 
 .press-card {
-  padding: 40px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: 0.3s;
+    padding: 40px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.press-card h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .press-card:hover {
-  background: rgba(255,255,255,1);
-  color: #000;
+    background: #fff;
+    color: #000;
 }
 
-/* FOOTER */
+/* =========================================
+   6. FOOTER
+   ========================================= */
 footer {
-  padding: 60px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  opacity: 0.4;
+    padding: 60px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.4;
 }
 
-/* ANIMACIONES */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); filter: blur(10px); }
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
-}
-
-/* MOBILE ADJUST */
+/* =========================================
+   7. 📱 MOBILE OPTIMIZATION (SIN FONDO.JPG)
+   ========================================= */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 70px; }
-  section { padding: 60px 20px; }
-  .bg-video { opacity: 0.5; } /* En celu mejor que se vea un poco menos si no es muy potente el procesador */
+    
+    body {
+        /* Eliminamos cualquier imagen de fondo blanca */
+        background-image: none !important;
+        background-color: #000 !important;
+    }
+
+    .bg-video {
+        opacity: 0.5;
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 55px !important;
+        letter-spacing: 1px;
+    }
+
+    section {
+        padding: 60px 20px !important;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .buttons a, .btn, .contact a {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .grid img {
+        height: 300px;
+    }
 }
