@@ -1,115 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>LUCALE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCALE | Sitio Oficial</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body style="opacity: 0;"> <video autoplay muted loop playsinline class="bg-video">
+        <source src="lucale.mp4" type="video/mp4">
+    </video>
 
-<!-- VIDEO FONDO -->
-<video autoplay muted loop playsinline class="bg-video">
-  <source src="lucale.mp4" type="video/mp4">
-</video>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>LUCALE</h1>
+            <p>Rap crudo · Identidad · Calle</p>
+            <div class="buttons">
+                <a href="https://open.spotify.com/artist/TU_ID_REAL" target="_blank">STREAM</a>
+                <a href="#music">MÚSICA</a>
+                <a href="#contacto">BOOKING</a>
+            </div>
+        </div>
+    </header>
 
-<!-- HERO -->
-<header class="hero">
+    <section class="quote">
+        <h2 style="font-style: italic; opacity: 0.8;">“El Límite es el Cielo.”</h2>
+    </section>
 
-  <div class="hero-content">
-    <h1>LUCALE</h1>
-    <p>Rap crudo · Identidad · Calle</p>
+    <section id="music" class="music">
+        <h2>MÚSICA</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 800px; margin: 0 auto 40px;">
+            <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;"
+                src="https://www.youtube.com/embed/5XYEefGguyw" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <a class="btn" href="https://open.spotify.com/artist/TU_ID_REAL" target="_blank">
+            ESCUCHAR EN SPOTIFY
+        </a>
+    </section>
 
-    <div class="buttons">
-      <a href="https://open.spotify.com/intl-es/artist/44Mmk92PgcbqGzO1oxVk6z" target="_blank">STREAM</a>
-      <a href="#music">MÚSICA</a>
-      <a href="#contacto">BOOKING</a>
-    </div>
-  </div>
+    <section id="bio" class="bio">
+        <h2>BIOGRAFÍA</h2>
+        <p>
+            <strong>Lucale</strong> (Cristian Alexander Devincenzi Lemos) es un rapero, compositor y gestor cultural nacido en Montevideo y criado en el conurbano bonaerense. Su identidad se construye desde la experiencia real de los barrios populares, fusionando rap con elementos del tango moderno en un sonido crudo y auténtico.
+        </p>
+        <p>
+            Criado en contextos vulnerables de San Isidro y <strong>Don Torcuato</strong>, territorio que hoy representa su base cultural, su historia está marcada por la resiliencia y la narrativa directa que refleja la realidad de la calle.
+        </p>
+        <p>
+            Con más de 50 canciones publicadas, Lucale se posiciona como un referente independiente en crecimiento, llevando el rap de barrio a un estándar global sin perder la esencia.
+        </p>
+    </section>
 
-</header>
+    <section class="gallery">
+        <h2>POSTULACIONES</h2>
+        <div class="grid">
+            <img src="img1.jpg" alt="Lucale en vivo" loading="lazy">
+            <img src="img3.jpg" alt="Lucale Sesión" loading="lazy">
+        </div>
+    </section>
 
-<!-- FRASE -->
-<section class="quote">
-  <h2>“El Límite es el Cielo.”</h2>
-</section>
+    <section class="press">
+        <h2>TRAYECTORIA</h2>
+        <div class="press-grid">
+            <div class="press-card">
+                <h3>+50</h3>
+                <p>Canciones publicadas</p>
+            </div>
+            <div class="press-card">
+                <h3>LIBRO</h3>
+                <p>"5000 Disparos"</p>
+            </div>
+            <div class="press-card">
+                <h3>UNAJ</h3>
+                <p>Haciendo Rap Juntxs</p>
+            </div>
+            <div class="press-card">
+                <h3>Capif</h3>
+                <p>Postulacion a Premios 2025/26</p>
+            </div>
+            <div class="press-card">
+                <h3>ESPAÑA</h3>
+                <p>Premios MIN 2026</p>
+            </div>
+        </div>
+    </section>
 
-<!-- MÚSICA -->
-<section id="music" class="music">
-  <h2>MÚSICA</h2>
+    <section id="contacto" class="contact">
+        <h2>CONTACTO / BOOKING</h2>
+        <div class="buttons">
+            <a href="mailto:contacto@lucalemusic.com.ar"> EMAIL</a>
+            <a href="https://wa.me/5491130157350" target="_blank"> WHATSAPP</a>
+            <a href="https://www.instagram.com/lucale.music" target="_blank"> INSTAGRAM</a>
+        </div>
+    </section>
 
-  <iframe class="video"
-    src="https://www.youtube.com/embed/5XYEefGguyw"
-    allowfullscreen>
-  </iframe>
+    <footer>
+        LUCALE © 2026 Todos los derechos reservados · Don Torcuato, Buenos Aires, Argentina.
+    </footer>
 
-  <a class="btn" href="https://open.spotify.com/intl-es/artist/44Mmk92PgcbqGzO1oxVk6z" target="_blank">
-    ESCUCHAR EN SPOTIFY
-  </a>
-</section>
-
-<!-- BIO -->
-<section id="bio" class="bio">
-  <h2>BIOGRAFÍA</h2>
-
-  <p>
-    <strong>Lucale</strong> (Cristian Alexander Devincenzi Lemos) es un rapero, compositor y gestor cultural nacido en Montevideo, Uruguay, en 1991, y criado en el conurbano bonaerense, Argentina. Su identidad artística se construye desde la experiencia real de los barrios populares, fusionando rap, música urbana y elementos del tango moderno en un sonido crudo, auténtico y con proyección internacional.
-  </p>
-
-  <p>
-    Desde muy temprana edad, su historia estuvo marcada por la resiliencia. Tras mudarse a Buenos Aires a los pocos meses de vida y atravesar la separación de sus padres a los 6 años, creció en contextos vulnerables de San Isidro y posteriormente en Don Torcuato, territorio que hoy representa su base cultural y artística.
-  </p>
-
-  <p>
-    La música de Lucale se caracteriza por líricas introspectivas, contenido social y una narrativa directa que refleja la realidad de la calle, abordando temáticas como la superación, la identidad y la lucha personal.
-  </p>
-
-  <p>
-    Con más de 50 canciones publicadas en plataformas digitales y participación en proyectos culturales como “Haciendo Rap Juntxs” de la UNAJ, Lucale se posiciona como un artista independiente en crecimiento dentro de la escena del rap argentino.
-  </p>
-
-  <p>
-    Su visión es clara: llevar el rap de barrio a un estándar global sin perder la esencia.
-  </p>
-</section>
-
-<!-- GALERÍA -->
-<section class="gallery">
-  <h2>POSTULACIONES</h2>
-
-  <div class="grid">
-    <img src="img1.jpg" alt="Lucale 1">
-    <img src="img3.jpg" alt="Lucale 2">
-  </div>
-</section>
-
-<!-- TRAYECTORIA -->
-<section class="press">
-  <h2>TRAYECTORIA</h2>
-
-  <div class="press-grid">
-    <div class="press-card">+50 canciones publicadas</div>
-    <div class="press-card">Libro "5000 Disparos"</div>
-    <div class="press-card">UNAJ – Haciendo Rap Juntxs</div>
-    <div class="press-card">Premios Gardel 2025/26</div>
-    <div class="press-card">Premios MIN 2026 (España)</div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="contact">
-  <h2>CONTACTO / BOOKING</h2>
-
-  <a href="mailto:contacto@lucalemusic.com.ar">📩 EMAIL</a>
-  <a href="https://wa.me/5491130157350" target="_blank">📱 WHATSAPP</a>
-  <a href="https://www.instagram.com/lucale.music" target="_blank">📷 INSTAGRAM</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  LUCALE © 2026
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
