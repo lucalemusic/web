@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUCALE | Sitio Oficial</title>
     
+    <meta property="og:title" content="LUCALE | Sitio Oficial">
+    <meta property="og:description" content="Rap crudo y cultura de barrio. Don Torcuato, Argentina.">
+    <meta property="og:image" content="img1.jpg">
+    <meta property="og:url" content="https://lucalemusic.com.ar/">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -12,7 +17,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="opacity: 0;"> <video autoplay muted loop playsinline class="bg-video">
+<body style="opacity: 0;"> 
+    
+    <video autoplay muted loop playsinline preload="auto" class="bg-video">
         <source src="lucale.mp4" type="video/mp4">
     </video>
 
@@ -28,15 +35,20 @@
         </div>
     </header>
 
+    <div class="marquee-bar">
+        <div class="marquee-text">
+            LUCALE · RAP CRUDO · DON TORCUATO · LUCALE · RAP CRUDO · DON TORCUATO · LUCALE · RAP CRUDO · DON TORCUATO ·
+        </div>
+    </div>
+
     <section class="quote">
         <h2 style="font-style: italic; opacity: 0.8;">“El Límite es el Cielo.”</h2>
     </section>
 
     <section id="music" class="music">
         <h2>MÚSICA</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 800px; margin: 0 auto 40px;">
+        <div class="video-container">
             <iframe 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;"
                 src="https://www.youtube.com/embed/5XYEefGguyw" 
                 allowfullscreen>
             </iframe>
@@ -48,15 +60,9 @@
 
     <section id="bio" class="bio">
         <h2>BIOGRAFÍA</h2>
-        <p>
-            <strong>Lucale</strong> (Cristian Alexander Devincenzi Lemos) es un rapero, compositor y gestor cultural nacido en Montevideo y criado en el conurbano bonaerense. Su identidad se construye desde la experiencia real de los barrios populares, fusionando rap con elementos del tango moderno en un sonido crudo y auténtico.
-        </p>
-        <p>
-            Criado en contextos vulnerables de San Isidro y <strong>Don Torcuato</strong>, territorio que hoy representa su base cultural, su historia está marcada por la resiliencia y la narrativa directa que refleja la realidad de la calle.
-        </p>
-        <p>
-            Con más de 50 canciones publicadas, Lucale se posiciona como un referente independiente en crecimiento, llevando el rap de barrio a un estándar global sin perder la esencia.
-        </p>
+        <p><strong>Lucale</strong> (Cristian Alexander Devincenzi Lemos) es un rapero, compositor y gestor cultural nacido en Montevideo y criado en el conurbano bonaerense. Su identidad se construye desde la experiencia real de los barrios populares.</p>
+        <p>Criado en contextos vulnerables de San Isidro y <strong>Don Torcuato</strong>, su historia está marcada por la resiliencia y la narrativa directa que refleja la realidad de la calle.</p>
+        <p>Con más de 50 canciones publicadas, se posiciona como un referente independiente en crecimiento, llevando el rap de barrio a un estándar global.</p>
     </section>
 
     <section class="gallery">
@@ -70,34 +76,21 @@
     <section class="press">
         <h2>TRAYECTORIA</h2>
         <div class="press-grid">
-            <div class="press-card">
-                <h3>+50</h3>
-                <p>Canciones publicadas</p>
-            </div>
-            <div class="press-card">
-                <h3>LIBRO</h3>
-                <p>"5000 Disparos"</p>
-            </div>
-            <div class="press-card">
-                <h3>UNAJ</h3>
-                <p>Haciendo Rap Juntxs</p>
-            </div>
-            <div class="press-card">
-                <h3>Capif</h3>
-                <p>Postulacion a Premios 2025/26</p>
-            </div>
-            <div class="press-card">
-                <h3>ESPAÑA</h3>
-                <p>Premios MIN 2026</p>
-            </div>
+            <div class="press-card"><h3>+50</h3><p>Canciones publicadas</p></div>
+            <div class="press-card"><h3>LIBRO</h3><p>"5000 Disparos"</p></div>
+            <div class="press-card"><h3>UNAJ</h3><p>Haciendo Rap Juntxs</p></div>
+            <div class="press-card"><h3>Capif</h3><p>Postulación Premios 25/26</p></div>
+            <div class="press-card"><h3>ESPAÑA</h3><p>Premios MIN 2026</p></div>
         </div>
+    </section>
+
     <section id="contacto" class="contact">
         <h2>CONTACTO / PRENSA / BOOKING</h2>
         <div class="buttons">
-            <a href="mailto:contacto@lucalemusic.com.ar"> EMAIL</a>
-            <a href="https://wa.me/5491130157350" target="_blank"> WHATSAPP</a>
-            <a href="https://www.instagram.com/lucale.music" target="_blank"> INSTAGRAM</a>
-            <a href="https://taplink.cc/lucale" target="_blank" style="border-color: #fff; background: rgba(255,255,255,0.1);"> PRENSA / PRESS</a>
+            <a href="mailto:contacto@lucalemusic.com.ar">EMAIL</a>
+            <a href="https://wa.me/5491130157350" target="_blank">WHATSAPP</a>
+            <a href="https://www.instagram.com/lucale.music" target="_blank">INSTAGRAM</a>
+            <a href="https://taplink.cc/lucale" target="_blank" class="btn-press">PRENSA / PRESS</a>
         </div>
     </section>
 
