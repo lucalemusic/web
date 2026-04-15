@@ -1,4 +1,4 @@
-/* FUENTES Y RESET */
+/* FUENTES Y RESET GENERAL */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,7 +11,7 @@ body {
     line-height: 1.6; 
 }
 
-/* FONDO VIDEO O IMAGEN */
+/* FONDO VIDEO */
 .bg-video { 
     position: fixed; 
     top: 50%; 
@@ -24,7 +24,7 @@ body {
     filter: brightness(0.3); 
 }
 
-/* Capa de degrade para asegurar legibilidad */
+/* CAPA DE DEGRADÉ PARA LEGIBILIDAD */
 body::after { 
     content: ""; 
     position: fixed; 
@@ -43,7 +43,6 @@ body::after {
     white-space: nowrap; 
     text-transform: uppercase; 
     font-size: 0.85rem; 
-    letter-spacing: 1px;
 }
 .marquee-text { 
     display: inline-block; 
@@ -54,7 +53,7 @@ body::after {
     to { transform: translateX(-50%); } 
 }
 
-/* SECCIONES GENERALES */
+/* SECCIONES */
 section { 
     padding: 100px 10vw; 
     max-width: 1200px; 
@@ -66,7 +65,7 @@ h2 {
     font-weight: 900; 
     margin-bottom: 40px; 
     text-transform: uppercase; 
-    letter-spacing: -3px; 
+    letter-spacing: -2px; 
 }
 p { font-size: 1.1rem; opacity: 0.8; margin-bottom: 25px; }
 
@@ -78,29 +77,32 @@ p { font-size: 1.1rem; opacity: 0.8; margin-bottom: 25px; }
     align-items: center; 
 }
 .hero h1 { 
-    font-size: clamp(60px, 18vw, 180px); 
+    font-size: clamp(60px, 15vw, 150px); 
     font-weight: 900; 
     line-height: 0.8; 
-    letter-spacing: -5px;
 }
 
-/* STUDIO / IMAGEN DEL SILLÓN */
-.studio-single-img { 
+/* --- SECCIÓN STUDIO / SILLÓN (REVISADO PARA MÓVIL) --- */
+.studio-single-img {
     max-width: 800px; 
-    margin: 50px auto; 
-    border: 1px solid rgba(255,255,255,0.1);
-    overflow: hidden;
+    margin: 40px auto; 
+    padding: 0 20px; 
+    display: flex;
+    justify-content: center;
 }
-.studio-single-img img { 
-    width: 100%; 
-    height: auto; 
+
+.studio-single-img img {
+    max-width: 100%; /* No se sale de la pantalla del celu */
+    height: auto;    /* Mantiene la forma original sin recortar */
     display: block;
-    filter: grayscale(100%) contrast(1.1); 
-    transition: 1s ease; 
+    border: 1px solid rgba(255,255,255,0.1);
+    filter: grayscale(100%);
+    transition: 0.8s ease;
 }
-.studio-single-img img:hover { 
-    filter: grayscale(0%) contrast(1); 
-    transform: scale(1.03); 
+
+.studio-single-img img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
 }
 
 /* PRESS / CARDS */
@@ -114,25 +116,21 @@ p { font-size: 1.1rem; opacity: 0.8; margin-bottom: 25px; }
     border: 1px solid rgba(255,255,255,0.1); 
     background: rgba(255,255,255,0.02); 
     text-align: left;
-    transition: 0.3s;
 }
-.press-card:hover { border-color: #fff; }
-.card-links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-.card-links a { font-size: 0.8rem; color: #fff; opacity: 0.5; text-decoration: none; border-bottom: 1px solid transparent; width: fit-content; }
-.card-links a:hover { opacity: 1; border-color: #fff; }
+.card-links { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+.card-links a { font-size: 0.8rem; color: #fff; opacity: 0.5; text-decoration: underline; }
 
 /* BOTONES */
 .buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 .buttons a { 
-    padding: 18px 35px; 
+    padding: 15px 30px; 
     border: 1px solid #fff; 
     text-decoration: none; 
     color: #fff; 
     font-weight: 700; 
     font-size: 0.75rem; 
     text-transform: uppercase; 
-    letter-spacing: 2px;
-    transition: 0.4s; 
+    transition: 0.3s; 
 }
 .buttons a:hover { background: #fff; color: #000; }
 .btn-buy { background: #fff !important; color: #000 !important; }
@@ -149,11 +147,12 @@ p { font-size: 1.1rem; opacity: 0.8; margin-bottom: 25px; }
 }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-footer { padding: 80px 20px; text-align: center; font-size: 0.75rem; opacity: 0.3; text-transform: uppercase; letter-spacing: 2px; }
+footer { padding: 80px 20px; text-align: center; font-size: 0.75rem; opacity: 0.4; }
 
-/* MOBILE */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-    section { padding: 70px 25px; }
-    .hero h1 { font-size: 70px; }
+    section { padding: 60px 20px; }
+    .hero h1 { font-size: 55px; }
     .buttons { flex-direction: column; }
+    .studio-single-img { margin: 20px auto; }
 }
