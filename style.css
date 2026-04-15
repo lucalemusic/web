@@ -1,3 +1,6 @@
+/* IMPORTAR FUENTE MODERNA */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
 /* RESET */
 * {
   margin: 0;
@@ -6,15 +9,20 @@
 }
 
 /* BASE */
-html, body {
-  height: 100%;
-  font-family: Arial, sans-serif;
-  background: black;
-  color: white;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-/* VIDEO FONDO (CINEMATIC FIX) */
+body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* VIDEO FONDO (CINEMATIC) */
 .bg-video {
   position: fixed;
   top: 50%;
@@ -24,21 +32,17 @@ html, body {
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: -2;
-  filter: brightness(0.6) contrast(1.2);
+  filter: brightness(0.4) contrast(1.1); /* Bajé el brillo para que resalte el texto */
 }
 
-/* EVITA BUGS */
-video {
-  display: block;
-}
-
-/* OVERLAY PROFESIONAL (PROFUNDO) */
+/* OVERLAY PROFUNDO */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+  background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.9) 100%);
   z-index: -1;
+  pointer-events: none;
 }
 
 /* HERO */
@@ -48,205 +52,134 @@ body::after {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 20px;
 }
 
-/* LOGO / NOMBRE */
 .hero h1 {
-  font-size: clamp(50px, 8vw, 110px);
-  letter-spacing: 12px;
-  font-weight: bold;
+  font-size: clamp(60px, 12vw, 150px); /* Más grande para impacto */
+  font-weight: 900;
+  letter-spacing: -2px; /* Letras más juntas = estilo trap moderno */
   text-transform: uppercase;
-  text-shadow:
-    0 0 10px rgba(255,255,255,0.2),
-    0 0 30px rgba(255,255,255,0.1);
-  animation: fadeIn 2s ease forwards;
+  line-height: 0.9;
+  margin-bottom: 10px;
+  animation: fadeIn 1.5s ease-out forwards;
 }
 
-/* SUBTEXTO */
 .hero p {
-  margin-top: 10px;
-  opacity: 0.7;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
+  font-size: 1.1rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 30px;
 }
 
-/* BOTONES */
+/* BOTONES ESTILO PREMIUM */
 .buttons {
-  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.buttons a {
-  margin: 10px;
-  padding: 12px 30px;
-  border: 1px solid rgba(255,255,255,0.6);
+.buttons a, .btn, .contact a {
+  padding: 15px 35px;
+  border: 1px solid rgba(255,255,255,0.3);
   text-decoration: none;
   color: white;
-  transition: 0.4s;
+  font-weight: 700;
+  font-size: 0.8rem;
   letter-spacing: 2px;
-  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-/* HOVER ESTILO ARTISTA */
-.buttons a:hover {
-  background: white;
-  color: black;
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+.buttons a:hover, .btn:hover, .contact a:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255,255,255,0.2);
 }
 
 /* SECCIONES */
 section {
-  padding: 120px 20px;
+  padding: 100px 10vw;
+  max-width: 1400px;
+  margin: 0 auto;
   text-align: center;
-  animation: fadeUp 1s ease;
 }
 
-/* TITULOS */
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  letter-spacing: 3px;
+  font-size: clamp(30px, 5vw, 50px);
+  margin-bottom: 50px;
+  font-weight: 900;
+  letter-spacing: -1px;
   text-transform: uppercase;
 }
 
-/* VIDEO */
-.video {
-  width: 90%;
-  max-width: 700px;
-  height: 400px;
-  margin-top: 20px;
-  border: none;
-  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+/* BIO TEXTO */
+.bio p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 25px auto;
+  text-align: left; /* Biografía justificada o a la izquierda es más legible */
+  color: rgba(255,255,255,0.8);
 }
 
-/* BOTON SPOTIFY */
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 12px 35px;
-  border: 1px solid rgba(255,255,255,0.6);
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: white;
-  color: black;
-  box-shadow: 0 0 25px white;
-}
-
-/* BIO */
-.bio {
-  max-width: 900px;
-  margin: auto;
-  line-height: 1.8;
-  font-size: 1.05rem;
-  opacity: 0.9;
-}
-
-/* GALERIA */
-.grid {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+/* GALERIA & TRAYECTORIA */
+.grid, .press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .grid img {
-  width: 300px;
-  border: 2px solid rgba(255,255,255,0.6);
-  transition: 0.4s;
-  filter: grayscale(20%);
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.1);
+  filter: grayscale(100%);
+  transition: 0.5s;
 }
 
 .grid img:hover {
-  transform: scale(1.07);
   filter: grayscale(0%);
-}
-
-/* TRAYECTORIA */
-.press-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  border-color: #fff;
 }
 
 .press-card {
-  border: 1px solid rgba(255,255,255,0.6);
-  padding: 25px;
-  width: 230px;
-  transition: 0.4s;
-  backdrop-filter: blur(4px);
-}
-
-.press-card:hover {
-  background: white;
-  color: black;
-  transform: translateY(-5px);
-}
-
-/* CONTACTO */
-.contact a {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 25px;
-  border: 1px solid rgba(255,255,255,0.6);
-  text-decoration: none;
-  color: white;
+  padding: 40px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
   transition: 0.3s;
 }
 
-.contact a:hover {
-  background: white;
-  color: black;
-  box-shadow: 0 0 20px white;
+.press-card:hover {
+  background: rgba(255,255,255,1);
+  color: #000;
 }
 
 /* FOOTER */
 footer {
-  padding: 40px;
-  opacity: 0.5;
-  font-size: 0.9rem;
+  padding: 60px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  opacity: 0.4;
 }
 
 /* ANIMACIONES */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px);}
-  to { opacity: 1; transform: translateY(0);}
+  from { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(50px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* 📱 MOBILE PRO */
+/* MOBILE ADJUST */
 @media (max-width: 768px) {
-
-  .bg-video {
-    display: none;
-  }
-
-  body {
-    background-image: url("fondo.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-
-  body::after {
-    background: rgba(0,0,0,0.8);
-  }
-
-  .hero h1 {
-    font-size: clamp(40px, 10vw, 70px);
-    letter-spacing: 4px;
-  }
-
-  .video {
-    height: 250px;
-  }
-
+  .hero h1 { font-size: 70px; }
+  section { padding: 60px 20px; }
+  .bg-video { opacity: 0.5; } /* En celu mejor que se vea un poco menos si no es muy potente el procesador */
 }
-
