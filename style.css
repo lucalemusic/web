@@ -166,3 +166,131 @@ body.loaded {
   opacity: 1;
 }
 
+/* ===== EFECTO CINEMÁTICO ===== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ZOOM LENTO DEL VIDEO */
+.bg-video {
+  animation: zoomVideo 20s ease-in-out infinite alternate;
+}
+
+@keyframes zoomVideo {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* TITULO IMPACTO */
+h1 {
+  font-size: 8rem;
+  font-weight: 900;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+/* TAGLINE */
+.tagline {
+  font-size: 1rem;
+  letter-spacing: 4px;
+  opacity: 0.6;
+  margin-top: 10px;
+  animation: fadeUp 2s ease forwards;
+}
+
+/* BOTONES ENTRADA */
+.buttons {
+  animation: fadeUp 2.5s ease forwards;
+}
+
+/* ANIMACIÓN GENERAL */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SCROLL SUAVE ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== MARQUEE PRO ===== */
+.marquee-bar {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 0;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  opacity: 0.6;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ===== VIDEO MÁS PRO ===== */
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 450px;
+}
+
+/* ===== TARJETAS PRO ===== */
+.press-card {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.4);
+}
+
+/* ===== HOVER INDUSTRIA ===== */
+.buttons a:hover {
+  transform: scale(1.1);
+  letter-spacing: 2px;
+}
+
+/* ===== MOBILE NIVEL REAL ===== */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
+  }
+
+  .video-container iframe {
+    height: 220px;
+  }
+
+}
+
+
+
