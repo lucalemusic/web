@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Aparecer el cuerpo de la página
-    document.body.style.transition = "opacity 1.5s ease-in-out";
-    document.body.style.opacity = 1;
+    // Aseguramos que el body sea visible inmediatamente
+    document.body.style.opacity = "1";
 
-    // Configuración del observador para animar secciones al hacer scroll
+    // Configuración del observador para animar las secciones al hacer scroll
     const observerOptions = {
-        threshold: 0.15
+        threshold: 0.10 // Bajamos un poco el umbral para que la animación empiece antes
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -17,12 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    // Aplicar animación a cada sección
+    // Seleccionamos todas las secciones para aplicarles el efecto de entrada
     const sections = document.querySelectorAll('section');
+    
     sections.forEach(section => {
+        // Estado inicial de las secciones antes de que el usuario haga scroll
         section.style.opacity = "0";
-        section.style.transform = "translateY(40px)";
-        section.style.transition = "all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+        
+        // Empezar a observar la sección
         observer.observe(section);
     });
 });
