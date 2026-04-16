@@ -25,12 +25,13 @@ body {
 }
 
 /* CAPA DE DEGRADÉ PARA LEGIBILIDAD */
-body::after { 
-    content: ""; 
-    position: fixed; 
-    inset: 0; 
-    background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.85)); 
-    z-index: -1; 
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: #000; 
+    color: #fff; 
+    overflow-x: hidden; 
+    line-height: 1.6;
+    opacity: 1; /* Esto garantiza que la página se vea siempre */
 }
 
 /* MARQUEE (CINTA DE TEXTO) */
