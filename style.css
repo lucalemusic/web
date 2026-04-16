@@ -3,12 +3,14 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body { 
     font-family: 'Inter', sans-serif; 
     background: #000; 
     color: #fff; 
     overflow-x: hidden; 
-    line-height: 1.6; 
+    line-height: 1.6;
+    opacity: 1; /* Garantiza que la página se vea siempre */
 }
 
 /* FONDO VIDEO */
@@ -24,14 +26,13 @@ body {
     filter: brightness(0.3); 
 }
 
-/* CAPA DE DEGRADÉ PARA LEGIBILIDAD */
-body { 
-    font-family: 'Inter', sans-serif; 
-    background: #000; 
-    color: #fff; 
-    overflow-x: hidden; 
-    line-height: 1.6;
-    opacity: 1; /* Esto garantiza que la página se vea siempre */
+/* CAPA DE DEGRADÉ PARA LEGIBILIDAD (Importante para que se lea el texto) */
+body::after { 
+    content: ""; 
+    position: fixed; 
+    inset: 0; 
+    background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.85)); 
+    z-index: -1; 
 }
 
 /* MARQUEE (CINTA DE TEXTO) */
@@ -93,8 +94,8 @@ p { font-size: 1.1rem; opacity: 0.8; margin-bottom: 25px; }
 }
 
 .studio-single-img img {
-    max-width: 100%; /* No se sale de la pantalla del celu */
-    height: auto;    /* Mantiene la forma original sin recortar */
+    max-width: 100%; 
+    height: auto; 
     display: block;
     border: 1px solid rgba(255,255,255,0.1);
     filter: grayscale(100%);
