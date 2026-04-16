@@ -1,108 +1,146 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<title>LUCALE | Rapero Argentino | Sitio Oficial</title>
+body {
+  font-family: 'Inter', sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
 
-<meta name="description" content="Lucale es un rapero argentino con estilo crudo, identidad de barrio y proyección internacional.">
-<link rel="canonical" href="https://lucalemusic.com.ar">
+/* VIDEO FONDO */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.35);
+}
 
-<meta property="og:title" content="LUCALE | Rap Crudo">
-<meta property="og:description" content="Identidad real desde el conurbano.">
-<meta property="og:image" content="https://lucalemusic.com.ar/img1.jpg">
-<meta property="og:type" content="website">
+/* CAPA OSCURA (ASEGURA LEGIBILIDAD) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-<body>
+.hero-content {
+  text-align: center;
+}
 
-<!-- VIDEO FONDO -->
-<video autoplay muted loop playsinline class="bg-video">
-  <source src="lucale.mp4" type="video/mp4">
-</video>
+h1 {
+  font-size: clamp(60px, 12vw, 140px);
+  font-weight: 900;
+  letter-spacing: 8px;
+}
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-content">
-    <h1>LUCALE</h1>
+.tagline {
+  margin-top: 10px;
+  opacity: 0.7;
+  letter-spacing: 3px;
+}
 
-    <p class="tagline">
-      RAP CRUDO · IDENTIDAD REAL · ARGENTINA
-    </p>
+/* BOTONES */
+.buttons {
+  margin-top: 20px;
+}
 
-    <div class="buttons">
-      <a href="#music">ESCUCHAR</a>
-      <a href="#bio">BIO</a>
-      <a href="#contacto">BOOKING</a>
-    </div>
-  </div>
-</header>
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
 
-<!-- FRASE IMPACTO -->
-<section class="impact">
-  <h2>NO VENDÍ EL ALMA</h2>
-</section>
+.buttons a:hover {
+  background: white;
+  color: black;
+}
 
-<!-- MÚSICA -->
-<section id="music">
-  <h2>ÚLTIMO LANZAMIENTO</h2>
+/* SECCIONES */
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
 
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/5XYEefGguyw" allowfullscreen></iframe>
-  </div>
+h2 {
+  font-size: clamp(30px, 5vw, 60px);
+  margin-bottom: 40px;
+}
 
-  <div class="buttons">
-    <a href="https://open.spotify.com/intl-es/artist/44Mmk92PgcbqGzO1oxVk6z" target="_blank">
-      ESCUCHAR EN SPOTIFY
-    </a>
-  </div>
-</section>
+/* FRASE IMPACTO */
+.impact h2 {
+  font-size: clamp(40px, 10vw, 110px);
+  letter-spacing: 5px;
+}
 
-<!-- BIO -->
-<section id="bio">
-  <h2>IDENTIDAD</h2>
+/* VIDEO */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  max-width: 800px;
+  margin: auto;
+}
 
-  <p>
-    Lucale es un rapero argentino con una propuesta basada en la crudeza,
-    la independencia y la identidad de barrio. Su obra refleja la realidad
-    del conurbano con una visión internacional.
-  </p>
-</section>
+.video-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-<!-- DISEÑO -->
-<section>
-  <h2>DISEÑO INDUSTRIAL</h2>
+/* IMAGEN */
+.studio-img img {
+  width: 100%;
+  max-width: 500px;
+  filter: grayscale(100%);
+  transition: 0.5s;
+}
 
-  <div class="studio-img">
-    <img src="img_octa.jpg" alt="Sillón Octagonal">
-  </div>
+.studio-img img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
 
-  <div class="buttons">
-    <a href="https://articulo.mercadolibre.com.ar/MLA-1682759613-sillon-moderno-octagonal-tela-1-m-x-1-m-directo-de-fabrica-_JM" target="_blank">
-      VER PRODUCTO
-    </a>
-  </div>
-</section>
+/* FOOTER */
+footer {
+  padding: 50px;
+  opacity: 0.5;
+}
 
-<!-- CONTACTO -->
-<section id="contacto">
-  <h2>CONTACTO</h2>
+/* MOBILE */
+@media (max-width: 768px) {
 
-  <div class="buttons">
-    <a href="mailto:contacto@lucalemusic.com.ar">EMAIL</a>
-    <a href="https://wa.me/5491130157350">WHATSAPP</a>
-  </div>
-</section>
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
 
-<footer>
-  LUCALE ™ · Buenos Aires, Argentina
-</footer>
+  .impact h2 {
+    font-size: 3rem;
+  }
 
-<script src="script.js"></script>
+  .video-container {
+    padding-bottom: 56.25%;
+  }
 
-</body>
-</html>
+}
