@@ -1,360 +1,50 @@
 /* CONFIGURACIÓN MAESTRA */
-
-:root {
-
-    color-scheme: dark;
-
-}
-
-
-
+:root { color-scheme: dark; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; background-color: #000; }
 
-
-
 body { 
-
     font-family: 'Inter', sans-serif; 
-
     background-color: #000; 
-
     color: #fff; 
-
     overflow-x: hidden; 
-
     line-height: 1.5;
-
+    /* Cursor Global */
+    cursor: url('tridente.png') 16 16, auto;
 }
 
-
+/* Enlaces y botones */
+a, button { cursor: url('tridente.png') 16 16, pointer; }
 
 /* FONDO VIDEO */
-
-.bg-video { 
-
-    position: fixed; 
-
-    top: 50%; 
-
-    left: 50%; 
-
-    width: 100vw; 
-
-    height: 100vh; 
-
-    transform: translate(-50%, -50%); 
-
-    object-fit: cover; 
-
-    z-index: -2; 
-
-    filter: brightness(0.4); 
-
-}
-
-
-
-body::after { 
-
-    content: ""; 
-
-    position: fixed; 
-
-    top: 0; left: 0; width: 100%; height: 100%;
-
-    background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.8)); 
-
-    z-index: -1; 
-
-}
-
-
+.bg-video { position: fixed; top: 50%; left: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); object-fit: cover; z-index: -2; filter: brightness(0.4); }
+body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.8)); z-index: -1; }
 
 /* MARQUEE */
-
-.marquee-bar { 
-
-    background: #fff; 
-
-    color: #000; 
-
-    padding: 12px 0; 
-
-    font-weight: 900; 
-
-    overflow: hidden; 
-
-    white-space: nowrap; 
-
-    text-transform: uppercase; 
-
-    font-size: 0.8rem;
-
-    position: relative;
-
-    z-index: 10;
-
-}
-
+.marquee-bar { background: #fff; color: #000; padding: 12px 0; font-weight: 900; overflow: hidden; white-space: nowrap; text-transform: uppercase; font-size: 0.8rem; position: relative; z-index: 10; }
 .marquee-text { display: inline-block; animation: marquee-animation 25s linear infinite; }
-
 @keyframes marquee-animation { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-
-
 /* HERO */
+.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
+.hero h1 { font-size: clamp(50px, 15vw, 150px); font-weight: 900; line-height: 0.8; }
 
-.hero { 
-
-    height: 100vh; 
-
-    display: flex; 
-
-    justify-content: center; 
-
-    align-items: center;
-
-    text-align: center;
-
-}
-
-.hero h1 { 
-
-    font-size: clamp(50px, 15vw, 150px); 
-
-    font-weight: 900; 
-
-    line-height: 0.8;
-
-}
-
-
-
-/* SECCIONES - Centrado corregido para PC */
-
-section { 
-
-    padding: 100px 5vw; 
-
-    max-width: 1100px; 
-
-    margin: 0 auto; 
-
-    position: relative;
-
-    z-index: 1;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center; /* Centra todo el contenido internamente */
-
-}
-
+/* SECCIONES */
+section { padding: 100px 5vw; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
 h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; text-transform: uppercase; }
-
-p { max-width: 800px; margin-bottom: 30px; }
-
-
+p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 
 /* BOTONES */
-
-.buttons { 
-
-    display: flex; 
-
-    gap: 15px; 
-
-    justify-content: center; 
-
-    flex-wrap: wrap; 
-
-}
-
-.buttons a { 
-
-    padding: 15px 30px; 
-
-    border: 1px solid #fff; 
-
-    text-decoration: none; 
-
-    color: #fff; 
-
-    font-weight: 700; 
-
-    font-size: 0.75rem; 
-
-    text-transform: uppercase; 
-
-    transition: 0.3s ease;
-
-    background: rgba(0,0,0,0.3);
-
-}
-
+.buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.buttons a { padding: 15px 30px; border: 1px solid #fff; text-decoration: none; color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s ease; background: rgba(0,0,0,0.3); }
 .buttons a:hover { background: #fff; color: #000; }
-
 .btn-buy { background: #fff !important; color: #000 !important; }
 
-
-
-/* --- EFECTO SILLÓN OCTA CORREGIDO --- */
-
-.studio-single-img { 
-
-    width: 100%; 
-
-    max-width: 700px; 
-
-    margin: 40px auto; 
-
-    overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    cursor: crosshair; /* Un detalle pro: cambia el puntero */
-
-}
-
-
-
-.studio-single-img img { 
-
-    width: 100%; 
-
-    height: auto; 
-
-    display: block;
-
-    filter: grayscale(100%); /* EMPIEZA EN BLANCO Y NEGRO */
-
-    transition: filter 0.8s ease, transform 0.8s ease; /* Transición suave */
-
-}
-
-
-
-.studio-single-img:hover img { 
-
-    filter: grayscale(0%); /* SE PONE A COLOR AL PASAR EL MOUSE */
-
-    transform: scale(1.05); /* ZOOM SUTIL */
-
-}
-
-
-
-/* PRESS CARDS */
-
-.press-grid { 
-
-    display: grid; 
-
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-
-    gap: 30px; 
-
-    width: 100%;
-
-}
-
-.press-card { 
-
-    padding: 40px; 
-
-    background: rgba(15, 15, 15, 0.9); 
-
-    border: 1px solid rgba(255,255,255,0.1); 
-
-    text-align: left; 
-
-}
-
-.card-links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-
-.card-links a { font-size: 0.8rem; color: #fff; opacity: 0.5; text-decoration: underline; }
-
-
-
-/* VIDEO - CENTRADO PARA PC */
-
-.video-container { 
-
-    width: 100%;
-
-    max-width: 850px; 
-
-    aspect-ratio: 16 / 9;
-
-    position: relative;
-
-    margin: 30px auto; /* Agregamos margen arriba y abajo para que respire */
-
-    align-self: center; /* ESTO es lo que obliga al video a centrarse en el diseño actual */
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-}
-
-
-
-.video-container iframe { 
-
-    position: absolute; 
-
-    top: 0; 
-
-    left: 0; 
-
-    width: 100%; 
-
-    height: 100%; 
-
-    border: 0; 
-
-}
-
-
-
-
-
+/* SILLÓN OCTA */
+.studio-single-img { width: 100%; max-width: 700px; margin: 40px auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+.studio-single-img img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: filter 0.8s ease, transform 0.8s ease; }
+.studio-single-img:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+/* FOOTER Y RESPONSIVE */
 footer { padding: 80px 20px; text-align: center; font-size: 0.75rem; opacity: 0.4; }
-
-
-
-/* RESPONSIVE MÓVIL */
-
-@media (max-width: 768px) {
-
-    section { padding: 60px 20px; }
-
-    .buttons { flex-direction: column; width: 100%; max-width: 300px; }
-
-    .buttons a { width: 100%; text-align: center; }
-
-}
-
-
-
-/* Cursor personalizado de Lucale */
-
-body {
-
-    cursor: url('tridente.png'), auto;
-
-}
-
-
-
-/* Para enlaces y botones */
-
-a, button {
-
-    cursor: url('tridente.png'), pointer;
-
-}
-
+@media (max-width: 768px) { section { padding: 60px 20px; } .buttons { flex-direction: column; width: 100%; max-width: 300px; } }
