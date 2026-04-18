@@ -35,3 +35,26 @@ document.addEventListener("DOMContentLoaded", () => {
         marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
     }
 });
+
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navDots = document.querySelectorAll('.scroll-spy a');
+    
+    let current = "";
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navDots.forEach(a => {
+        a.classList.remove("active");
+        if (a.getAttribute("data-section") === current) {
+            a.classList.add("active");
+        }
+    });
+});
+
+
