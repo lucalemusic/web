@@ -22,7 +22,11 @@
     </style>
 </head>
 <body>
-    <div id="preloader"><div class="tridente-loader"></div></div>
+    <body>
+    <div id="preloader">
+        <div class="tridente-loader"></div>
+    </div>
+        
 
     <div class="bio-content">
         <h1>LUCALE</h1>
@@ -43,9 +47,13 @@
     <script>
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
-            preloader.style.opacity = '0';
-            setTimeout(() => { preloader.style.display = 'none'; }, 500);
+            // Espera 1 segundo para que se vea la carga y luego desaparece
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => { preloader.style.display = 'none'; }, 500);
+            }, 1000);
         });
     </script>
+</body>
 </body>
 </html>
