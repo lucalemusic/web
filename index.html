@@ -46,10 +46,10 @@
     </style>
 </head>
 
-<body> 
+<body>
     <div id="preloader">
-    <img src="tridente.svg" alt="Cargando..." class="tridente-loader">
-</div>
+        <div class="tridente-loader"></div>
+    </div>
 
     <header class="hero">
         <div class="hero-content" style="text-align: center; padding: 100px 20px;">
@@ -123,12 +123,14 @@
     <script>
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
+            // Espera 1 segundo para que se vea la carga y luego desaparece
             setTimeout(() => {
                 preloader.style.opacity = '0';
                 setTimeout(() => { preloader.style.display = 'none'; }, 500);
-            }, 800);
+            }, 1000);
         });
     </script>
 </body>
+    
 </html>
 
