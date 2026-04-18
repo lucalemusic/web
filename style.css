@@ -3,20 +3,20 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; background-color: #000; }
 
+/* --- CONFIGURACIÓN DE CUERPO --- */
 body { 
     font-family: 'Inter', sans-serif; 
     background-color: #000; 
     color: #fff; 
     overflow-x: hidden; 
     line-height: 1.5;
-    /* Cursor Global con ruta absoluta para evitar errores */
-    cursor: url('https://lucalemusic.com.ar/tridente.png') 16 16, auto;
 }
 
 /* --- CURSOR UNIFICADO --- */
 body, body *, a, button { 
-    cursor: url('https://lucalemusic.com.ar/tridente.png'), auto !important; 
+    cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; 
 }
+
 
 /* --- EFECTOS DE FONDO --- */
 .bg-video { position: fixed; top: 50%; left: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); object-fit: cover; z-index: -2; filter: brightness(0.4); }
