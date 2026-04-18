@@ -14,8 +14,9 @@ body {
 
 /* --- CURSOR UNIFICADO --- */
 body, body *, a, button { 
-    cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; 
+    cursor: url('https://lucalemusic.com.ar/cursor.png') 16 16, auto !important; 
 }
+
 
 
 
