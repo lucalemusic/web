@@ -4,27 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUCALE | Links Oficiales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 40px 20px; }
-        .links-container { width: 100%; max-width: 500px; }
-        .btn { display: block; width: 100%; padding: 18px; border: 1px solid #fff; color: #fff; text-decoration: none; text-align: center; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px; }
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; min-width: 100%; padding: 40px 20px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 3rem; font-weight: 900; letter-spacing: -2px; }
+        .links-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+        .cat-title { font-size: 0.7rem; color: #666; margin: 20px 0 10px 0; letter-spacing: 2px; text-transform: uppercase; text-align: center; }
+        .btn { display: block; width: 100%; padding: 18px; border: 1px solid #fff; color: #fff; text-decoration: none; text-align: center; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s; }
         .btn:hover { background-color: #fff; color: #000; }
-        .cat-title { font-size: 0.7rem; color: #666; text-align: center; margin: 20px 0; }
+        .grid-social { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .btn-press { background: #111; border: 1px solid #333; margin-bottom: 8px; font-size: 0.75rem; }
     </style>
 </head>
 <body>
-    <div class="links-container">
-        <h1 style="text-align: center; margin-bottom: 30px;">PRENSA Y POSTULACIONES</h1>
-        
+    <header class="header">
+        <h1>LUCALE</h1>
+        <p style="letter-spacing: 3px; opacity: 0.6; font-size: 0.8rem;">PLATAFORMAS Y PRENSA</p>
+    </header>
+
+    <main class="links-container">
         <a href="https://wa.me/5491130157350" target="_blank" class="btn">WHATSAPP</a>
         
-        <h3 class="cat-title">PREMIOS GARDEL 2026</h3>
-        <div style="margin-bottom: 20px; text-align: center;">
-            <img src="premios gardel.jpg" alt="Constancia" style="width: 100%; border: 1px solid #333;">
+        <h3 class="cat-title">REDES SOCIALES</h3>
+        <div class="grid-social">
+            <a href="https://www.facebook.com/Lucale777/" target="_blank" class="btn">FACEBOOK</a>
+            <a href="https://www.instagram.com/lucale.music" target="_blank" class="btn">INSTAGRAM</a>
+            <a href="https://www.tiktok.com/@lucale.music" target="_blank" class="btn">TIK TOK</a>
+            <a href="https://www.linkedin.com/in/lucalemusic/" target="_blank" class="btn">LINKEDIN</a>
+            <a href="https://x.com/lucale_music" target="_blank" class="btn">TWITTER</a>
+            <a href="https://www.threads.net/@lucale.music" target="_blank" class="btn">THREADS</a>
         </div>
 
-        <a href="/" class="btn" style="background:#333; border:none;">VOLVER A LA WEB PRINCIPAL</a>
-    </div>
+        <h3 class="cat-title">PLATAFORMAS DIGITALES</h3>
+        <a href="https://open.spotify.com/artist/0" target="_blank" class="btn">SPOTIFY</a>
+        <a href="https://www.youtube.com/@LucaleMusic" target="_blank" class="btn">YOUTUBE</a>
+        <a href="https://music.apple.com/artist/lucale/1521276479" target="_blank" class="btn">APPLE MUSIC</a>
+        <a href="https://www.deezer.com/artist/99323142" target="_blank" class="btn">DEEZER</a>
+        <a href="https://soundcloud.com/lucale-music" target="_blank" class="btn">SOUNDCLOUD</a>
+
+        <h3 class="cat-title">ARCHIVO DE PRENSA</h3>
+        <a href="https://diario-nco.net/2025/12/29/lucale-premios-min-2026/" target="_blank" class="btn btn-press">NCO: LUCALE EN LOS MIN</a>
+        <a href="https://dequeruza.ar/lucale-participa-oficialmente-en-los-min-2026-con-candelabro/" target="_blank" class="btn btn-press">DE QUERUZA: CANDELABRO</a>
+        <a href="https://zonanortevision.com.ar/352982/el-rapero-lucale-abanderado-en-su-ultimo-ano-de-secundaria-de-adultos-una-caricia-al-alma/" target="_blank" class="btn btn-press">ZONA NORTE: ABANDERADO</a>
+        <a href="https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale" target="_blank" class="btn btn-press">BIOGRAFÍA CMTV</a>
+
+        <div style="margin-top: 30px;">
+             <a href="/" class="btn" style="background: #333; border: none;">VOLVER A WEB PRINCIPAL</a>
+        </div>
+    </main>
 </body>
 </html>
