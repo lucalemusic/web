@@ -13,8 +13,10 @@ body {
     cursor: url('https://lucalemusic.com.ar/tridente.png') 16 16, auto;
 }
 
-/* Enlaces y botones - Cursor */
-a, button { cursor: url('https://lucalemusic.com.ar/tridente.png') 16 16, pointer; }
+/* --- CURSOR UNIFICADO --- */
+body, body *, a, button { 
+    cursor: url('https://lucalemusic.com.ar/tridente.png') 16 16, auto !important; 
+}
 
 /* --- EFECTOS DE FONDO --- */
 .bg-video { position: fixed; top: 50%; left: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); object-fit: cover; z-index: -2; filter: brightness(0.4); }
