@@ -13,8 +13,31 @@
         .tridente-loader { width: 100px; height: 100px; background-color: #fff; mask: url('tridente.svg') no-repeat center; -webkit-mask: url('tridente.svg') no-repeat center; mask-size: contain; -webkit-mask-size: contain; animation: fillTrident 2s ease-in-out infinite; }
         @keyframes fillTrident { 0% { clip-path: inset(100% 0 0 0); } 50% { clip-path: inset(0% 0 0 0); } 100% { clip-path: inset(0% 0 0 0); } }
         
-        /* Asegurar fondo negro sólido */
-        body { background-color: #000 !important; }
+        /* Asegurar fondo negro sólido y estilos base */
+        body { background-color: #000 !important; font-family: 'Inter', sans-serif; color: #fff; margin: 0; overflow-x: hidden; }
+        section { padding: 100px 5vw; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; text-transform: uppercase; }
+        p { max-width: 800px; margin-bottom: 30px; text-align: center; }
+        
+        /* BOTONES */
+        .buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .buttons a { padding: 15px 30px; border: 1px solid #fff; text-decoration: none; color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s ease; background: rgba(0,0,0,0.3); }
+        .buttons a:hover { background: #fff; color: #000; }
+        
+        /* EFECTO SILLÓN OCTA */
+        .studio-single-img { width: 100%; max-width: 700px; margin: 40px auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); cursor: crosshair; }
+        .studio-single-img img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: filter 0.8s ease, transform 0.8s ease; }
+        .studio-single-img:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+        /* MARQUEE Y OTROS ESTILOS NECESARIOS (si no están en style.css) */
+        .marquee-bar { background: #fff; color: #000; padding: 12px 0; font-weight: 900; overflow: hidden; white-space: nowrap; text-transform: uppercase; font-size: 0.8rem; }
+        .marquee-text { display: inline-block; animation: marquee-animation 25s linear infinite; }
+        @keyframes marquee-animation { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .press-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; width: 100%; }
+        .press-card { padding: 40px; background: rgba(15, 15, 15, 0.9); border: 1px solid rgba(255,255,255,0.1); }
+        .card-links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        .card-links a { font-size: 0.8rem; color: #fff; opacity: 0.5; text-decoration: underline; }
+        footer { padding: 80px 20px; text-align: center; font-size: 0.75rem; opacity: 0.4; }
     </style>
 </head>
 
@@ -47,6 +70,15 @@
             <a class="btn" href="https://open.spotify.com/artist/tu_id" target="_blank">SPOTIFY</a>
             <a class="btn" href="/LINKS/">LINKS Y ARCHIVO</a>
         </div>
+    </section>
+
+    <section id="studio">
+        <h2>STUDIO | DISEÑO INDUSTRIAL</h2>
+        <p>Proyectos de diseño de autor y gestión cultural.</p>
+        <div class="studio-single-img">
+            <img src="img_octa.jpg" alt="Sillón Octa - Diseño de autor Lucale">
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: -20px;">Sillón Octa ®. Metal, madera y cuero. 2024.</p>
     </section>
 
     <section id="registro">
