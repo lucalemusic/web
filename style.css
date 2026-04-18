@@ -179,4 +179,17 @@ a, button {
     cursor: url('tridente.png'), pointer;
 }
 
+/* Refinamiento de la animación de entrada */
+section {
+    /* Mantenemos tu base, pero añadimos will-change para rendimiento extremo */
+    will-change: opacity, transform;
+}
+
+/* Opcional: Si querés un efecto de aparición aún más "cine" */
+/* El JS ya controla la transición, pero esto asegura que se vea perfecto */
+section[style*="opacity: 1"] {
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
 
