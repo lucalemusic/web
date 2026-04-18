@@ -4,41 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUCALE | Rap Argentino & Diseño Industrial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         /* ESTILOS DEL PRELOADER */
-        #preloader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 9999; display: flex;
-            justify-content: center; align-items: center;
-        }
-        .tridente-loader {
-            width: 100px; height: 100px;
-            background-color: #fff;
-            mask: url('tridente.svg') no-repeat center;
-            -webkit-mask: url('tridente.svg') no-repeat center;
-            mask-size: contain;
-            -webkit-mask-size: contain;
-            animation: fillTrident 2s ease-in-out infinite;
-        }
-        @keyframes fillTrident {
-            0% { clip-path: inset(100% 0 0 0); }
-            50% { clip-path: inset(0% 0 0 0); }
-            100% { clip-path: inset(0% 0 0 0); }
-        }
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
+        .tridente-loader { width: 100px; height: 100px; background-color: #fff; mask: url('tridente.svg') no-repeat center; -webkit-mask: url('tridente.svg') no-repeat center; mask-size: contain; -webkit-mask-size: contain; animation: fillTrident 2s ease-in-out infinite; }
+        @keyframes fillTrident { 0% { clip-path: inset(100% 0 0 0); } 50% { clip-path: inset(0% 0 0 0); } 100% { clip-path: inset(0% 0 0 0); } }
+        
+        /* Asegurar fondo negro sólido */
+        body { background-color: #000 !important; }
     </style>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body> 
     <div id="preloader">
         <div class="tridente-loader"></div>
     </div>
-
-    <video autoplay muted loop playsinline preload="auto" class="bg-video" poster="fondo.jpg">
-        <source src="lucale.mp4" type="video/mp4">
-    </video>
 
     <header class="hero">
         <div class="hero-content">
@@ -66,8 +49,41 @@
         </div>
     </section>
 
+    <section id="registro">
+        <h2>REGISTRO EDITORIAL & PRENSA</h2>
+        <div class="press-grid">
+            <div class="press-card">
+                <h3>UNAJ / LEVIATÁN</h3>
+                <p>"Haciendo Rap Juntxs". El rap como relato del conurbano.</p>
+                <div class="card-links">
+                    <a href="#">NOTA PÁGINA/12</a>
+                    <a href="#">LIBRO EN MERCADO LIBRE</a>
+                </div>
+            </div>
+            <div class="press-card">
+                <h3>WALDEN / 5000 DISPAROS</h3>
+                <p>Registro fotográfico y documental de la escena urbana.</p>
+                <div class="card-links">
+                    <a href="#">CASA DE LA PROVINCIA</a>
+                    <a href="#">LIBRO EN MERCADO LIBRE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>CONTACTO</h2>
+        <div class="buttons">
+            <a href="mailto:tuemail@ejemplo.com">EMAIL</a>
+            <a href="https://wa.me/5491130157350">WHATSAPP</a>
+        </div>
+    </section>
+
+    <footer>
+        2026 LUCALE ™ · Lucale Music Publishing ™ · Don Torcuato, Buenos Aires, Argentina. Todos los derechos reservados.
+    </footer>
+
     <script>
-        // SCRIPT PARA QUITAR EL PRELOADER CUANDO CARGA LA PAGINA
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
             preloader.style.opacity = '0';
