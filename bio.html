@@ -30,7 +30,7 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
         h1 { font-size: 3rem; margin-bottom: 50px; text-transform: uppercase; border-bottom: 2px solid #fff; display: inline-block; }
         .accordion { border-bottom: 1px solid #333; }
         .accordion-header { padding: 20px 0; cursor: pointer; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; display: flex; justify-content: space-between; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; color: #aaa; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.8s ease out; color: #aaa; }
         .accordion-content p { padding-bottom: 20px; }
 
         /* --- CITA Y BOTÓN --- */
@@ -82,47 +82,50 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
     </div>
 
     <script>
-        // Función original para el toggle manual
-        function toggleAccordion(element) {
-            const content = element.nextElementSibling;
-            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
-            element.innerHTML = element.innerHTML.includes("+") ? element.innerHTML.replace("+", "-") : element.innerHTML.replace("-", "+");
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            element.innerHTML = element.innerHTML.replace("-", "+");
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            element.innerHTML = element.innerHTML.replace("+", "-");
         }
+    }
 
-        // --- NUEVA LÓGICA: Scroll Automático ---
-        const observerOptions = {
-            root: null, // usa el viewport
-            threshold: 0.8 // se activa cuando el 80% del header es visible
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const header = entry.target;
-                    const content = header.nextElementSibling;
-                    // Si está cerrado (maxHeight es 0 o null), lo abrimos
-                    if (!content.style.maxHeight) {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        header.innerHTML = header.innerHTML.replace("+", "-");
-                    }
+    // Intersection Observer configurado para detectar cuando el título llega a la mitad de la pantalla
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const header = entry.target;
+                const content = header.nextElementSibling;
+                // Abrir solo si está cerrado
+                if (!content.style.maxHeight || content.style.maxHeight === "0px") {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    header.innerHTML = header.innerHTML.replace("+", "-");
                 }
-            });
-        }, observerOptions);
-
-        // Aplicamos el observador a todos los headers de acordeón
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            observer.observe(header);
+            }
         });
+    }, {
+        root: null,
+        rootMargin: '0px 0px -40% 0px', // Se activa solo cuando el título llega al 60% de la altura de la pantalla
+        threshold: 0
+    });
 
-        // Preloader original
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => { preloader.style.display = 'none'; }, 500);
-            }, 1000);
-        });
-    </script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        observer.observe(header);
+    });
+
+    // Preloader
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => { preloader.style.display = 'none'; }, 500);
+        }, 1000);
+    });
+</script>
+    
     
 </body>
 </html>
