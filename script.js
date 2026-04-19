@@ -72,12 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
-    // Esperamos medio segundo extra para que sea elegante
-    setTimeout(() => {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    }, 800);
+    
+    // Función para ocultar el preloader
+    function ocultarPreloader() {
+        if (preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }
+    }
+
+    // Ejecutar después de 1.5 segundos asegurados
+    setTimeout(ocultarPreloader, 1500);
 });
 
