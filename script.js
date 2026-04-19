@@ -69,3 +69,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    // Esperamos medio segundo extra para que sea elegante
+    setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }, 800);
+});
+
