@@ -6,8 +6,18 @@
     <title>LUCALE | Links Oficiales</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* --- PRELOADER --- */
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
+        .tridente-loader { width: 150px; height: 150px; background-image: url('https://lucalemusic.com.ar/tridente.png'); background-size: contain; background-repeat: no-repeat; background-position: center; animation: fillTrident 2s ease-in-out infinite; }
+        @keyframes fillTrident { 0% { clip-path: inset(100% 0 0 0); } 50% { clip-path: inset(0% 0 0 0); } 100% { clip-path: inset(0% 0 0 0); } }
+
+        /* --- ESTILOS GENERALES --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; min-width: 100%; padding: 40px 20px; }
+        
+        /* --- CURSOR UNIFICADO --- */
+        body, body *, a, button { cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; }
+
         .header { text-align: center; margin-bottom: 40px; }
         h1 { font-size: 3rem; font-weight: 900; letter-spacing: -2px; }
         .links-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
@@ -16,16 +26,13 @@
         .btn:hover { background-color: #fff; color: #000; }
         .grid-social { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .btn-press { background: #111; border: 1px solid #333; margin-bottom: 8px; font-size: 0.75rem; }
-
-        /* Cursor personalizado de Lucale */
-body, a, button {
-    cursor: url('../tridente.png') 16 16, auto;
-}
-
-        
     </style>
 </head>
 <body>
+    <div id="preloader">
+        <div class="tridente-loader"></div>
+    </div>
+
     <header class="header">
         <h1>LUCALE</h1>
         <p style="letter-spacing: 3px; opacity: 0.6; font-size: 0.8rem;">PLATAFORMAS Y PRENSA</p>
@@ -61,5 +68,15 @@ body, a, button {
              <a href="/" class="btn" style="background: #333; border: none;">VOLVER A WEB PRINCIPAL</a>
         </div>
     </main>
+
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => { preloader.style.display = 'none'; }, 500);
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
