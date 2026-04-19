@@ -1,146 +1,267 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUCALE | Rap Argentino & Diseño Industrial</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-    /* PRELOADER */
-    #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
-    
-    .tridente-loader { 
-        width: 150px; height: 150px; 
-        background-image: url('https://lucalemusic.com.ar/tridente.png'); 
-        background-size: contain; background-repeat: no-repeat; background-position: center;
-        animation: fillTrident 2s ease-in-out infinite; 
-    }
-    
-    @keyframes fillTrident { 
-        0% { clip-path: inset(100% 0 0 0); } 
-        50% { clip-path: inset(0% 0 0 0); } 
-        100% { clip-path: inset(0% 0 0 0); } 
-    }
-        
-    /* BASE */
-    body { background-color: #000 !important; font-family: 'Inter', sans-serif; color: #fff; margin: 0; overflow-x: hidden; }
-    section { padding: 100px 5vw; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-    h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; text-transform: uppercase; }
-    p { max-width: 800px; margin-bottom: 30px; text-align: center; }
-    
-    /* BOTONES */
-    .buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-    .buttons a { padding: 15px 30px; border: 1px solid #fff; text-decoration: none; color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s ease; background: rgba(0,0,0,0.3); }
-    .buttons a:hover { background: #fff; color: #000; }
-    
-    /* EFECTO SILLÓN */
-    .studio-single-img { width: 100%; max-width: 700px; margin: 40px auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-    .studio-single-img img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: filter 0.8s ease, transform 0.8s ease; }
-    .studio-single-img:hover img { filter: grayscale(0%); transform: scale(1.05); }
+ <!DOCTYPE html>
 
-    /* MARQUEE */
-    .marquee-bar { background: #fff; color: #000; padding: 12px 0; font-weight: 900; overflow: hidden; white-space: nowrap; text-transform: uppercase; font-size: 0.8rem; }
-    .marquee-text { display: inline-block; animation: marquee-animation 25s linear infinite; }
-    @keyframes marquee-animation { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-site-verification" content="2adb702965582deb" />
+
+
+
+    <title>LUCALE | Rap Argentino & Diseño Industrial de Autor</title>
+
+    <meta name="description" content="Sitio oficial de LUCALE. Rap crudo desde Don Torcuato y diseño industrial registrado: creador del Sillón Octa®. Gestión cultural y registro editorial urbano.">
+
     
-    /* PRENSA */
-    .press-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; width: 100%; }
-    .press-card { padding: 40px; background: rgba(15, 15, 15, 0.9); border: 1px solid rgba(255,255,255,0.1); }
-    .card-links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-    .card-links a { font-size: 0.8rem; color: #fff; opacity: 0.5; text-decoration: underline; }
-    footer { padding: 80px 20px; text-align: center; font-size: 0.75rem; opacity: 0.4; }
-</style>
-    
-    
+
+    <meta property="og:title" content="LUCALE | Música, Diseño & Editorial">
+
+    <meta property="og:description" content="Rap crudo, diseño de autor y gestión cultural.">
+
+    <meta property="og:image" content="img1.jpg"> 
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=1.4">
+
+
+
+    <script type="application/ld+json">
+
+    {
+
+      "@context": "https://schema.org",
+
+      "@type": "Person",
+
+      "name": "Lucale",
+
+      "url": "https://lucalemusic.com.ar",
+
+      "mainEntityOfPage": "https://www.wikidata.org/wiki/Q117826469",
+
+      "sameAs": [
+
+        "https://www.wikidata.org/wiki/Q117826469",
+
+        "https://www.instagram.com/lucalemusic",
+
+        "https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale"
+
+      ],
+
+      "jobTitle": ["Músico", "Diseñador Industrial"],
+
+      "description": "Artista de rap y diseñador industrial argentino, creador del Sillón Octa."
+
+    }
+
+    </script>
+
 </head>
 
-<body>
-    <div id="preloader">
-        <div class="tridente-loader"></div>
-    </div>
+
+
+<body> 
+
+    <video autoplay muted loop playsinline preload="auto" class="bg-video" poster="fondo.jpg">
+
+        <source src="lucale.mp4" type="video/mp4">
+
+    </video>
+
+
 
     <header class="hero">
-        <div class="hero-content" style="text-align: center; padding: 100px 20px;">
+
+        <div class="hero-content">
+
             <h1>LUCALE</h1>
+
             <p>Rap Crudo · Diseño Industrial · Gestión Cultural</p>
+
             <nav class="buttons">
+
                 <a href="#music">MÚSICA</a>
-                <a href="#studio">DISEÑO INDUSTRIAL</a>
-                <a href="bio.html">BIOGRAFÍA</a>
+
+                <a href="#studio">DISEÑO</a>
+
+                <a href="#bio">BIOGRAFÍA</a>
+
             </nav>
+
         </div>
+
     </header>
 
+
+
     <div class="marquee-bar">
+
         <div class="marquee-text">
-            LUCALE MUSIC PUBLISHING ™ · RAP CRUDO · DON TORCUATO · DISEÑO DE AUTOR · SILLÓN OCTA ® · PREMIOS GARDEL · PREMIOS MIN (ESPAÑA)
+
+            LUCALE MUSIC PUBLISHING ™ · RAP CRUDO · DON TORCUATO · DISEÑO DE AUTOR · SILLÓN OCTA ® · PREMIOS GARDEL · PREMIOS MIN (ESPAÑA) · HACIENDO RAP JUNTXS X UNAJ · 
+
         </div>
+
     </div>
 
+
+
+    <section id="bio" class="bio">
+
+        <h2>IDENTIDAD MULTIDISCIPLINARIA</h2>
+
+        <p><strong>Lucale</strong> articula la narrativa del rap con la precisión técnica del diseño industrial. Obra documentada en medios nacionales y registros académicos.</p>
+
+        <div class="buttons" style="margin-top: 20px;">
+
+            <a href="https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale" target="_blank" class="btn-sm">BIOGRAFÍA OFICIAL CMTV</a>
+
+        </div>
+
+    </section>
+
+
+
     <section id="music" class="music">
+
         <h2>MÚSICA | RAP DE AUTOR</h2>
+
+        <div class="video-container">
+
+            <iframe src="https://www.youtube.com/embed/5XYEefGguyw" title="YouTube video player" allowfullscreen loading="lazy"></iframe>
+
+        </div>
+
         <div class="buttons" style="margin-top: 30px;">
-            <a class="btn" href="https://open.spotify.com/intl-es/artist/44Mmk92PgcbqGzO1oxVk6z" target="_blank">SPOTIFY</a>
-            <a class="btn" href="/LINKS/">LINKS Y ARCHIVO</a>
+
+            <a class="btn" href="https://open.spotify.com/artist/tu_id" target="_blank">SPOTIFY</a>
+
+            <a class="btn" href="https://taplink.cc/lucale" target="_blank">PRENSA / EPK</a>
+
         </div>
+
     </section>
 
-    <section id="studio">
-        <h2>STUDIO | DISEÑO INDUSTRIAL</h2>
-        <p>Proyectos de diseño de autor y gestión cultural.</p>
+
+
+    <section id="studio" class="studio">
+
+        <h2>STUDIO | SILLÓN OCTA ®</h2>
+
+        <p>Diseño industrial registrado ante el INPI. Innovación geométrica y fabricación nacional.</p>
+
         <div class="studio-single-img">
-            <img src="img_octa.jpg" alt="Sillón Octa - Diseño de autor Lucale">
+
+            <img src="img_octa.jpg" alt="Sillón Octa de Lucale - Diseño Industrial Argentino" title="Sillón Octa ®">
+
         </div>
-        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: -20px;">Sillón Octa ®</p>
+
+        <div class="buttons" style="margin-top: 30px;">
+
+            <a href="https://articulo.mercadolibre.com.ar/MLA-1682759613-sillon-moderno-octagonal-tela-1-m-x-1-m-directo-de-fabrica-_JM" target="_blank" class="btn-buy">MERCADO LIBRE</a>
+
+        </div>
+
     </section>
 
-    <section id="registro">
+
+
+    <section class="press" id="press">
+
         <h2>REGISTRO EDITORIAL & PRENSA</h2>
+
         <div class="press-grid">
+
             <div class="press-card">
+
                 <h3>UNAJ / LEVIATÁN</h3>
+
                 <p>"Haciendo Rap Juntxs". El rap como relato del conurbano.</p>
+
                 <div class="card-links">
-                    <a href="#">NOTA PÁGINA/12</a>
-                    <a href="#">LIBRO EN MERCADO LIBRE</a>
+
+                    <a href="https://www.pagina12.com.ar/569517-el-rap-como-relato-del-conurbano/" target="_blank">NOTA PÁGINA/12</a>
+
+                    <a href="https://www.mercadolibre.com.ar/haciendo-rap-juntxs-antologia-de-letras-raperas-y-raperos-del-conurbano-de-bueno-de-aavv-editorial-leviatan-tapa-blanda-edicion-1-en-espanol-2023/p/MLA33224204" target="_blank">LIBRO EN ML</a>
+
                 </div>
+
             </div>
+
             <div class="press-card">
+
                 <h3>WALDEN / 5000 DISPAROS</h3>
+
                 <p>Registro fotográfico y documental de la escena urbana.</p>
+
                 <div class="card-links">
-                    <a href="#">CASA DE LA PROVINCIA</a>
-                    <a href="#">LIBRO EN MERCADO LIBRE</a>
+
+                    <a href="https://www.gba.gob.ar/gobierno/noticias/la_casa_de_la_provincia_cierra_el_a%C3%B1o_con_m%C3%A1s_agenda_cultural" target="_blank">CASA DE LA PROVINCIA</a>
+
+                    <a href="https://www.mercadolibre.com.ar/cinco-mil-disparos-biaggini-martin-a/p/MLA22136019" target="_blank">LIBRO EN ML</a>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <section id="contacto">
+
+
+    <section id="contacto" class="contact">
+
         <h2>CONTACTO</h2>
+
         <div class="buttons">
+
             <a href="mailto:contacto@lucalemusic.com.ar">EMAIL</a>
-            <a href="https://wa.me/5491130157350">WHATSAPP</a>
+
+            <a href="https://wa.me/5491130157350" target="_blank">WHATSAPP</a>
+
         </div>
+
     </section>
+
+
 
     <footer>
+
         2026 LUCALE ™ · Lucale Music Publishing ™ · Don Torcuato, Buenos Aires, Argentina. Todos los derechos reservados.
+
     </footer>
 
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            // Espera 1 segundo para que se vea la carga y luego desaparece
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => { preloader.style.display = 'none'; }, 500);
-            }, 1000);
-        });
-    </script>
+
+
+    <script src="script.js"></script>
+
 </body>
-    
+
 </html>
+
+
+
+
+
+
+
+    ...
+
+</body>
+
+</html>
+
 
