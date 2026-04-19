@@ -13,9 +13,17 @@
         .tridente-loader { width: 100px; height: 100px; background-color: #fff; mask: url('https://lucalemusic.com.ar/tridente.svg') no-repeat center; -webkit-mask: url('https://lucalemusic.com.ar/tridente.svg') no-repeat center; mask-size: contain; -webkit-mask-size: contain; animation: fillTrident 2s ease-in-out infinite; }
         @keyframes fillTrident { 0% { clip-path: inset(100% 0 0 0); } 50% { clip-path: inset(0% 0 0 0); } 100% { clip-path: inset(0% 0 0 0); } }
 
-        /* --- CURSOR DINÁMICO --- */
-        body, a, button { cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; transition: transform 0.2s; }
-        a:hover, button:hover { transform: scale(1.1); }
+       /* --- CURSOR DINÁMICO --- */
+/* Esta regla fuerza el cursor en todos los elementos posibles */
+* { cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; }
+
+/* Aseguramos que los botones y links mantengan la animación de escala */
+a, button, .accordion-header { 
+    cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; 
+    transition: transform 0.2s; 
+}
+a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
+        
 
         /* --- ACORDEONES --- */
         .bio-content { max-width: 800px; width: 100%; }
