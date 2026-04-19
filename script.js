@@ -70,19 +70,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-window.addEventListener('load', () => {
+// 1. PRELOADER: Ejecución inmediata (sin esperar a que cargue todo)
+(function() {
     const preloader = document.getElementById('preloader');
-    
-    // Función para ocultar
-    const esconder = () => {
-        if (preloader && preloader.style.display !== 'none') {
+    setTimeout(() => {
+        if (preloader) {
             preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.5s ease';
             setTimeout(() => {
                 preloader.style.display = 'none';
             }, 500);
         }
-    };
+    }, 600); // 600ms es el tiempo exacto para que se vea y luego abra la cortina
+})();
 
-    // Esperar medio segundo y ejecutar
-    setTimeout(esconder, 500);
+// 2. LÓGICA DE ANIMACIONES AL HACER SCROLL
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = "1";
+
+    const observerOptions = { threshold: 0.10 };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        if (section.id !== 'hero') {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(30px)";
+            section.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+            observer.observe(section);
+        } else {
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0)";
+        }
+    });
 });
