@@ -82,12 +82,39 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
     </div>
 
     <script>
+        // Función original para el toggle manual
         function toggleAccordion(element) {
             const content = element.nextElementSibling;
             content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
             element.innerHTML = element.innerHTML.includes("+") ? element.innerHTML.replace("+", "-") : element.innerHTML.replace("-", "+");
         }
 
+        // --- NUEVA LÓGICA: Scroll Automático ---
+        const observerOptions = {
+            root: null, // usa el viewport
+            threshold: 0.8 // se activa cuando el 80% del header es visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const header = entry.target;
+                    const content = header.nextElementSibling;
+                    // Si está cerrado (maxHeight es 0 o null), lo abrimos
+                    if (!content.style.maxHeight) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        header.innerHTML = header.innerHTML.replace("+", "-");
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Aplicamos el observador a todos los headers de acordeón
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            observer.observe(header);
+        });
+
+        // Preloader original
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
@@ -96,5 +123,6 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
             }, 1000);
         });
     </script>
+    
 </body>
 </html>
