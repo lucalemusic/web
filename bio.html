@@ -30,7 +30,14 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
         h1 { font-size: 3rem; margin-bottom: 50px; text-transform: uppercase; border-bottom: 2px solid #fff; display: inline-block; }
         .accordion { border-bottom: 1px solid #333; }
         .accordion-header { padding: 20px 0; cursor: pointer; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; display: flex; justify-content: space-between; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.8s ease out; color: #aaa; }
+        .accordion-content { 
+    max-height: 0; 
+    overflow: hidden; 
+    /* 2 segundos de duración para que sea bien lento */
+    transition: max-height 2s cubic-bezier(0.2, 0, 0.2, 1); 
+    color: #aaa; 
+}
+        
         .accordion-content p { padding-bottom: 20px; }
 
         /* --- CITA Y BOTÓN --- */
@@ -82,9 +89,10 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
     </div>
 
     <script>
+    // Función para alternar secciones
     function toggleAccordion(element) {
         const content = element.nextElementSibling;
-        if (content.style.maxHeight) {
+        if (content.style.maxHeight && content.style.maxHeight !== "0px") {
             content.style.maxHeight = null;
             element.innerHTML = element.innerHTML.replace("-", "+");
         } else {
@@ -93,38 +101,28 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
         }
     }
 
-    // Intersection Observer configurado para detectar cuando el título llega a la mitad de la pantalla
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const header = entry.target;
-                const content = header.nextElementSibling;
-                // Abrir solo si está cerrado
-                if (!content.style.maxHeight || content.style.maxHeight === "0px") {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    header.innerHTML = header.innerHTML.replace("+", "-");
-                }
-            }
-        });
-    }, {
-        root: null,
-        rootMargin: '0px 0px -40% 0px', // Se activa solo cuando el título llega al 60% de la altura de la pantalla
-        threshold: 0
-    });
-
-    document.querySelectorAll('.accordion-header').forEach(header => {
-        observer.observe(header);
-    });
-
-    // Preloader
+    // Lógica de carga
     window.addEventListener('load', function() {
         const preloader = document.getElementById('preloader');
+        
+        // Espera a que termine el preloader
         setTimeout(() => {
             preloader.style.opacity = '0';
-            setTimeout(() => { preloader.style.display = 'none'; }, 500);
+            setTimeout(() => { 
+                preloader.style.display = 'none'; 
+                
+                // --- APERTURA LENTA AUTOMÁTICA DE LA PRIMERA SECCIÓN ---
+                const firstHeader = document.querySelector('.accordion-header');
+                const firstContent = firstHeader.nextElementSibling;
+                
+                firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+                firstHeader.innerHTML = firstHeader.innerHTML.replace("+", "-");
+                
+            }, 500);
         }, 1000);
     });
 </script>
+    
     
     
 </body>
