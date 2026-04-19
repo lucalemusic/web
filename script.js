@@ -70,31 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-window.addEventListener('load', function() {
+window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     
-    // Función que elimina el preloader
-    function quitarPreloader() {
-        if (preloader) {
+    // Función para ocultar
+    const esconder = () => {
+        if (preloader && preloader.style.display !== 'none') {
             preloader.style.opacity = '0';
             setTimeout(() => {
                 preloader.style.display = 'none';
             }, 500);
         }
-    }
+    };
 
-    // OPCIÓN A: Se va cuando todo cargó (lo normal)
-    quitarPreloader();
+    // Esperar medio segundo y ejecutar
+    setTimeout(esconder, 500);
 });
-
-// OPCIÓN B (Seguridad): Si por algún error no cargó en 3 segundos, lo borra igual.
-setTimeout(function() {
-    const preloader = document.getElementById('preloader');
-    if (preloader && preloader.style.display !== 'none') {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    }
-}, 3000);
-
