@@ -73,8 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     
-    // Función para ocultar el preloader
-    function ocultarPreloader() {
+    // Función que elimina el preloader
+    function quitarPreloader() {
         if (preloader) {
             preloader.style.opacity = '0';
             setTimeout(() => {
@@ -83,7 +83,18 @@ window.addEventListener('load', function() {
         }
     }
 
-    // Ejecutar después de 1.5 segundos asegurados
-    setTimeout(ocultarPreloader, 1500);
+    // OPCIÓN A: Se va cuando todo cargó (lo normal)
+    quitarPreloader();
 });
+
+// OPCIÓN B (Seguridad): Si por algún error no cargó en 3 segundos, lo borra igual.
+setTimeout(function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader && preloader.style.display !== 'none') {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
+}, 3000);
 
