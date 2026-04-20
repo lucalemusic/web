@@ -62,27 +62,30 @@ p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 .buttons a:hover { background: #fff; color: #000; }
 .btn-buy { background: #fff !important; color: #000 !important; }
 
-/* --- AJUSTE MÓVIL (ÚNICO Y DEFINITIVO) --- */
 @media screen and (max-width: 768px) {
+    /* Forzamos al contenedor de botones a centrarse respecto al padre */
     .buttons {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        margin: 20px 0 !important;
+        margin: 20px auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         gap: 15px !important;
     }
 
+    /* Forzamos al enlace mismo a centrarse */
     .buttons a {
         display: block !important;
         width: 250px !important;
-        margin: 0 auto !important; /* Centra el botón individualmente */
+        margin-left: auto !important;
+        margin-right: auto !important;
         text-align: center !important;
+        float: none !important;
     }
 }
-
-
 
 
 /* --- SILLÓN OCTA --- */
