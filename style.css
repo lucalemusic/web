@@ -181,5 +181,29 @@ body {
     }
 }
 
+/* --- ANULACIÓN DE ESTILOS HTML Y CENTRADO MÓVIL --- */
+@media (max-width: 768px) {
+    /* Forzamos el contenedor de botones a ignorar los márgenes del HTML */
+    .buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 20px auto !important; /* Sobreescribe cualquier margin-top que esté en el HTML */
+    }
+
+    /* todos los botones tienen el mismo comportamiento */
+    .buttons a {
+        display: block !important;
+        width: 250px !important;
+        margin: 10px auto !important;
+        text-align: center !important;
+        float: none !important;
+    }
+}
+
+
+
 
 
