@@ -6,41 +6,24 @@
     <title>BIOGRAFÍA | LUCALE</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* --- ESTRUCTURA Y PRELOADER --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; padding: 80px 5vw; display: flex; flex-direction: column; align-items: center; line-height: 1.6; }
+        
         #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
         .tridente-loader { width: 100px; height: 100px; background-color: #fff; mask: url('https://lucalemusic.com.ar/tridente.svg') no-repeat center; -webkit-mask: url('https://lucalemusic.com.ar/tridente.svg') no-repeat center; mask-size: contain; -webkit-mask-size: contain; animation: fillTrident 2s ease-in-out infinite; }
         @keyframes fillTrident { 0% { clip-path: inset(100% 0 0 0); } 50% { clip-path: inset(0% 0 0 0); } 100% { clip-path: inset(0% 0 0 0); } }
 
-       /* --- CURSOR DINÁMICO --- */
+        * { cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; }
+        a, button, .accordion-header { cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; transition: transform 0.2s; }
+        a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
 
-* { cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; }
-
-/* Aseguramos que los botones y links mantengan la animación de escala */
-a, button, .accordion-header { 
-    cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; 
-    transition: transform 0.2s; 
-}
-a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
-        
-
-        /* --- ACORDEONES --- */
         .bio-content { max-width: 800px; width: 100%; }
         h1 { font-size: 3rem; margin-bottom: 50px; text-transform: uppercase; border-bottom: 2px solid #fff; display: inline-block; }
         .accordion { border-bottom: 1px solid #333; }
         .accordion-header { padding: 20px 0; cursor: pointer; font-weight: 900; font-size: 1.2rem; text-transform: uppercase; display: flex; justify-content: space-between; }
-        .accordion-content { 
-    max-height: 0; 
-    overflow: hidden; 
-    /* 2 segundos de duración para que sea bien lento */
-    transition: max-height 2s cubic-bezier(0.2, 0, 0.2, 1); 
-    color: #aaa; 
-}
-        
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 2s cubic-bezier(0.2, 0, 0.2, 1); color: #aaa; }
         .accordion-content p { padding-bottom: 20px; }
 
-        /* --- CITA Y BOTÓN --- */
         .quote { font-size: clamp(1.5rem, 4vw, 3rem); font-weight: 900; color: #fff; opacity: 0.15; text-align: center; margin: 80px 0; line-height: 1.1; }
         .btn-back { margin-top: 50px; display: inline-block; padding: 15px 30px; border: 1px solid #fff; color: #fff; text-decoration: none; text-transform: uppercase; font-weight: 700; transition: 0.3s; }
         .btn-back:hover { background: #fff; color: #000; }
@@ -48,9 +31,7 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
 </head>
 <body>
 
-    <div id="preloader">
-        <div class="tridente-loader"></div>
-    </div>
+    <div id="preloader"><div class="tridente-loader"></div></div>
 
     <div class="bio-content">
         <h1>LUCALE</h1>
@@ -63,92 +44,68 @@ a:hover, button:hover, .accordion-header:hover { transform: scale(1.02); }
         </div>
 
         <div class="accordion">
-    <div class="accordion-header" onclick="toggleAccordion(this)">TRAYECTORIA +</div>
-    
-    <div class="accordion-content">
-        <p>Su música es una fusión de hip hop y rap con matices de tango moderno, reflejo de su herencia rioplatense. Lejos de los clichés comerciales, la lírica de Lucale practica un <em>storytelling</em> crudo, narrando la realidad de la calle, la resiliencia y la superación personal con producciones minimalistas e introspectivas.</p>
-
-        <p>Con más de 50 canciones editadas —incluyendo <em>Candelabro</em> (2025), <em>Sola</em> (2025), <em>Sin Tanto Rollo</em> (2025), <em>Rutina Asesina</em> (2024), <em>Entre Hienas</em> (2024) y <em>Estoy Vivo</em> (2016)—, y colaboraciones con artistas referentes del genero como <strong>J. Mastermix, Cuban Bling, Johana Rodriguez</strong>. Lucale ha consolidado su carrera integrándose a <strong>Universal Music Publishing</strong> y trabajando bajo el ala de <strong>Tommy Gun Records</strong>, junto al productor, mánager y arquitecto sonoro del rock argentino. <strong>Alejandro Taranto</strong>. Su trayectoria cuenta con nominaciones internacionales en los Premios Gran Latino (Nueva York), y postulaciones en los Premios MIN 2026 (España) y Premios Gardel 2025/26.</p>
-
-        <p>Actualmente, Lucale integra el proyecto <strong>"Tango Urbano"</strong>, un disco en proceso de producción que fusiona la raíz arrabalera con la estética contemporánea, bajo la dirección artística de <strong>Mariano Rucci</strong> y <strong>Amílcar Vázquez</strong> Producido por <strong>Nossion y Dumboy Jazz</strong>. Paralelamente, es parte activa de <strong>"Haciendo Rap Juntxs: Sin Fronteras"</strong>, Proyecto de Vinculación Territorial de la <strong>Universidad Nacional Arturo Jauretche (UNAJ)</strong> dirigido por <strong>Martin Biaggini y Lucia Calvi</strong> producido por <strong>Cythrux </strong>, ex Miembro del <strong>Sindicato Argentino del Hip Hop</strong> y <strong>Martes 13</strong>, que expande el rap del conurbano hacia una colaboración internacional con artistas de Honduras, Uruguay, Colombia y México.</p>
-        
-        <p>En este mismo marco de expansión, Lucale se encuentra produciendo una nueva colaboración junto a <strong>Faby DJ</strong>, explorando la fusión entre el Rap y la estética de la Cumbia Sonidera/Wepa, integrando nuevas texturas sonoras a su catálogo.</p>
-    </div> 
-</div>     
-        
-        
-        
-
-        <div class="accordion">
-            <div class="accordion-header" onclick="toggleAccordion(this)">HACIENDO RAP JUNTXS +</div>
+            <div class="accordion-header" onclick="toggleAccordion(this)">TRAYECTORIA +</div>
             <div class="accordion-content">
-                <p>Más allá de los escenarios, Su obra ha sido documentada en el libro fotográfico de Martin Biaggini y Ariel Puckaz <em>5000 disparos</em> y Participa Activamente en la antología de Letras de Raperas y Raperos del Conurbano Bonaerense, Proyecto nacido en la Universidad Nacional Arturo Jauretche (UNAJ) <em>Haciendo rap juntxs</em>. Actualmente, bajo el respaldo de su propia editora, continúa su evolución profesional sin perder jamás sus raíces de trabajador del conurbano.</p>
+                <p>Su música es una fusión de hip hop y rap con matices de tango moderno, reflejo de su herencia rioplatense. Lejos de los clichés comerciales, la lírica de Lucale practica un <em>storytelling</em> crudo, narrando la realidad de la calle, la resiliencia y la superación personal con producciones minimalistas e introspectivas.</p>
+                <p>Con más de 50 canciones editadas —incluyendo <em>Candelabro</em> (2025), <em>Sola</em> (2025), <em>Sin Tanto Rollo</em> (2025), <em>Rutina Asesina</em> (2024), <em>Entre Hienas</em> (2024) y <em>Estoy Vivo</em> (2016)—, y colaboraciones con artistas referentes como <strong>J. Mastermix, Cuban Bling y Johana Rodriguez</strong>, Lucale ha consolidado su carrera integrándose a <strong>Universal Music Publishing</strong> y trabajando bajo el ala de <strong>Tommy Gun Records</strong>, junto al arquitecto sonoro del rock argentino, <strong>Alejandro Taranto</strong>. Su trayectoria cuenta con nominaciones internacionales en los Premios Gran Latino (Nueva York), y postulaciones en los Premios MIN 2026 (España) y Premios Gardel 2025/26.</p>
+                <p>Actualmente, Lucale integra el proyecto <strong>"Tango Urbano"</strong>, un disco en proceso de producción que fusiona la raíz arrabalera con la estética contemporánea, bajo la dirección artística de <strong>Mariano Rucci</strong> y <strong>Amílcar Vázquez</strong>, producido por <strong>Nossion y Dumboy Jazz</strong>. Paralelamente, es parte activa de <strong>"Haciendo Rap Juntxs: Sin Fronteras"</strong>, Proyecto de Vinculación Territorial de la <strong>Universidad Nacional Arturo Jauretche (UNAJ)</strong> dirigido por <strong>Martín Biaggini y Lucía Calvi</strong>, producido por <strong>Cythrux</strong> (ex miembro del Sindicato Argentino del Hip Hop y Martes 13), que expande el rap del conurbano hacia una colaboración internacional con artistas de Honduras, Uruguay, Colombia y México.</p>
+                <p>En este marco, Lucale se encuentra produciendo una nueva colaboración junto a <strong>Faby DJ</strong>, explorando la fusión entre el Rap y la estética de la Cumbia Sonidera/Wepa.</p>
             </div>
         </div>
 
         <div class="accordion">
-    <div class="accordion-header" onclick="toggleAccordion(this)"> LUCALE MUSIC PUBLISHING™ +</div>
-    <div class="accordion-content">
-        <p>En el plano de la gestión cultural, Lucale ha formalizado su propia estructura editorial, <strong>Lucale Music Publishing™</strong>, consolidando un modelo de autogestión profesional que integra la creación musical con la administración técnica de derechos de autor.</p>
-    </div> 
-</div>
-        
+            <div class="accordion-header" onclick="toggleAccordion(this)">HACIENDO RAP JUNTXS +</div>
+            <div class="accordion-content">
+                <p>Más allá de los escenarios, su obra ha sido documentada en el libro fotográfico <em>5000 disparos</em> (Martín Biaggini y Ariel Puckaz) y participa activamente en la antología de Letras de Raperas y Raperos del Conurbano Bonaerense, proyecto nacido en la Universidad Nacional Arturo Jauretche (UNAJ) titulado <em>Haciendo rap juntxs</em>. Actualmente, bajo el respaldo de su propia editora, continúa su evolución profesional sin perder jamás sus raíces de trabajador del conurbano.</p>
+            </div>
+        </div>
 
         <div class="accordion">
-    <div class="accordion-header" onclick="toggleAccordion(this)">DISEÑO REGISTRADO | MODELO INDUSTRIAL +</div>
-    <div class="accordion-content">
-        <p>El sillón <strong>Octa</strong> representa una síntesis entre la geometría pura y la funcionalidad ergonómica. Este diseño ha sido formalmente registrado ante el <strong>Instituto Nacional de la Propiedad Industrial (INPI)</strong> bajo el número de modelo industrial <strong>111285</strong>, protegiendo su innovación estética y constructiva.</p>
-        
-        <p>La propuesta técnica se centra en una estructura octagonal que optimiza el aprovechamiento del espacio, combinando técnicas de fabricación nacional de alta precisión. Este registro no solo valida la propiedad intelectual del diseño, sino que consolida un enfoque profesional en la fabricación de mobiliario de autor, distanciándose de la producción estandarizada para ofrecer una pieza con identidad propia y respaldo legal.</p>
-    </div> 
-</div>
-  
-        
-        <div class="quote">"NO HAY FRASE MAS DAÑINA QUE: MAÑANA LO HAGO."</div>
+            <div class="accordion-header" onclick="toggleAccordion(this)">LUCALE MUSIC PUBLISHING™ +</div>
+            <div class="accordion-content">
+                <p>En el plano de la gestión cultural, Lucale ha formalizado su propia estructura editorial, <strong>Lucale Music Publishing™</strong>, consolidando un modelo de autogestión profesional que integra la creación musical con la administración técnica de derechos de autor.</p>
+            </div>
+        </div>
 
-        <center><a href="/" class="btn-back">VOLVER AL INICIO</a></center>
+        <div class="accordion">
+            <div class="accordion-header" onclick="toggleAccordion(this)">DISEÑO REGISTRADO | MODELO INDUSTRIAL +</div>
+            <div class="accordion-content">
+                <p>El sillón <strong>Octa</strong> representa una síntesis entre la geometría pura y la funcionalidad ergonómica. Este diseño ha sido formalmente registrado ante el <strong>Instituto Nacional de la Propiedad Industrial (INPI)</strong> bajo el número de modelo industrial <strong>111285</strong>, protegiendo su innovación estética y constructiva.</p>
+                <p>La propuesta técnica se centra en una estructura octagonal que optimiza el aprovechamiento del espacio, combinando técnicas de fabricación nacional de alta precisión. Este registro valida la propiedad intelectual y consolida un enfoque profesional en la fabricación de mobiliario de autor.</p>
+            </div>
+        </div>
+
+        <div class="quote">"NO HAY FRASE MÁS DAÑINA QUE: MAÑANA LO HAGO."</div>
+
+        <div style="text-align: center;"><a href="/" class="btn-back">VOLVER AL INICIO</a></div>
     </div>
 
     <script>
-    
-function toggleAccordion(element) {
-    const content = element.nextElementSibling;
-    const isExpanding = !content.style.maxHeight || content.style.maxHeight === "0px";
-    
-    if (isExpanding) {
-        content.style.maxHeight = content.scrollHeight + "px";
-        // Cambia el signo de forma segura
-        element.innerHTML = element.innerHTML.replace("+", "-");
-    } else {
-        content.style.maxHeight = "0px";
-        // Cambia el signo de forma segura
-        element.innerHTML = element.innerHTML.replace("-", "+");
-    }
-}
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const isExpanding = !content.style.maxHeight || content.style.maxHeight === "0px";
+            if (isExpanding) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                element.innerHTML = element.innerHTML.replace("+", "-");
+            } else {
+                content.style.maxHeight = "0px";
+                element.innerHTML = element.innerHTML.replace("-", "+");
+            }
+        }
 
-    // Lógica de carga
-    window.addEventListener('load', function() {
-        const preloader = document.getElementById('preloader');
-        
-        // Espera a que termine el preloader
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            setTimeout(() => { 
-                preloader.style.display = 'none'; 
-                
-                // --- APERTURA LENTA AUTOMÁTICA DE LA PRIMERA SECCIÓN ---
-                const firstHeader = document.querySelector('.accordion-header');
-                const firstContent = firstHeader.nextElementSibling;
-                
-                firstContent.style.maxHeight = firstContent.scrollHeight + "px";
-                firstHeader.innerHTML = firstHeader.innerHTML.replace("+", "-");
-                
-            }, 500);
-        }, 1000);
-    });
-</script>
-    
-    
-    
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => { 
+                    preloader.style.display = 'none'; 
+                    const firstHeader = document.querySelector('.accordion-header');
+                    const firstContent = firstHeader.nextElementSibling;
+                    firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+                    firstHeader.innerHTML = firstHeader.innerHTML.replace("+", "-");
+                }, 500);
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
