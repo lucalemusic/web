@@ -2,229 +2,34 @@
 :root { color-scheme: dark; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; background-color: #000; }
+body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; line-height: 1.5; }
 
-/* --- CONFIGURACIÓN DE CUERPO --- */
-body { 
-    font-family: 'Inter', sans-serif; 
-    background-color: #000; 
-    color: #fff; 
-    overflow-x: hidden; 
-    line-height: 1.5;
-}
+/* --- CURSOR --- */
+body, body *, a, button { cursor: url('https://lucalemusic.com.ar/cursor.png') 16 16, auto !important; }
 
-/* --- CURSOR UNIFICADO --- */
-body, body *, a, button { 
-    cursor: url('https://lucalemusic.com.ar/cursor.png') 16 16, auto !important; 
-}
-
-
-
-
-/* --- EFECTOS DE FONDO --- */
-.bg-video { position: fixed; top: 50%; left: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); object-fit: cover; z-index: -2; filter: brightness(0.4); }
-body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.8)); z-index: -1; }
-
-/* --- MARQUEE --- */
-.marquee-bar { background: #fff; color: #000; padding: 12px 0; font-weight: 900; overflow: hidden; white-space: nowrap; text-transform: uppercase; font-size: 0.8rem; position: relative; z-index: 10; }
-.marquee-text { display: inline-block; animation: marquee-animation 25s linear infinite; }
-@keyframes marquee-animation { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* --- HERO --- */
+/* --- HERO & SECCIONES --- */
 .hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
 .hero h1 { font-size: clamp(50px, 15vw, 150px); font-weight: 900; line-height: 0.8; }
-
-/* --- SECCIONES --- */
-section { padding: 100px 5vw; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+section { padding: 100px 5vw; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
 h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; text-transform: uppercase; }
-p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 
-/* --- BOTONES --- */
-.buttons { 
-    display: flex; 
-    gap: 15px; 
-    justify-content: center; 
-    flex-wrap: wrap; 
-}
-
-.buttons a { 
-    padding: 15px 30px; 
-    border: 1px solid #fff; 
-    text-decoration: none; 
-    color: #fff; 
-    font-weight: 700; 
-    font-size: 0.75rem; 
-    text-transform: uppercase; 
-    transition: 0.3s ease; 
-    background: rgba(0,0,0,0.3); 
-    text-align: center;
-}
-
+/* --- BOTONES (REGLA ÚNICA) --- */
+.buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+.buttons a { padding: 15px 30px; border: 1px solid #fff; text-decoration: none; color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s ease; background: rgba(0,0,0,0.3); text-align: center; display: inline-block; }
 .buttons a:hover { background: #fff; color: #000; }
 .btn-buy { background: #fff !important; color: #000 !important; }
 
-/* --- ATAQUE DIRECTO AL PADRE Y LOS BOTONES --- */
+/* --- CENTRADO MÓVIL DEFINITIVO --- */
 @media (max-width: 768px) {
-    /* 1. Limpiamos el contenedor padre */
-    .buttons {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin: 20px auto !important;
-        width: 100% !important;
-        gap: 15px !important;
-    }
-
-    /* 2. Forzamos los botones a centrarse */
-    .buttons a {
-        display: block !important;
-        width: 250px !important;
-        margin: 0 auto !important; /* Esto es lo que centra el botón individualmente */
-        text-align: center !important;
-    }
+    .buttons { flex-direction: column !important; align-items: center !important; }
+    .buttons a { width: 250px !important; display: block !important; margin: 5px auto !important; }
+    section { padding: 60px 20px; }
 }
 
-/* --- SILLÓN OCTA --- */
-.studio-single-img { width: 100%; max-width: 700px; margin: 40px auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-.studio-single-img img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: filter 0.8s ease, transform 0.8s ease; }
+/* --- OTROS --- */
+.marquee-bar { background: #fff; color: #000; padding: 12px 0; font-weight: 900; white-space: nowrap; text-transform: uppercase; font-size: 0.8rem; }
+.studio-single-img img { width: 100%; max-width: 700px; display: block; filter: grayscale(100%); transition: 0.8s; }
 .studio-single-img:hover img { filter: grayscale(0%); transform: scale(1.05); }
-
-/* --- FOOTER --- */
-footer { padding: 80px 20px; text-align: center; font-size: 0.75rem; opacity: 0.4; }
-@media (max-width: 768px) { section { padding: 60px 20px; } .buttons { flex-direction: column; width: 100%; max-width: 300px; } }
-
-/* --- PRELOADER LIMPIO --- */
-#preloader { 
-    position: fixed; 
-    top: 0; left: 0; width: 100%; height: 100%; 
-    background: #000; 
-    z-index: 9999999; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    transition: opacity 0.5s ease;
-}
-
-.logo-loader { 
-    width: 120px; 
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse { 
-    0% { transform: scale(0.9); opacity: 0.7; } 
-    50% { transform: scale(1.1); opacity: 1; } 
-    100% { transform: scale(0.9); opacity: 0.7; } 
-}
-
-
-.tridente-loader { 
-    width: 150px !important; 
-    height: 150px !important; 
-    background-image: url('https://lucalemusic.com.ar/tridente.png') !important; 
-    background-size: contain !important; 
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    animation: fillTrident 2s ease-in-out infinite; 
-}
-
-@keyframes fillTrident { 
-    0% { clip-path: inset(100% 0 0 0); } 
-    50% { clip-path: inset(0% 0 0 0); } 
-    100% { clip-path: inset(0% 0 0 0); } 
-}
-
-/* Fondo negro sólido */
-body {
-    background-color: #000 !important;
-    margin: 0;
-    padding: 0;
-}
-
-/* Preloader styles */
-#preloader {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-}
-
-.logo-loader {
-    width: 120px; /* Tamaño del tridente */
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(0.9); opacity: 0.7; }
-    50% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(0.9); opacity: 0.7; }
-}
-
-/* --- REGLA MAESTRA PARA CENTRAR BOTONES EN CELULAR --- */
-@media screen and (max-width: 768px) {
-    body .buttons {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        margin: 20px 0 !important;
-        padding: 0 !important;
-    }
-
-    body .buttons a {
-        display: block !important;
-        width: 250px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        text-align: center !important;
-        float: none !important;
-    }
-}
-
-/* --- ANULACIÓN DE ESTILOS HTML Y CENTRADO MÓVIL --- */
-@media (max-width: 768px) {
-    /* Forzamos el contenedor de botones a ignorar los márgenes del HTML */
-    .buttons {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        margin: 20px auto !important; /* Sobreescribe cualquier margin-top que esté en el HTML */
-    }
-
-    /* todos los botones tienen el mismo comportamiento */
-    .buttons a {
-        display: block !important;
-        width: 250px !important;
-        margin: 10px auto !important;
-        text-align: center !important;
-        float: none !important;
-    }
-}
-
-
-/* --- CENTRADO ESPECÍFICO PARA LOS BOTONES DEL HEADER --- */
-@media screen and (max-width: 768px) {
-    .hero-content .buttons {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin: 20px auto !important;
-    }
-
-    .hero-content .buttons a {
-        width: 250px !important;
-        display: block !important;
-        margin: 10px auto !important;
-        text-align: center !important;
-    }
-}
-
-
-
+#preloader { position: fixed; top:0; left:0; width: 100%; height:100%; background: #000; display: flex; justify-content: center; align-items: center; z-index: 9999; }
+.logo-loader { width: 120px; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(0.9); opacity: 0.7; } 50% { transform: scale(1.1); opacity: 1; } }
