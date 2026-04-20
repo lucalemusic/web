@@ -118,18 +118,21 @@
         }
 
         <script>
-    window.addEventListener('load', function() {
+    <script>
+    // Usamos un tiempo fijo para asegurar que desaparezca pase lo que pase
+    window.addEventListener('DOMContentLoaded', function() {
         const preloader = document.getElementById('preloader');
         
-        // Espera 1 segundo para mostrar el logo
-        setTimeout(() => {
+        // Función para ocultar
+        function ocultarPreloader() {
             preloader.style.opacity = '0';
-            
-            // Espera a que termine la transición de 0.5s para borrarlo
-            setTimeout(() => { 
-                preloader.style.display = 'none'; 
+            setTimeout(() => {
+                preloader.style.display = 'none';
             }, 500);
-        }, 1000);
+        }
+
+        // 1. Intentamos ocultar después de 2 segundos (máximo)
+        setTimeout(ocultarPreloader, 2000);
     });
 </script> 
 </body>
