@@ -36,5 +36,20 @@ h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; t
 .studio-single-img:hover img { filter: grayscale(0%); transform: scale(1.05); }
 #preloader { position: fixed; top:0; left:0; width: 100%; height:100%; background: #000; display: flex; justify-content: center; align-items: center; z-index: 9999; }
 .logo-loader { width: 120px; height: 120px; animation: pulse 1.5s infinite; object-fit: contain; }
-@keyframes pulse { 0%, 100% { transform: scale(0.9); opacity: 0.7; } 50% { transform: scale(1.1); opacity: 1; } }
+/* --- EFECTO CORAZÓN LATIENDO (Elegante) --- */
+.logo-loader { 
+    width: 120px; 
+    height: 120px; 
+    animation: heart-beat 2s ease-in-out infinite;
+    object-fit: contain;
+}
+
+@keyframes heart-beat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.15); } /* El "golpe" inicial */
+    30% { transform: scale(1); }    /* Vuelve al tamaño normal */
+    45% { transform: scale(1.05); } /* Un pequeño rebote extra */
+    60% { transform: scale(1); }    /* Se queda quieto un momento */
+    100% { transform: scale(1); }   /* Pausa antes de repetir */
+}
 
