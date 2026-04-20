@@ -63,33 +63,26 @@ p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 .btn-buy { background: #fff !important; color: #000 !important; }
 
 /* --- ATAQUE DIRECTO AL PADRE Y LOS BOTONES --- */
-@media screen and (max-width: 768px) {
-    /* Forzamos a TODAS las secciones a centrar sus hijos */
-    section, .hero, .hero-content {
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    /* Forzamos al contenedor de botones */
+@media (max-width: 768px) {
+    /* 1. Limpiamos el contenedor padre */
     .buttons {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
+        margin: 20px auto !important;
         width: 100% !important;
-        margin: 20px 0 !important;
+        gap: 15px !important;
     }
 
-    /* Forzamos al botón mismo */
+    /* 2. Forzamos los botones a centrarse */
     .buttons a {
         display: block !important;
         width: 250px !important;
-        margin: 10px auto !important; /* El 'auto' aquí es el que centra */
+        margin: 0 auto !important; /* Esto es lo que centra el botón individualmente */
         text-align: center !important;
     }
 }
-
-
 
 /* --- SILLÓN OCTA --- */
 .studio-single-img { width: 100%; max-width: 700px; margin: 40px auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
