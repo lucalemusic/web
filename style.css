@@ -38,42 +38,46 @@ section { padding: 100px 5vw; max-width: 1100px; margin: 0 auto; position: relat
 h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; text-transform: uppercase; }
 p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 
-/* --- BOTONES (REEMPLAZAR TOTALMENTE) --- */
+/* --- BOTONES  --- */
 .buttons { 
-    display: flex !important; 
-    gap: 15px !important; 
-    justify-content: center !important; 
-    flex-wrap: wrap !important; 
-    margin: 20px auto !important; 
-    width: 100% !important;
+    display: flex; 
+    gap: 15px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
 }
 
 .buttons a { 
-    padding: 15px 30px !important; 
-    border: 1px solid #fff !important; 
-    text-decoration: none !important; 
-    color: #fff !important; 
-    font-weight: 700 !important; 
-    font-size: 0.75rem !important; 
-    text-transform: uppercase !important; 
-    transition: 0.3s ease !important; 
-    background: rgba(0,0,0,0.3) !important; 
-    text-align: center !important;
-    display: block !important; /* Importante para que el centrado funcione */
+    padding: 15px 30px; 
+    border: 1px solid #fff; 
+    text-decoration: none; 
+    color: #fff; 
+    font-weight: 700; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    transition: 0.3s ease; 
+    background: rgba(0,0,0,0.3); 
 }
 
+.buttons a:hover { background: #fff; color: #000; }
+.btn-buy { background: #fff !important; color: #000 !important; }
+
+
 /* --- AJUSTE MÓVIL DEFINITIVO --- */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .buttons {
+        display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         gap: 15px !important;
     }
     
     .buttons a {
-        width: 250px !important;
+        width: 250px !important; /* Mantenemos el ancho */
+        text-align: center !important;
+        /* No tocamos padding ni colores para no perder el destello/hover */
     }
 }
+
 
 
 /* --- SILLÓN OCTA --- */
