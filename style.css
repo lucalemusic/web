@@ -215,6 +215,23 @@ body {
 }
 
 
+/* --- CENTRADO ESPECÍFICO PARA LOS BOTONES DEL HEADER --- */
+@media screen and (max-width: 768px) {
+    .hero-content .buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 20px auto !important;
+    }
+
+    .hero-content .buttons a {
+        width: 250px !important;
+        display: block !important;
+        margin: 10px auto !important;
+        text-align: center !important;
+    }
+}
 
 
 
