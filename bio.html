@@ -117,19 +117,20 @@
             }
         }
 
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => { 
-                    preloader.style.display = 'none'; 
-                    const firstHeader = document.querySelector('.accordion-header');
-                    const firstContent = firstHeader.nextElementSibling;
-                    firstContent.style.maxHeight = firstContent.scrollHeight + "px";
-                    firstHeader.innerHTML = firstHeader.innerHTML.replace("+", "-");
-                }, 500);
-            }, 1000);
-        });
-    </script>
+        <script>
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        
+        // Espera 1 segundo para mostrar el logo
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            
+            // Espera a que termine la transición de 0.5s para borrarlo
+            setTimeout(() => { 
+                preloader.style.display = 'none'; 
+            }, 500);
+        }, 1000);
+    });
+</script> 
 </body>
 </html>
