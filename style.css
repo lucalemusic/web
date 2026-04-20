@@ -38,29 +38,43 @@ section { padding: 100px 5vw; max-width: 1100px; margin: 0 auto; position: relat
 h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; text-transform: uppercase; }
 p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 
-/* --- BOTONES --- */
-.buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-.buttons a { padding: 15px 30px; border: 1px solid #fff; text-decoration: none; color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s ease; background: rgba(0,0,0,0.3); }
+/* --- BOTONES (CONFIGURACIÓN ÚNICA) --- */
+.buttons { 
+    display: flex; 
+    gap: 15px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin: 20px 0;
+}
+
+.buttons a { 
+    padding: 15px 30px; 
+    border: 1px solid #fff; 
+    text-decoration: none; 
+    color: #fff; 
+    font-weight: 700; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    transition: 0.3s ease; 
+    background: rgba(0,0,0,0.3); 
+    text-align: center;
+}
+
 .buttons a:hover { background: #fff; color: #000; }
 .btn-buy { background: #fff !important; color: #000 !important; }
-/*  (Relacion de aspecto para celulares) */
+
+/* --- AJUSTE MÓVIL (CENTRADO Y PAREJO) --- */
 @media (max-width: 768px) {
-    /* Forzamos al contenedor padre a ocupar todo el ancho y centrar todo */
     .buttons {
-        display: flex !important;
         flex-direction: column !important;
-        align-items: center !important; 
-        justify-content: center !important;
+        align-items: center !important;
+        gap: 15px !important;
         width: 100% !important;
-        margin: 20px auto !important; /* El 'auto' ayuda a centrar bloques */
     }
 
-    /* Ajustamos los botones para que no se estiren de más */
     .buttons a {
-        width: 200px !important; /* Un ancho fijo suele ser más estable en celular */
-        text-align: center !important;
-        margin-bottom: 15px !important;
-        padding: 15px 0 !important; /* Quitamos el padding lateral para que no se deforme */
+        width: 250px !important; /* Todos los botones del mismo ancho */
+        padding: 15px 0 !important;
     }
 }
 
