@@ -40,7 +40,7 @@ h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; t
 .logo-loader { 
     width: 120px; 
     height: 120px; 
-    animation: heart-beat 2s ease-in-out infinite;
+    animation: heart-beat 2.5s ease-in-out infinite;
     object-fit: contain;
 }
 
