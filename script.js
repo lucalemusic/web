@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     
-    // Esperamos 2 segundos después de que cargó todo para que el usuario aprecie el logo
+    // Esperamos 2 segundos para que el usuario conecte con el logo
     setTimeout(() => {
-        preloader.style.opacity = '0'; // Esto crea el efecto de desvanecimiento
+        preloader.style.opacity = '0'; // Se desvanece
         
-        // Una vez que terminó la transición de opacidad, quitamos el elemento
+        // Esperamos a que termine la transición para quitarlo del DOM
         setTimeout(() => {
             preloader.style.display = 'none';
-        }, 500); // 500ms es el tiempo que dura la transición
+        }, 800); 
     }, 2000); 
 });
