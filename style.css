@@ -38,46 +38,42 @@ section { padding: 100px 5vw; max-width: 1100px; margin: 0 auto; position: relat
 h2 { font-size: clamp(30px, 6vw, 60px); margin-bottom: 30px; font-weight: 900; text-transform: uppercase; }
 p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 
-/* --- BOTONES (CONFIGURACIÓN ÚNICA) --- */
+/* --- BOTONES (REEMPLAZAR TOTALMENTE) --- */
 .buttons { 
-    display: flex; 
-    gap: 15px; 
-    justify-content: center; 
-    flex-wrap: wrap; 
-    margin: 20px 0;
+    display: flex !important; 
+    gap: 15px !important; 
+    justify-content: center !important; 
+    flex-wrap: wrap !important; 
+    margin: 20px auto !important; 
+    width: 100% !important;
 }
 
 .buttons a { 
-    padding: 15px 30px; 
-    border: 1px solid #fff; 
-    text-decoration: none; 
-    color: #fff; 
-    font-weight: 700; 
-    font-size: 0.75rem; 
-    text-transform: uppercase; 
-    transition: 0.3s ease; 
-    background: rgba(0,0,0,0.3); 
-    text-align: center;
+    padding: 15px 30px !important; 
+    border: 1px solid #fff !important; 
+    text-decoration: none !important; 
+    color: #fff !important; 
+    font-weight: 700 !important; 
+    font-size: 0.75rem !important; 
+    text-transform: uppercase !important; 
+    transition: 0.3s ease !important; 
+    background: rgba(0,0,0,0.3) !important; 
+    text-align: center !important;
+    display: block !important; /* Importante para que el centrado funcione */
 }
 
-.buttons a:hover { background: #fff; color: #000; }
-.btn-buy { background: #fff !important; color: #000 !important; }
-
-/* --- AJUSTE MÓVIL (CENTRADO Y PAREJO) --- */
+/* --- AJUSTE MÓVIL DEFINITIVO --- */
 @media (max-width: 768px) {
     .buttons {
         flex-direction: column !important;
         align-items: center !important;
         gap: 15px !important;
-        width: 100% !important;
     }
-
+    
     .buttons a {
-        width: 250px !important; /* Todos los botones del mismo ancho */
-        padding: 15px 0 !important;
+        width: 250px !important;
     }
 }
-
 
 
 /* --- SILLÓN OCTA --- */
