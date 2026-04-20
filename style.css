@@ -1,3 +1,14 @@
+@keyframes marquee-animation { 
+    0% { transform: translateX(100%); } 
+    100% { transform: translateX(-100%); } 
+}
+
+.marquee-text { 
+    display: inline-block; 
+    white-space: nowrap;
+    animation: marquee-animation 15s linear infinite !important; 
+}
+
 /* --- CONFIGURACIÓN MAESTRA --- */
 :root { color-scheme: dark; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
