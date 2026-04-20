@@ -45,20 +45,25 @@ p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 .btn-buy { background: #fff !important; color: #000 !important; }
 /*  (Relacion de aspecto para celulares) */
 @media (max-width: 768px) {
+    /* Forzamos al contenedor padre a ocupar todo el ancho y centrar todo */
     .buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: center;
-        width: 100%;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; 
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 20px auto !important; /* El 'auto' ayuda a centrar bloques */
     }
 
+    /* Ajustamos los botones para que no se estiren de más */
     .buttons a {
-        width: 80%; 
-        text-align: center;
-        margin-bottom: 15px; 
+        width: 200px !important; /* Un ancho fijo suele ser más estable en celular */
+        text-align: center !important;
+        margin-bottom: 15px !important;
+        padding: 15px 0 !important; /* Quitamos el padding lateral para que no se deforme */
     }
 }
+
 
 
 /* --- SILLÓN OCTA --- */
