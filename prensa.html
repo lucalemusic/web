@@ -5,19 +5,56 @@
     <title>ARCHIVO DE PRENSA | LUCALE</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { background: #000; color: #fff; font-family: 'Space Mono', monospace; padding: 80px 5vw; display: flex; flex-direction: column; align-items: center; cursor: url('https://lucalemusic.com.ar/cursor.png'), auto !important; }
-        h1 { font-size: 2.5rem; margin-bottom: 60px; letter-spacing: -2px; border-bottom: 4px solid #fff; padding-bottom: 10px; }
-        .archivo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; width: 100%; max-width: 1100px; }
-        .ficha { border: 1px solid #333; padding: 30px; position: relative; background: #0a0a0a; transition: all 0.4s ease; }
-        .ficha:hover { border-color: #fff; transform: translateX(10px); }
-        .tag { font-size: 0.6rem; background: #fff; color: #000; padding: 2px 8px; margin-bottom: 15px; display: inline-block; font-weight: 700; }
-        .ficha h3 { font-size: 1rem; margin-bottom: 15px; line-height: 1.3; }
-        .ficha p { font-size: 0.8rem; color: #888; margin-bottom: 20px; }
-        .btn-link { display: inline-block; padding: 8px 15px; border: 1px solid #555; color: #fff; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 5px; }
-        .ficha:hover .btn-link { border-color: #fff; background: #fff; color: #000; }
-        .back-btn { margin-top: 80px; border: 1px solid #fff; padding: 15px 30px; color: #fff; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; }
-        .back-btn:hover { background: #fff; color: #000; }
-    </style>
+    /* 1. Cursor: Agregamos las coordenadas para centrar el tridente */
+    body, a, .btn-link, .back-btn { 
+        cursor: url('https://lucalemusic.com.ar/cursor.png') 16 16, auto !important; 
+    }
+
+    body { 
+        background: #000; 
+        color: #fff; 
+        font-family: 'Space Mono', monospace; 
+        padding: 80px 5vw; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 60px; letter-spacing: -2px; border-bottom: 4px solid #fff; padding-bottom: 10px; }
+    
+    .archivo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; width: 100%; max-width: 1100px; }
+    
+    .ficha { border: 1px solid #333; padding: 30px; position: relative; background: #0a0a0a; transition: all 0.4s ease; }
+    
+    /* Efecto al pasar el cursor */
+    .ficha:hover { border-color: #fff; transform: translateY(-5px); } /* Cambié a translateY para un salto más elegante */
+    
+    .tag { font-size: 0.6rem; background: #fff; color: #000; padding: 2px 8px; margin-bottom: 15px; display: inline-block; font-weight: 700; }
+    
+    .ficha h3 { font-size: 1rem; margin-bottom: 15px; line-height: 1.3; }
+    
+    .ficha p { font-size: 0.8rem; color: #888; margin-bottom: 20px; }
+    
+    .btn-link { 
+        display: inline-block; 
+        padding: 8px 15px; 
+        border: 1px solid #555; 
+        color: #fff; 
+        text-decoration: none; 
+        font-size: 0.7rem; 
+        text-transform: uppercase; 
+        margin-bottom: 5px;
+        margin-right: 5px; /* Separación entre botones */
+        transition: all 0.3s ease;
+    }
+    
+    .ficha:hover .btn-link { border-color: #fff; background: #fff; color: #000; }
+    
+    .back-btn { margin-top: 80px; border: 1px solid #fff; padding: 15px 30px; color: #fff; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; transition: all 0.3s ease; }
+    
+    .back-btn:hover { background: #fff; color: #000; }
+</style>
+    
 </head>
 <body>
 
