@@ -62,30 +62,33 @@ p { max-width: 800px; margin-bottom: 30px; text-align: center; }
 .buttons a:hover { background: #fff; color: #000; }
 .btn-buy { background: #fff !important; color: #000 !important; }
 
+/* --- ATAQUE DIRECTO AL PADRE Y LOS BOTONES --- */
 @media screen and (max-width: 768px) {
-    /* Forzamos al contenedor de botones a centrarse respecto al padre */
+    /* Forzamos a TODAS las secciones a centrar sus hijos */
+    section, .hero, .hero-content {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Forzamos al contenedor de botones */
     .buttons {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
         width: 100% !important;
-        margin: 20px auto !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        gap: 15px !important;
+        margin: 20px 0 !important;
     }
 
-    /* Forzamos al enlace mismo a centrarse */
+    /* Forzamos al botón mismo */
     .buttons a {
         display: block !important;
         width: 250px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        margin: 10px auto !important; /* El 'auto' aquí es el que centra */
         text-align: center !important;
-        float: none !important;
     }
 }
+
 
 
 /* --- SILLÓN OCTA --- */
