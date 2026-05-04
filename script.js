@@ -45,3 +45,23 @@ window.addEventListener('load', () => {
         }, 800); 
     }, 2000); 
 });
+
+
+ type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Lucale",
+  "url": "https://lucalemusic.com.ar/",
+  "sameAs": [
+    "https://www.instagram.com/lucale/",
+    "https://www.youtube.com/@LucaleMusic"
+  ],
+  "jobTitle": "Músico / Artista",
+  "hasPart": {
+    "@type": "CollectionPage",
+    "name": "Archivo de Prensa",
+    "url": "https://lucalemusic.com.ar/prensa.html",
+    "description": "Cronología de notas, entrevistas y reconocimientos de la trayectoria de Lucale."
+  }
+}
