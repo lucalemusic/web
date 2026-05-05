@@ -1,122 +1,187 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" type="image/png" href="https://lucalemusic.com.ar/tridente.png">
+    <link rel="icon" type="image/png" href="https://hrj.com.ar/tridente.png">
     <meta charset="UTF-8">
-    <title>ARCHIVO DE PRENSA | LUCALE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Archivo oficial de prensa, notas, entrevistas y reconocimientos de Lucale. Cobertura de medios, premios y trayectoria profesional.">
-    <meta property="og:title" content="Archivo de Prensa | Lucale">
-    <meta property="og:description" content="Cronología de hitos, notas de prensa y reconocimientos de Lucale.">
-    <meta property="og:image" content="https://lucalemusic.com.ar/img1.jpg">
+
+    <link rel="canonical" href="https://hrj.com.ar/index.html">
+    
+    <title>LUCALE | Medios</title>
+    <meta name="description" content="Notas, entrevistas y repercusiones en medios sobre Lucale.">
+    <meta name="keywords" content="Lucale, prensa, medios, rap conurbano, Don Torcuato, Rap Argentino, Rap, entrevistas, notas de prensa">
+    
+    <meta property="og:title" content="Prensa | Lucale">
+    <meta property="og:description" content="Descubre cómo los medios reflejan el impacto de Lucale en el conurbano bonaerense.">
+    <meta property="og:image" content="https://lucalemusic.com.ar/tridente.png">
     <meta property="og:url" content="https://lucalemusic.com.ar/prensa.html">
-    <meta property="og:type" content="article">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <meta property="og:type" content="website">
+
+    <title>LUCALE | Medios</title>
     <style>
-    /* 1. Cursor: Agregamos las coordenadas para centrar el tridente */
-    body, a, .btn-link, .back-btn { 
-        cursor: url('https://lucalemusic.com.ar/cursor.png') 16 16, auto !important; 
+    /* 1. Definición de colores */
+    :root { 
+        --blanco: #ffffff; 
+        --negro: #000000; 
     }
 
-    body { 
-        background: #000; 
-        color: #fff; 
-        font-family: 'Space Mono', monospace; 
-        padding: 80px 5vw; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap');
+    
+    body, html { margin: 0; padding: 0; background: var(--negro); color: var(--blanco); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+    /* Navegación */
+    .nav-global { 
+        position: fixed; top: 20px; right: 20px; z-index: 9999; 
+        display: flex; gap: 10px; background: rgba(0,0,0,0.7); 
+        padding: 10px; border: 1px solid var(--blanco); border-radius: 5px;
     }
 
-    h1 { font-size: 2.5rem; margin-bottom: 60px; letter-spacing: -2px; border-bottom: 4px solid #fff; padding-bottom: 10px; }
-    
-    .archivo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; width: 100%; max-width: 1100px; }
-    
-    .ficha { border: 1px solid #333; padding: 30px; position: relative; background: #0a0a0a; transition: all 0.4s ease; }
-    
-    /* Efecto al pasar el cursor */
-    .ficha:hover { border-color: #fff; transform: translateY(-5px); } /* Cambié a translateY para un salto más elegante */
-    
-    .tag { font-size: 0.6rem; background: #fff; color: #000; padding: 2px 8px; margin-bottom: 15px; display: inline-block; font-weight: 700; }
-    
-    .ficha h3 { font-size: 1rem; margin-bottom: 15px; line-height: 1.3; }
-    
-    .ficha p { font-size: 0.8rem; color: #888; margin-bottom: 20px; }
-    
-    .btn-link { 
-        display: inline-block; 
-        padding: 8px 15px; 
-        border: 1px solid #555; 
-        color: #fff; 
-        text-decoration: none; 
-        font-size: 0.7rem; 
-        text-transform: uppercase; 
-        margin-bottom: 5px;
-        margin-right: 5px; /* Separación entre botones */
-        transition: all 0.3s ease;
+    .btn-nav {
+        font-family: 'Anton', sans-serif; color: var(--blanco); text-decoration: none; 
+        font-size: 1rem; padding: 5px 15px; transition: 0.3s;
+        border: 1px solid transparent;
     }
-    
-    .ficha:hover .btn-link { border-color: #fff; background: #fff; color: #000; }
-    
-    .back-btn { margin-top: 80px; border: 1px solid #fff; padding: 15px 30px; color: #fff; text-decoration: none; font-size: 0.7rem; text-transform: uppercase; transition: all 0.3s ease; }
-    
-    .back-btn:hover { background: #fff; color: #000; }
-    </style>
-</head> 
+
+    .btn-nav:hover { color: var(--negro); background: var(--blanco); border-bottom: 1px solid var(--blanco); }
+
+    @media (max-width: 768px) {
+        .nav-global { 
+            top: auto; bottom: 0; left: 0; right: 0; 
+            flex-wrap: wrap; justify-content: center; gap: 5px;
+            background: var(--negro); border: none; border-top: 1px solid var(--blanco);
+        }
+    }
+
+    /* Títulos */
+    #main-title {
+        position: fixed; width: 100%; text-align: center; top: 30vh; z-index: 100;
+        font-family: 'Anton', sans-serif; font-size: 8rem; color: var(--blanco);
+        transition: all 0.5s ease; pointer-events: none;
+    }
+    .shrink #main-title { top: 20px; font-size: 2rem; }
+
+    /* Secciones */
+    section { 
+        height: 100vh; width: 100%; position: relative; 
+        display: flex; align-items: center; justify-content: center;
+        background-attachment: fixed; background-size: cover; background-position: center;
+    }
+
+    .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+
+    .content { 
+        position: relative; z-index: 2; width: 80%; max-width: 600px;
+        background: rgba(0,0,0,0.8); padding: 40px; border-left: 4px solid var(--blanco);
+    }
+
+    h2 { font-family: 'Anton', sans-serif; color: var(--blanco); margin: 0 0 15px; }
+
+    .btn-ver-aca { 
+        display: inline-block; padding: 10px 25px; border: 1px solid var(--blanco);
+        color: var(--blanco); text-decoration: none; margin-top: 20px; font-weight: bold;
+    }
+
+    .btn-ver-aca:hover { background: var(--blanco); color: var(--negro); }
+
+    /* Trama */
+    .con-trama { position: relative; }
+    .con-trama::after {
+        content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+        pointer-events: none; z-index: 1; 
+        background-image: repeating-linear-gradient(45deg, #ffffff 0px, #ffffff 1px, transparent 1px, transparent 6px);
+        background-size: 3px 3px; opacity: 0.1; /* Bajé la opacidad para que no moleste visualmente */
+    }
+</style>
+</head>
 <body>
 
-    <h1>ARCHIVO DOCUMENTAL</h1>
-    
-    <div class="archivo-grid">
-        
-        <div class="ficha">
-            <span class="tag">CULTURA</span>
-            <h3>UNAJ / LEVIATÁN</h3>
-            <p>"Haciendo Rap Juntxs". El rap como relato del conurbano.</p>
-            <a href="https://www.pagina12.com.ar/569517-el-rap-como-relato-del-conurbano/" target="_blank" class="btn-link">NOTA PÁGINA/12</a>
-            <a href="https://www.mercadolibre.com.ar/haciendo-rap-juntxs-antologia-de-letras-raperas-y-raperos-del-conurbano-de-bueno-de-aavv-editorial-leviatan-tapa-blanda-edicion-1-en-espanol-2023/p/MLA33224204" target="_blank" class="btn-link">LIBRO EN ML</a>
-            <a href="https://losmuros.org/4975/%C2%A8haciendo-rap-juntxs%C2%A8/" target="_blank" class="btn-link">NOTA LOS MUROS</a>
-            <a href="https://periodicoparatodos.com.ar/2025/11/09/el-rap-la-educacion-y-el-conurbano-se-unen-en-el-festival-potencia-conurbana/" target="_blank" class="btn-link">NOTA UNPAZ</a>
-        </div>
+    <h1 id="main-title">MEDIOS</h1>
 
-        <div class="ficha">
-            <span class="tag">CULTURA</span>
-            <h3>MARTIN BIAGGINI, WALDEN EDITORA / 5000 DISPAROS</h3>
-            <p>Registro fotográfico y documental de la escena urbana.</p>
-            <a href="https://waldeneditora.com/?product=5-mil-disparos-martin-biaggini" target="_blank" class="btn-link">WALDEN EDITORA</a>
-            <a href="https://www.youtube.com/watch?v=Gk8Fw0Z25dY" target="_blank" class="btn-link">JUAN DATA</a>
-            <a href="https://www.gba.gob.ar/gobierno/noticias/la_casa_de_la_provincia_cierra_el_a%C3%B1o_con_m%C3%A1s_agenda_cultural" target="_blank" class="btn-link">CASA PROVINCIA</a>
-            <a href="https://www.mercadolibre.com.ar/cinco-mil-disparos-biaggini-martin-a/p/MLA22136019" target="_blank" class="btn-link">LIBRO EN ML</a>
-        </div>
+    <nav class="nav-global">
+    <a href="index.html" class="btn-nav">INICIO</a>
+    <a href="bio.html" class="btn-nav">BIOGRAFÍA</a>
+    <a href="prensa.html" class="btn-nav">PRENSA</a>
+</nav>
 
-        <div class="ficha">
-            <span class="tag">INDUSTRIA</span>
-            <h3>UNIVERSAL MUSIC / TOMMY GUN</h3>
-            <p>Contrato discográfico y salto profesional.</p>
-            <a href="https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale" target="_blank" class="btn-link">CMTV</a>
-            <a href="https://www.agencianova.com/seccion.asp?s=60&t=NOVA%20Show&n=2023_9_7" target="_blank" class="btn-link">AGENCIA NOVA</a>
-            <a href="https://www.eltalarnoticias.com.ar/lucale-contrato-discografico-y-salto-del-rapero-en-su-carrera-musical/" target="_blank" class="btn-link">EL TALAR</a>
-            <a href="https://www.noroestemadrid.com/2023/09/salto-de-gigante-del-rapero-lucale-en-su-carrera-musical-al-firmar-con-la-discografica-universal-music/" target="_blank" class="btn-link">NOROESTE</a>
-        </div>
-        <div class="ficha">
-            <span class="tag">POSTULACIONES</span>
-            <h3>PREMIOS GARDEL / PREMIOS MIN</h3>
-            <p>Registro de las postulaciones a premios nacionales e internacionales.</p>
-            <a href="https://diario-nco.net/2025/12/29/lucale-premios-min-2026/" target="_blank" class="btn-link">DIARIO NCO</a>
-            <a href="https://periodicoparatodos.com.ar/2025/12/23/lucale-participa-oficialmente-en-los-premios-min-2026-con-candelabro/" target="_blank" class="btn-link">PERIODICO PARA TODOS</a>
-            <a href="https://tigrenoticias.com.ar/tigre-lucale-proyecta-su-carrera-internacional-y-prepara-un-2026-con-nuevos-lanzamientos/" target="_blank" class="btn-link">TIGRE NOTICIAS</a>
-            
-        </div>
+    <div class="main-wrapper" id="contenedor-prensa">
     </div>
 
-    <a href="/index.html" class="back-btn">VOLVER AL INICIO</a>
-
-    <footer>
-        2026 LUCALE ® · Lucale Music Publishing ™ · LE ® ·Don Torcuato, Buenos Aires, Argentina. Todos los derechos reservados.
-    </footer>
+<section class="con-trama" style="background-image: url('tridente.png');">
+    <div class="overlay"></div>
+    <div class="content">
+        <h2>VOLVE AL INICIO</h2>
+        <a href="index.html" class="btn-ver-aca">Inicio</a>
+    </div>
+</section>
     
+        </div>
 
+  <script>
+  
+    const noticias = [
+  { "titulo": "Radio Click Digital", "desc": "Lucale, la voz urbana del norte del Gran Buenos Aires que transforma vivencias en rap.", "link": "https://www.radioclickdigital.com.ar/lucale-la-voz-urbana-del-norte-del-gran-buenos-aires-que-transforma-vivencias-en-rap/", "img": "ASSETS-MEDIOS/radio-click1.jpg" },
+  { "titulo": "Diario NCO", "desc": "Lucale participa oficialmente en los Premios MIN 2026 con Candelabro.", "link": "https://diario-nco.net/2025/12/29/lucale-premios-min-2026/", "img": "ASSETS-MEDIOS/diario-nco.jpg" },
+  { "titulo": "Periodico Para Todos", "desc": "Lucale participa oficialmente en los Premios MIN 2026 con Candelabro.", "link": "https://periodicoparatodos.com.ar/2025/12/23/lucale-participa-oficialmente-en-los-premios-min-2026-con-candelabro/", "img": "ASSETS-MEDIOS/periodico-paratodos.jpg" },
+  { "titulo": "Mundo Norte", "desc": "Lucale, el rapero que cruza fronteras.", "link": "https://www.mundonorte.com.ar/2025/12/lucale-el-rapero-que-cruza-fronteras-y.html", "img": "ASSETS-MEDIOS/mundo-norte.jpg" },
+  { "titulo": "De Queruza", "desc": "Lucale participa oficialmente en los Premios MIN 2026 con Candelabro.", "link": "https://dequeruza.ar/lucale-participa-oficialmente-en-los-premios-min-2026-con-candelabro/", "img": "ASSETS-MEDIOS/de-queruza.jpg" },
+  { "titulo": "Mundo Norte", "desc": "De terminar el secundario a filmar con...", "link": "https://www.mundonorte.com.ar/2024/12/de-terminar-el-secundario-filmar-con.html?m=1", "img": "ASSETS-MEDIOS/abanderado1.jpg" },
+  { "titulo": "Zona Norte Visión", "desc": "El rapero Lucale, abanderado en su último año de secundaria de adultos.", "link": "https://zonanortevision.com.ar/352982/el-rapero-lucale-abanderado-en-su-ultimo-ano-de-secundaria-de-adultos-una-caricia-al-alma/", "img": "ASSETS-MEDIOS/zona-norte-vision.jpg" },
+  { "titulo": "Tigre Noticias", "desc": "Lucale, el rapero fue elegido abanderado en su último año de secundaria.", "link": "https://tigrenoticias.com.ar/tigre-el-rapero-lucale-fue-elegido-abanderado-en-su-ultimo-ano-de-secundaria-para-adultos/", "img": "ASSETS-MEDIOS/tigre-noticias1.jpg" },
+  { "titulo": "Diario Lo Nuestro", "desc": "Luchó contra los demonios, es un reconocido artista y finalizó como abanderado.", "link": "https://www.diariolonuestro.com.ar/single-post/luch%C3%B3-contra-los-demonios-es-un-reconocido-artista-y-finaliz%C3%B3-como-abanderado-de-secundario-para", "img": "ASSETS-MEDIOS/diario-lo-nuestro.jpg" },
+  
+  { "titulo": "Zona Norte Diario", "desc": "El rapero tigrense Lucale, abanderado en secundaria de adultos.", "link": "https://www.zonanortediario.com.ar/26/06/2025/el-rapero-tigrense-lucale-abanderado-en-su-ultimo-ano-de-secundaria-de-adultos-una-caricia-al-alma/", "img": "ASSETS-MEDIOS/abanderado2.jpg" },
+  { "titulo": "Indie Emergente", "desc": "Lanzamientos de Lucale.", "link": "https://indiemergente.com.ar/es/lanzamientos/lucale", "img": "ASSETS-MEDIOS/indie-emergente.jpg" },
+  { "titulo": "Periodico Para Todos", "desc": "El rapero Lucale llenó de alegría a muchos niños en el barrio Las Flores.", "link": "https://periodicoparatodos.com.ar/2024/08/20/el-rapero-lucale-lleno-de-alegria-a-muchos-ninos-en-el-barrio-las-flores/", "img": "ASSETS-MEDIOS/periodico-paratodos1.jpg" },
+  { "titulo": "Muzikalia", "desc": "El rapero argentino Lucale estrena un nuevo sencillo.", "link": "https://muzikalia.com/el-rapero-argentino-lucale-estrena-un-nuevo-sencillo/", "img": "ASSETS-MEDIOS/muzikalia.jpg" },
+  { "titulo": "Periodico Para Todos", "desc": "Lucale los espera con Space X.", "link": "https://periodicoparatodos.com.ar/2024/08/16/lucale-los-espera-con-space-x-el-20-de-agosto/", "img": "ASSETS-MEDIOS/periodico-paratodos-2.jpg" },
+  { "titulo": "Mundo Norte", "desc": "Lucale, el rapero argentino de la periferia.", "link": "https://www.mundonorte.com.ar/2024/08/lucale-el-rapero-argentino-de-la.html", "img": "ASSETS-MEDIOS/mundo-norte-2.jpg" },
+  { "titulo": "Tigre Noticias", "desc": "Lucale: autenticidad y versatilidad.", "link": "https://tigrenoticias.com.ar/lucale-el-rapero-argentino-de-la-periferia-que-conquista-con-su-autenticidad-y-versatilidad/", "img": "ASSETS-MEDIOS/tigre-noticias2.jpg" },
+  { "titulo": "Tigre Noticias", "desc": "Lucale, músico de Don Torcuato, presenta el libro Haciendo Rap Juntxs.", "link": "https://tigrenoticias.com.ar/tigre-lucale-musico-de-don-torcuato-presenta-el-libro-haciendo-rap-juntxs-antologia-de-letras-de-raperas-y-raperos-del-conurbano-de-buenos-aires/", "img": "ASSETS-MEDIOS/tigre-noticias.jpg" },
+  { "titulo": "CMTV", "desc": "Biografía y trayectoria de Lucale.", "link": "https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale", "img": "ASSETS-MEDIOS/cmtv.jpg" },
+  { "titulo": "Diario NCO", "desc": "Lucale, el rapero.", "link": "https://diario-nco.com/la-bata/lucale-el-rapero/", "img": "ASSETS-MEDIOS/diario-nco-2.jpg" },
+  { "titulo": "El Talar Noticias", "desc": "Contrato discográfico y salto del rapero en su carrera.", "link": "https://eltalarnoticias.com.ar/lucale-contrato-discografico-y-salto-del-rapero-en-su-carrera-musical/", "img": "ASSETS-MEDIOS/el-talar.jpg" },
+  { "titulo": "Codigo Provincia", "desc": "Perfil del artista Lucale.", "link": "https://codigoprovincia.gba.gob.ar/artistas/lucale", "img": "ASSETS-MEDIOS/codigo-provincia.jpg" },
+  
+  { "titulo": "De Queruza", "desc": "Conoce a Lucale, talento de la música urbana.", "link": "https://dequeruza.ar/conoce-a-lucale-el-nuevo-talento-de-la-musica-urbana/", "img": "ASSETS-MEDIOS/de-queruza-2.jpg" },
+  
+  { "titulo": "Revista Mestiza", "desc": "Un barco de papel.", "link": "https://revistamestiza.unaj.edu.ar/un-barco-de-papel/", "img": "ASSETS-MEDIOS/revista-mestiza.jpg" },
+  { "titulo": "Rio Colorado Informa", "desc": "Lucale, artista urbano que rompe esquemas.", "link": "https://riocoloradoinforma.com.ar/lucale-el-artista-urbano-que-rompe-todos-los-esquemas/", "img": "ASSETS-MEDIOS/rio-colorado.jpg" },
+  { "titulo": "Periodico Para Todos", "desc": "Cristian Devincenzi, Lucale, de Don Torcuato para el mundo.", "link": "https://periodicoparatodos.com.ar/2023/05/21/cristian-devincenzi-lucale-de-don-torcuato-para-el-mundo/", "img": "ASSETS-MEDIOS/periodico-paratodos-3.jpg" },
+  { "titulo": "Tigre Noticias", "desc": "Lucale firmó contrato con Universal Music.", "link": "https://tigrenoticias.com.ar/tigre-lucale-rapero-de-don-torcuato-firmo-un-contrato-discografico-con-universal-music/", "img": "ASSETS-MEDIOS/tigre-noticias2jpg" },
+  { "titulo": "Diario Lo Nuestro", "desc": "De Torcuato a Universal Music.", "link": "https://www.diariolonuestro.com.ar/single-post/de-torcuato-a-universal-music-umpg-y-tommy-qun-records", "img": "ASSETS-MEDIOS/diario-lo-nuestro.jpg" },
+  { "titulo": "Tigre Noticias", "desc": "Lucale lanzó el tema Barrio Picado.", "link": "https://tigrenoticias.com.ar/tigre-lucale-de-don-torcuato-lanzo-el-tema-barrio-picado/", "img": "ASSETS-MEDIOS/tigre-noticias.jpg" },
+  { "titulo": "Zona Norte Visión", "desc": "Lucale, el rapero que dio un gran salto.", "link": "https://zonanortevision.com.ar/304369/lucale-el-rapero-uruguayo-que-dio-un-gran-salto-en-la-escena-urbana-argentina/", "img": "ASSETS-MEDIOS/zona-norte-vision-2.jpg" },
+  { "titulo": "El Bonaerense", "desc": "Lucale, artista de música urbana con gran proyección.", "link": "https://www.elbonaerense.news/2023/09/22/exclusivo-lucale--artista-de-musica-urbana-en-zona-norte-con-gran-proyeccion", "img": "ASSETS-MEDIOS/elbonaerense.jpg" },
+  { "titulo": "Noroeste Madrid", "desc": "Salto de gigante al firmar con Universal Music.", "link": "https://www.noroestemadrid.com/2023/09/salto-de-gigante-del-rapero-lucale-en-su-carrera-musical-al-firmar-con-la-discografica-universal-music/", "img": "ASSETS-MEDIOS/noroestemadrid.jpg" },
+
+  { "titulo": "Nova Uruguay", "desc": "Lucale, el rapero que dio un gran salto.", "link": "https://www.novauruguay.com/nota.asp?t=VIDEO-Lucale-el-rapero-uruguayo-que-dio-un-gran-salto-en-la-escena-urbana-argentina&id=27254&id tiponota=9", "img": "ASSETS-MEDIOS/nova-uruguay.jpg" },
+  { "titulo": "Sudoeste BA", "desc": "Lucale, rapero de Don Torcuato, ha dado un gran salto.", "link": "https://www.sudoesteba.com/2023-09-05/lucale-rapero-de-don-torcuato-ha-dado-un-gran-salto-en-su-carrera-musical-6739/", "img": "ASSETS-MEDIOS/sudoeste-ba.jpg" }
+]
+   
+    const container = document.getElementById('contenedor-prensa');
+    noticias.forEach(item => {
+        const section = document.createElement('section');
+        section.classList.add('con-trama');
+        section.style.backgroundImage = `url('${item.img}')`;
+        section.innerHTML = `
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>${item.titulo}</h2>
+                <p>${item.desc}</p>
+                <a href="${item.link}" target="_blank" class="btn-ver-aca">Ver acá</a>
+            </div>
+        `;
+        container.appendChild(section);
+    });
+
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            document.body.classList.add('shrink');
+        } else {
+            document.body.classList.remove('shrink');
+        }
+    });
+</script>
 </body>
-</html>
+</html> 
