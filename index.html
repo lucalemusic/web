@@ -44,7 +44,7 @@
             overflow-x: hidden;
         }
 
-        /* MANIFIESTO DE ADVERTENCIA / PRELOADER */
+        /* MANIFIESTO DE ADVERTENCIA */
         #preloader {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -80,15 +80,15 @@
         }
         .enter-btn:hover { transform: scale(1.05); }
 
-        /* HERO AJUSTADO Y CENTRADO SIMÉTRICO PARA PC */
+        /* HERO HEADER - CENTRADO ABSOLUTO PC Y MÓVIL */
         header.hero {
             height: 100vh;
             width: 100%;
             background: linear-gradient(to top, #000000 10%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.8) 100%), url('galeria/lucale-perfilweb.jpg') no-repeat center center;
             background-size: cover;
             display: flex; 
-            align-items: center; /* Centrado vertical */
-            justify-content: center; /* Centrado horizontal */
+            align-items: center; 
+            justify-content: center; 
             box-sizing: border-box;
             text-align: center;
         }
@@ -98,7 +98,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centra los hijos adentro del contenedor */
+            align-items: center; 
         }
         header.hero h1 {
             font-size: clamp(55px, 10vw, 120px); font-weight: 900; margin: 0; letter-spacing: -4px;
@@ -110,21 +110,22 @@
             font-weight: 700;
         }
 
-        /* Botonera de la Cabecera perfectamente alineada */
+        /* FILA DE BOTONES TOTALMENTE CENTRADA EN TODA LA WEB */
         .buttons-grid { 
             display: flex; 
             gap: 15px; 
             flex-wrap: wrap; 
-            justify-content: center; /* Alinea los botones al centro en PC */
-            align-items: center;
+            justify-content: center !important; 
+            align-items: center !important;
             width: 100%;
+            margin-top: 25px;
         }
         .btn-premium {
             padding: 14px 32px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
             color: #fff; text-decoration: none; background: rgba(0,0,0,0.7);
             border: 1px solid var(--border-gold); transition: all 0.3s ease;
             text-align: center;
-            min-width: 180px; /* Consistencia en los tamaños de botón */
+            min-width: 190px; 
             box-sizing: border-box;
         }
         .btn-premium:hover {
@@ -143,12 +144,13 @@
         .marquee-wrapper span { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-flat); margin-right: 50px; }
         @keyframes loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* Contenedores de Sección */
+        /* CONTENEDORES DE BLOQUES */
         .main-layout { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
         
         section.studio-panel {
             background: var(--bg-matte); border: 1px solid rgba(212,175,55,0.15);
             padding: 50px; margin-bottom: 60px; box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+            box-sizing: border-box;
         }
         section.studio-panel h2 {
             font-size: 24px; font-weight: 900; letter-spacing: 2px; margin: 0 0 30px 0;
@@ -159,7 +161,7 @@
         .bio-text-layout p { margin: 0 0 20px 0; }
         .bio-highlight { color: #fff; font-weight: 700; border-bottom: 1px dashed var(--gold-flat); }
 
-        /* REPRODUCTOR ENCUADRADO MECANIZADO */
+        /* REPRODUCTOR MASTER */
         .custom-audio-engine {
             background: #000000; border: 1px solid var(--gold-flat); padding: 30px; margin-top: 40px; box-sizing: border-box;
         }
@@ -208,25 +210,6 @@
 
         footer { text-align: center; padding: 60px 20px; font-size: 11px; color: #444; letter-spacing: 1px; border-top: 1px solid #111; margin-top: 60px; }
     </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MusicGroup",
-      "name": "Lucale",
-      "alternateName": "Cristian Alexander Devincenzi Lemos",
-      "url": "https://lucalemusic.com.ar",
-      "mainEntityOfPage": "https://www.wikidata.org/wiki/Q117826469",
-      "description": "Artista de rap uruguayo/argentino y diseñador industrial, reconocido por su obra 'Candelabro' y la creación del Sillón Octa. Referente del rap de la periferia en Don Torcuato, norte de Buenos Aires.",
-      "genre": ["Rap", "Hip Hop", "Urbano", "Tango Rap", "New Cumbia"],
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q117826469",
-        "https://es.wikipedia.org/wiki/Usuario:Lkl_20/Lucale",
-        "https://www.instagram.com/lucale.music",
-        "https://www.youtube.com/@LUCALEMUSIC"
-      ]
-    }
-    </script> 
 </head>
 <body>
 
@@ -262,10 +245,10 @@
         <section id="bio" class="studio-panel">
             <h2>IDENTIDAD MULTIDISCIPLINARIA // BIO</h2>
             <div class="bio-text-layout">
-                <p><span class="bio-highlight">Lucale</span> (Cristian Alexander Devincenzi Lemos) articula la narrativa explícita del rap de autor con la precisión milimétrica del diseño de objetos. Afincado firmemente como un referente del rap de la periferia en <span class="bio-highlight">Don Torcuato</span>, en la zona norte del Gran Buenos Aires, su obra cruza las fronteras tradicionales del circuito comercial musical.</p>
+                <p><span class="bio-highlight">Lucale</span> (Cristian Alexander Devincenzi Lemos) articula la narrativa explícita del rap de autor con la precisión milimétrica del diseño de objetos. Afincado firmemente como un referente del rap de la periferia en <span class="bio-highlight">Don Torcuato</span>, en la zona norte del Gran Buenos Aires, su obra cruza las frontiers tradicionales del circuito comercial musical.</p>
                 <p>Como diseñador industrial, es el creador intelectual y fabricante del aclamado <span class="bio-highlight">Sillón Octa ®</span> y la pieza conceptual "Candelabro", cruzando la geometría pura con la manufactura nacional. Su trayectoria artística y cultural cuenta con un amplio respaldo documental en medios masivos, prensa escrita y registros académicos independientes de la región metropolitana.</p>
             </div>
-            <div class="buttons-grid" style="margin-top: 30px; justify-content: flex-start;">
+            <div class="buttons-grid">
                 <a href="https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale" target="_blank" class="btn-premium">FICHA BIOGRÁFICA CMTV</a>
             </div>
         </section>
@@ -284,35 +267,35 @@
                 </div>
 
                 <div class="playlist-holder">
-                    <div class="playlist-track active-track" data-src="audio/TRACK-1.mp3" onclick="selectAndPlay(this)">
+                    <div class="playlist-track active-track" data-src="AUDIO/track-1.mp3" onclick="selectAndPlay(this)">
                         <div class="track-meta">
                             <span class="track-idx">01</span>
                             <span class="track-line-name">TRACK 1</span>
                         </div>
                         <span class="track-trigger-btn">PLAY</span>
                     </div>
-                    <div class="playlist-track" data-src="audio/TRACK-2.mp3" onclick="selectAndPlay(this)">
+                    <div class="playlist-track" data-src="AUDIO/track-2.mp3" onclick="selectAndPlay(this)">
                         <div class="track-meta">
                             <span class="track-idx">02</span>
                             <span class="track-line-name">TRACK 2</span>
                         </div>
                         <span class="track-trigger-btn">PLAY</span>
                     </div>
-                    <div class="playlist-track" data-src="audio/TRACK-3.mp3" onclick="selectAndPlay(this)">
+                    <div class="playlist-track" data-src="AUDIO/track-3.mp3" onclick="selectAndPlay(this)">
                         <div class="track-meta">
                             <span class="track-idx">03</span>
                             <span class="track-line-name">TRACK 3</span>
                         </div>
                         <span class="track-trigger-btn">PLAY</span>
                     </div>
-                    <div class="playlist-track" data-src="audio/TRACK-4.mp3" onclick="selectAndPlay(this)">
+                    <div class="playlist-track" data-src="AUDIO/track-4.mp3" onclick="selectAndPlay(this)">
                         <div class="track-meta">
                             <span class="track-idx">04</span>
                             <span class="track-line-name">TRACK 4</span>
                         </div>
                         <span class="track-trigger-btn">PLAY</span>
                     </div>
-                    <div class="playlist-track" data-src="audio/TRACK-5.mp3" onclick="selectAndPlay(this)">
+                    <div class="playlist-track" data-src="AUDIO/track-5.mp3" onclick="selectAndPlay(this)">
                         <div class="track-meta">
                             <span class="track-idx">05</span>
                             <span class="track-line-name">TRACK 5</span>
@@ -329,9 +312,9 @@
                 </div>
             </div>
 
-            <audio id="hidden-core-audio" src="audio/TRACK-1.mp3" preload="auto" style="display:none;"></audio>
+            <audio id="hidden-core-audio" src="AUDIO/track-1.mp3" preload="auto" style="display:none;"></audio>
 
-            <div class="buttons-grid" style="margin-top:40px; justify-content: flex-start;">
+            <div class="buttons-grid">
                 <a class="btn-premium" href="https://open.spotify.com/artist/tu_id" target="_blank">SPOTIFY</a>
                 <a class="btn-premium" href="LINKS/">PLATAFORMAS GLOBALES</a>
             </div>
@@ -343,7 +326,7 @@
             <div class="product-media">
                 <img src="img_octa.jpg" alt="Sillón Octa de Lucale - Diseño Industrial Argentino">
             </div>
-            <div class="buttons-grid" style="justify-content: flex-start;">
+            <div class="buttons-grid">
                 <a href="https://articulo.mercadolibre.com.ar/MLA-1682759613-sillon-moderno-octagonal-tela-1-m-x-1-m-directo-de-fabrica-_JM" target="_blank" class="btn-premium btn-action-green">ADQUIRIR EN MERCADO LIBRE</a>
             </div>
         </section>
@@ -351,14 +334,14 @@
         <section class="studio-panel">
             <h2>ARCHIVO DOCUMENTAL & PRENSA</h2>
             <p>Acceso al registro histórico de publicaciones digitales, reseñas de lanzamientos y cobertura de prensa.</p>
-            <div class="buttons-grid" style="justify-content: flex-start;">
+            <div class="buttons-grid">
                 <a href="prensa.html" class="btn-premium">ABRIR FOLIO DE PRENSA</a>
             </div>
         </section>
 
         <section class="studio-panel">
             <h2>CANAL DE COMUNICACIÓN</h2>
-            <div class="buttons-grid" style="justify-content: flex-start;">
+            <div class="buttons-grid">
                 <a href="mailto:contacto@lucalemusic.com.ar" class="btn-premium">EMAIL DIRECTO</a>
                 <a href="https://wa.me/5491130157350" target="_blank" class="btn-premium">DESPACHO WHATSAPP</a>
             </div>
@@ -375,16 +358,12 @@
         const progressBar = document.getElementById('track-progress');
         const titleTarget = document.getElementById('track-title-target');
 
-        // Quitar preloader
         function unlockSite() {
             const loader = document.getElementById('preloader');
             loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 600);
+            setTimeout(() => { loader.style.display = 'none'; }, 600);
         }
 
-        // Selección y recarga de track del servidor forzada (Fix de reproducción)
         function selectAndPlay(element) {
             document.querySelectorAll('.playlist-track').forEach(t => {
                 t.classList.remove('active-track');
@@ -399,28 +378,29 @@
             
             titleTarget.innerText = trackName;
             
-            // Re-inyección robusta del CORE de audio
             audio.src = trackSrc;
-            audio.load(); // Fuerza al navegador a leer el archivo nuevo en el buffer
+            audio.load(); 
             
-            // Ejecutar play manejando la promesa nativa
             var playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.then(_ => {
                     masterToggle.innerText = '❚❚';
                 }).catch(error => {
-                    console.log("Interrupción de reproducción controlada:", error);
+                    console.error("Error crítico de reproducción. Verifique que los archivos estén en AUDIO/ y en minúsculas.", error);
                 });
             }
         }
 
-        // Interruptor maestro Play / Pausa
         function toggleAudio() {
-            if (audio.src === "" || audio.paused) {
-                audio.play();
-                masterToggle.innerText = '❚❚';
-                const activeBtn = document.querySelector('.active-track .track-trigger-btn');
-                if(activeBtn) activeBtn.innerText = 'SONANDO';
+            if (audio.paused) {
+                audio.play().then(() => {
+                    masterToggle.innerText = '❚❚';
+                    const activeBtn = document.querySelector('.active-track .track-trigger-btn');
+                    if(activeBtn) activeBtn.innerText = 'SONANDO';
+                }).catch(err => {
+                    const firstTrack = document.querySelector('.playlist-track');
+                    if(firstTrack) selectAndPlay(firstTrack);
+                });
             } else {
                 audio.pause();
                 masterToggle.innerText = '▶';
@@ -429,7 +409,6 @@
             }
         }
 
-        // Sincronización de barra temporal
         audio.addEventListener('timeupdate', () => {
             if (audio.duration) {
                 const percent = (audio.currentTime / audio.duration) * 100;
@@ -437,19 +416,16 @@
             }
         });
 
-        // Buscador interactivo sobre línea de tiempo
         function seekAudio(event) {
             const timeline = document.getElementById('timeline-bg');
             const rect = timeline.getBoundingClientRect();
             const clickX = event.clientX - rect.left;
             const width = rect.width;
             if(audio.duration) {
-                const seekTo = (clickX / width) * audio.duration;
-                audio.currentTime = seekTo;
+                audio.currentTime = (clickX / width) * audio.duration;
             }
         }
 
-        // Reset al finalizar canción
         audio.addEventListener('ended', () => {
             masterToggle.innerText = '▶';
             progressBar.style.width = '0%';
