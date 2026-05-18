@@ -200,7 +200,7 @@
                             <img src="tridente.png" alt="LÚCALE Logo Oficial"/>
                         </div>
                         <div class="brand-info">
-                            <h1>XML SITEMAP // <span>LÚCALE MUSIC</span></h1>
+                            <h1>XML SITEMAP // <span>LUCALE MUSIC</span></h1>
                             <p class="desc">
                                 Índice digital de distribución y rastreo SEO. Optimizado para el mapeo automatizado de Google Core.
                             </p>
@@ -237,7 +237,7 @@
                     </table>
                     
                     <div class="footer-brand">
-                        © 2026 LÚCALE MUSIC | OFFICIAL WEB ARCHIVE
+                        © 2026 LUCALE MUSIC | OFFICIAL WEB ARCHIVE
                     </div>
                 </div>
             </body>
