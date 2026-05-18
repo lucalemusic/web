@@ -33,7 +33,6 @@
             --text-white: #ffffff;
             --text-gray: #a0a0a0;
             --border-gold: rgba(212, 175, 55, 0.25);
-            --border-heavy: 2px solid #d4af37;
         }
 
         body {
@@ -45,7 +44,7 @@
             overflow-x: hidden;
         }
 
-        /* 1. MANIFIESTO DE ADVERTENCIA / PRELOADER BRUTALISTA */
+        /* MANIFIESTO DE ADVERTENCIA / PRELOADER */
         #preloader {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -81,32 +80,52 @@
         }
         .enter-btn:hover { transform: scale(1.05); }
 
-        /* 2. HERO INMERSIVO CON TU FOTO DE PERFIL */
+        /* HERO AJUSTADO Y CENTRADO SIMÉTRICO PARA PC */
         header.hero {
             height: 100vh;
             width: 100%;
-            background: linear-gradient(to top, #000000 5%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.8) 100%), url('galeria/lucale-perfilweb.jpg') no-repeat center center;
+            background: linear-gradient(to top, #000000 10%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.8) 100%), url('galeria/lucale-perfilweb.jpg') no-repeat center center;
             background-size: cover;
-            display: flex; align-items: flex-end;
+            display: flex; 
+            align-items: center; /* Centrado vertical */
+            justify-content: center; /* Centrado horizontal */
             box-sizing: border-box;
+            text-align: center;
         }
         .hero-content {
-            max-width: 1100px; margin: 0 auto; width: 100%; padding: 0 40px 100px 40px;
+            max-width: 900px; 
+            width: 100%; 
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los hijos adentro del contenedor */
         }
         header.hero h1 {
-            font-size: clamp(50px, 8vw, 110px); font-weight: 900; margin: 0; letter-spacing: -4px;
+            font-size: clamp(55px, 10vw, 120px); font-weight: 900; margin: 0; letter-spacing: -4px;
             background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
         }
         header.hero p {
-            font-size: 16px; color: var(--text-gray); margin: 15px 0 35px 0; letter-spacing: 3px; text-transform: uppercase;
+            font-size: clamp(12px, 2vw, 16px); color: var(--text-gray); margin: 15px 0 40px 0; letter-spacing: 3px; text-transform: uppercase;
+            font-weight: 700;
         }
 
-        /* Botonera Premium */
-        .buttons-grid { display: flex; gap: 15px; flex-wrap: wrap; }
+        /* Botonera de la Cabecera perfectamente alineada */
+        .buttons-grid { 
+            display: flex; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+            justify-content: center; /* Alinea los botones al centro en PC */
+            align-items: center;
+            width: 100%;
+        }
         .btn-premium {
-            padding: 14px 30px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-            color: #fff; text-decoration: none; background: rgba(0,0,0,0.6);
+            padding: 14px 32px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            color: #fff; text-decoration: none; background: rgba(0,0,0,0.7);
             border: 1px solid var(--border-gold); transition: all 0.3s ease;
+            text-align: center;
+            min-width: 180px; /* Consistencia en los tamaños de botón */
+            box-sizing: border-box;
         }
         .btn-premium:hover {
             background: var(--gold-gradient); color: #000; font-weight: 900;
@@ -115,7 +134,7 @@
         .btn-action-green { border-color: #00ff66; color: #00ff66; }
         .btn-action-green:hover { background: #00ff66; color: #000; box-shadow: 0 0 20px rgba(0,255,102,0.4); }
 
-        /* Marquee continuo */
+        /* Marquee */
         .marquee-container {
             background: #000; border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold);
             padding: 15px 0; overflow: hidden; white-space: nowrap;
@@ -124,7 +143,7 @@
         .marquee-wrapper span { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-flat); margin-right: 50px; }
         @keyframes loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* Contenedores de Sección Encuadrados */
+        /* Contenedores de Sección */
         .main-layout { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
         
         section.studio-panel {
@@ -136,14 +155,13 @@
             color: #fff; text-transform: uppercase; border-left: 4px solid var(--gold-flat); padding-left: 15px;
         }
 
-        /* 3. BIOGRAFÍA COMPLETA INCORPORADA */
         .bio-text-layout { font-size: 16px; color: #ccc; line-height: 1.8; }
         .bio-text-layout p { margin: 0 0 20px 0; }
         .bio-highlight { color: #fff; font-weight: 700; border-bottom: 1px dashed var(--gold-flat); }
 
-        /* 4. REPRODUCTOR PREMIUM INTEGRAD0 Y ENCUADRADO (ARREGLADO) */
+        /* REPRODUCTOR ENCUADRADO MECANIZADO */
         .custom-audio-engine {
-            background: #000000; border: 1px solid var(--gold-flat); padding: 30px; margin-top: 40px;
+            background: #000000; border: 1px solid var(--gold-flat); padding: 30px; margin-top: 40px; box-sizing: border-box;
         }
         .now-playing-banner {
             display: flex; justify-content: space-between; align-items: center;
@@ -156,7 +174,7 @@
         .playlist-track {
             display: flex; justify-content: space-between; align-items: center;
             padding: 15px 20px; background: #0b0b0b; border: 1px solid #1a1a1a;
-            cursor: pointer; transition: all 0.2s ease;
+            cursor: pointer; transition: all 0.2s ease; box-sizing: border-box;
         }
         .playlist-track:hover { border-color: rgba(212,175,55,0.5); background: #121212; }
         .playlist-track.active-track { border-color: var(--gold-flat); background: #161616; }
@@ -184,7 +202,6 @@
         .progress-timeline { flex-grow: 1; height: 4px; background: #222; position: relative; cursor: pointer; }
         .progress-fill { height: 100%; background: var(--gold-flat); width: 0%; }
 
-        /* Video e Imágenes de diseño */
         .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 40px; }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .product-media img { width: 100%; height: auto; display: block; border: 1px solid #222; margin-bottom: 30px; }
@@ -206,21 +223,7 @@
         "https://www.wikidata.org/wiki/Q117826469",
         "https://es.wikipedia.org/wiki/Usuario:Lkl_20/Lucale",
         "https://www.instagram.com/lucale.music",
-        "https://open.spotify.com/artist/1G06Siz3P375xXvS8hU3Dk",
-        "https://www.youtube.com/@LUCALEMUSIC",
-        "https://music.youtube.com/channel/UCKr_veDynshfkVrLJ_g5PTg",
-        "https://music.apple.com/ar/artist/lucale/1521276479",
-        "https://www.deezer.com/artist/99323142",
-        "https://soundcloud.com/lucale-6846868",
-        "https://www.facebook.com/Lucale777",
-        "https://hrj.com.ar/BIOGRAFIAS-ARTISTAS/lucale.html",
-        "https://basic.gba.gob.ar/search/detail/67746",
-        "https://www.tiktok.com/@lucale.music",
-        "https://www.linkedin.com/in/lucalemusic/",
-        "https://x.com/lucale_music",
-        "https://www.threads.net/@lucale.music",
-        "https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale",
-        "https://revistalanegra.com.ar/wp-content/uploads/2025/12/revista-La-Negra-de-enero-2026.pdf"
+        "https://www.youtube.com/@LUCALEMUSIC"
       ]
     }
     </script> 
@@ -262,7 +265,7 @@
                 <p><span class="bio-highlight">Lucale</span> (Cristian Alexander Devincenzi Lemos) articula la narrativa explícita del rap de autor con la precisión milimétrica del diseño de objetos. Afincado firmemente como un referente del rap de la periferia en <span class="bio-highlight">Don Torcuato</span>, en la zona norte del Gran Buenos Aires, su obra cruza las fronteras tradicionales del circuito comercial musical.</p>
                 <p>Como diseñador industrial, es el creador intelectual y fabricante del aclamado <span class="bio-highlight">Sillón Octa ®</span> y la pieza conceptual "Candelabro", cruzando la geometría pura con la manufactura nacional. Su trayectoria artística y cultural cuenta con un amplio respaldo documental en medios masivos, prensa escrita y registros académicos independientes de la región metropolitana.</p>
             </div>
-            <div class="buttons-grid" style="margin-top: 30px;">
+            <div class="buttons-grid" style="margin-top: 30px; justify-content: flex-start;">
                 <a href="https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale" target="_blank" class="btn-premium">FICHA BIOGRÁFICA CMTV</a>
             </div>
         </section>
@@ -326,9 +329,9 @@
                 </div>
             </div>
 
-            <audio id="hidden-core-audio" src="audio/TRACK-1.mp3" style="display:none;"></audio>
+            <audio id="hidden-core-audio" src="audio/TRACK-1.mp3" preload="auto" style="display:none;"></audio>
 
-            <div class="buttons-grid" style="margin-top:40px;">
+            <div class="buttons-grid" style="margin-top:40px; justify-content: flex-start;">
                 <a class="btn-premium" href="https://open.spotify.com/artist/tu_id" target="_blank">SPOTIFY</a>
                 <a class="btn-premium" href="LINKS/">PLATAFORMAS GLOBALES</a>
             </div>
@@ -340,7 +343,7 @@
             <div class="product-media">
                 <img src="img_octa.jpg" alt="Sillón Octa de Lucale - Diseño Industrial Argentino">
             </div>
-            <div class="buttons-grid">
+            <div class="buttons-grid" style="justify-content: flex-start;">
                 <a href="https://articulo.mercadolibre.com.ar/MLA-1682759613-sillon-moderno-octagonal-tela-1-m-x-1-m-directo-de-fabrica-_JM" target="_blank" class="btn-premium btn-action-green">ADQUIRIR EN MERCADO LIBRE</a>
             </div>
         </section>
@@ -348,14 +351,14 @@
         <section class="studio-panel">
             <h2>ARCHIVO DOCUMENTAL & PRENSA</h2>
             <p>Acceso al registro histórico de publicaciones digitales, reseñas de lanzamientos y cobertura de prensa.</p>
-            <div class="buttons-grid">
+            <div class="buttons-grid" style="justify-content: flex-start;">
                 <a href="prensa.html" class="btn-premium">ABRIR FOLIO DE PRENSA</a>
             </div>
         </section>
 
         <section class="studio-panel">
             <h2>CANAL DE COMUNICACIÓN</h2>
-            <div class="buttons-grid">
+            <div class="buttons-grid" style="justify-content: flex-start;">
                 <a href="mailto:contacto@lucalemusic.com.ar" class="btn-premium">EMAIL DIRECTO</a>
                 <a href="https://wa.me/5491130157350" target="_blank" class="btn-premium">DESPACHO WHATSAPP</a>
             </div>
@@ -372,7 +375,7 @@
         const progressBar = document.getElementById('track-progress');
         const titleTarget = document.getElementById('track-title-target');
 
-        // Cerrar cartel de advertencia y activar contexto de audio
+        // Quitar preloader
         function unlockSite() {
             const loader = document.getElementById('preloader');
             loader.style.opacity = '0';
@@ -381,34 +384,41 @@
             }, 600);
         }
 
-        // Selección y reproducción fluida desde la lista
+        // Selección y recarga de track del servidor forzada (Fix de reproducción)
         function selectAndPlay(element) {
-            // Remover clases activas anteriores
             document.querySelectorAll('.playlist-track').forEach(t => {
                 t.classList.remove('active-track');
                 t.querySelector('.track-trigger-btn').innerText = 'PLAY';
             });
 
-            // Activar track actual
             element.classList.add('active-track');
             element.querySelector('.track-trigger-btn').innerText = 'SONANDO';
             
-            // Actualizar textos y lanzar reproductor
             const trackSrc = element.getAttribute('data-src');
             const trackName = element.querySelector('.track-line-name').innerText;
             
             titleTarget.innerText = trackName;
+            
+            // Re-inyección robusta del CORE de audio
             audio.src = trackSrc;
-            audio.play();
-            masterToggle.innerText = '❚❚';
+            audio.load(); // Fuerza al navegador a leer el archivo nuevo en el buffer
+            
+            // Ejecutar play manejando la promesa nativa
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    masterToggle.innerText = '❚❚';
+                }).catch(error => {
+                    console.log("Interrupción de reproducción controlada:", error);
+                });
+            }
         }
 
-        // Botón general Play/Pausa
+        // Interruptor maestro Play / Pausa
         function toggleAudio() {
-            if (audio.paused) {
+            if (audio.src === "" || audio.paused) {
                 audio.play();
                 masterToggle.innerText = '❚❚';
-                // Poner en estado "sonando" al track activo en la interfaz
                 const activeBtn = document.querySelector('.active-track .track-trigger-btn');
                 if(activeBtn) activeBtn.innerText = 'SONANDO';
             } else {
@@ -419,26 +429,32 @@
             }
         }
 
-        // Barra de progreso interactiva en tiempo real
+        // Sincronización de barra temporal
         audio.addEventListener('timeupdate', () => {
-            const percent = (audio.currentTime / audio.duration) * 100;
-            progressBar.style.width = percent + '%';
+            if (audio.duration) {
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = percent + '%';
+            }
         });
 
-        // Permitir clicks sobre la barra para adelantar o retrasar el tema
+        // Buscador interactivo sobre línea de tiempo
         function seekAudio(event) {
             const timeline = document.getElementById('timeline-bg');
             const rect = timeline.getBoundingClientRect();
             const clickX = event.clientX - rect.left;
             const width = rect.width;
-            const seekTo = (clickX / width) * audio.duration;
-            audio.currentTime = seekTo;
+            if(audio.duration) {
+                const seekTo = (clickX / width) * audio.duration;
+                audio.currentTime = seekTo;
+            }
         }
 
-        // Pasar al siguiente tema automáticamente si termina
+        // Reset al finalizar canción
         audio.addEventListener('ended', () => {
             masterToggle.innerText = '▶';
             progressBar.style.width = '0%';
+            const activeBtn = document.querySelector('.active-track .track-trigger-btn');
+            if(activeBtn) activeBtn.innerText = 'PLAY';
         });
     </script>
     <script src="script.js"></script>
