@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="2adb702965582deb" />
     
-    <title>LUCALE | Rap Argentino & Diseño Industrial de Autor</title>
+    <title>LUCALE | Archivo Oficial</title>
     
     <link rel="icon" type="image/png" href="https://lucalemusic.com.ar/nuevo-logo.png">
     <link rel="preload" href="tridente.png" as="image" fetchpriority="high">
@@ -26,13 +26,10 @@
     <style>
         :root {
             --bg-pure: #000000;
-            --bg-matte: #0b0b0b;
-            --bg-studio: #121212;
             --gold-flat: #d4af37;
             --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
             --text-white: #ffffff;
-            --text-gray: #a0a0a0;
-            --border-gold: rgba(212, 175, 55, 0.25);
+            --text-gray: #888888;
         }
 
         body {
@@ -44,195 +41,153 @@
             overflow-x: hidden;
         }
 
-        /* PRELOADER / AVISO */
+        /* ANIMACIONES ESTILO TRAP AVANT-GARDE */
+        @keyframes logoGlowPulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(212,175,55,0.2)) brightness(1); }
+            50% { transform: scale(1.03); filter: drop-shadow(0 0 15px rgba(212,175,55,0.6)) brightness(1.2); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(212,175,55,0.2)) brightness(1); }
+        }
+
+        @keyframes tridenteFloat {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+            50% { transform: translateY(-10px) rotate(5deg); opacity: 0.35; filter: hue-rotate(45deg); }
+            100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+        }
+
+        /* PRELOADER INTERACTIVO */
         #preloader {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: var(--bg-pure);
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             z-index: 99999; padding: 20px; box-sizing: border-box; text-align: center;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .manifesto-box {
-            max-width: 500px; border: 2px solid var(--gold-flat); padding: 30px;
-            background: var(--bg-matte); box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+            max-width: 450px; text-align: center;
         }
-        .manifesto-box img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 20px; }
-        .manifesto-box h3 { margin: 0 0 10px 0; font-size: 14px; letter-spacing: 2px; color: var(--gold-flat); }
-        .manifesto-box p { font-size: 13px; color: var(--text-gray); line-height: 1.6; margin: 0 0 25px 0; }
+        .manifesto-box img { 
+            width: 90px; height: 90px; object-fit: contain; margin-bottom: 30px;
+            animation: logoGlowPulse 3s ease-in-out infinite;
+        }
+        .manifesto-box h3 { font-size: 12px; letter-spacing: 4px; color: var(--gold-flat); font-weight: 900; margin-bottom: 15px; }
+        .manifesto-box p { font-size: 13px; color: var(--text-gray); line-height: 1.6; margin: 0 0 35px 0; font-weight: 400; }
         .enter-btn {
-            background: var(--gold-gradient); color: #000; border: none; padding: 12px 35px; font-weight: 900;
-            font-size: 12px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer;
+            background: #fff; color: #000; border: none; padding: 16px 45px; font-weight: 900;
+            font-size: 11px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .enter-btn:hover { background: var(--gold-flat); transform: scale(1.05); }
+
+        /* NAV FLOTANTE FIJA EN ESQUINAS (ESTILO KHEA) */
+        .brand-header {
+            position: fixed; top: 0; left: 0; width: 100%; padding: 30px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; pointer-events: none; box-sizing: border-box;
+        }
+        .nav-logo-left {
+            font-size: 20px; font-weight: 900; letter-spacing: 4px; color: #fff;
+            text-decoration: none; pointer-events: auto;
+            animation: logoGlowPulse 4s ease-in-out infinite;
+        }
+        .nav-logo-right img {
+            width: 32px; height: 32px; object-fit: contain; pointer-events: auto;
+            animation: logoGlowPulse 3s ease-in-out infinite;
         }
 
-        /* HERO HEADER CENTRADO */
+        /* HERO GIGANTE MINIMALISTA */
         header.hero {
             height: 100vh; width: 100%;
-            background: linear-gradient(to top, #000000 10%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.8) 100%), url('galeria/lucale-perfilweb.jpg') no-repeat center center;
-            background-size: cover; display: flex; align-items: center; justify-content: center; box-sizing: border-box; text-align: center;
+            background: linear-gradient(to top, #000 5%, rgba(0,0,0,0.1) 50%, #000 95%), url('galeria/lucale-perfilweb.jpg') no-repeat center center;
+            background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center;
         }
-        .hero-content { max-width: 900px; width: 100%; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .hero-content { max-width: 1000px; padding: 20px; }
         header.hero h1 {
-            font-size: clamp(55px, 10vw, 120px); font-weight: 900; margin: 0; letter-spacing: -4px;
-            background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            font-size: clamp(60px, 15vw, 150px); font-weight: 900; margin: 0; letter-spacing: -6px;
+            line-height: 0.85; text-transform: uppercase; color: #fff;
         }
-        header.hero p { font-size: clamp(12px, 2vw, 16px); color: var(--text-gray); margin: 15px 0 40px 0; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; }
+        header.hero p { font-size: clamp(11px, 1.5vw, 14px); color: var(--gold-flat); margin: 25px 0 40px 0; letter-spacing: 5px; text-transform: uppercase; font-weight: 700; }
 
-        /* BOTONERAS GLOBALES ENCUADRADAS AL CENTRO */
+        /* BOTONERAS ESTILO PREMIUM INTERNACIONAL */
         .buttons-grid { 
-            display: flex; gap: 15px; flex-wrap: wrap; justify-content: center !important; align-items: center !important; width: 100%; margin-top: 25px;
+            display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%; margin-top: 20px;
         }
         .btn-premium {
-            padding: 14px 32px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-            color: #fff; text-decoration: none; background: rgba(0,0,0,0.7); border: 1px solid var(--border-gold);
-            text-align: center; min-width: 190px; box-sizing: border-box; transition: all 0.3s ease;
+            padding: 16px 35px; font-size: 11px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase;
+            color: #fff; text-decoration: none; background: transparent; border: 1px solid rgba(255,255,255,0.2);
+            text-align: center; min-width: 200px; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .btn-premium:hover { background: var(--gold-gradient); color: #000; font-weight: 900; box-shadow: 0 0 20px rgba(212,175,55,0.4); transform: translateY(-2px); }
+        .btn-premium:hover { border-color: #fff; background: #fff; color: #000; transform: translateY(-3px); }
         .btn-action-green { border-color: #00ff66; color: #00ff66; }
-        .btn-action-green:hover { background: #00ff66; color: #000; box-shadow: 0 0 20px rgba(0,255,102,0.4); }
+        .btn-action-green:hover { background: #00ff66; color: #000; border-color: #00ff66; }
 
-        /* Marquee */
-        .marquee-container { background: #000; border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); padding: 15px 0; overflow: hidden; white-space: nowrap; }
-        .marquee-wrapper { display: inline-block; animation: loop 30s linear infinite; }
-        .marquee-wrapper span { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-flat); margin-right: 50px; }
+        /* MARQUEE CONTINUO */
+        .marquee-container { background: #000; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 20px 0; overflow: hidden; white-space: nowrap; }
+        .marquee-wrapper { display: inline-block; animation: loop 25s linear infinite; }
+        .marquee-wrapper span { font-size: 12px; font-weight: 900; letter-spacing: 3px; color: #fff; margin-right: 60px; text-transform: uppercase; }
         @keyframes loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* CONTENEDORES MAESTROS */
-        .main-layout { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        /* DISEÑO DE LAYOUT ESTILO BLACK GRID */
+        .main-layout { max-width: 950px; margin: 0 auto; padding: 80px 20px; }
         
         section.studio-panel {
-            background: var(--bg-matte); border: 1px solid rgba(212, 175, 55, 0.15); padding: 50px; margin-bottom: 60px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.9); box-sizing: border-box; width: 100%;
+            background: transparent; padding: 60px 0; margin-bottom: 40px; width: 100%;
         }
         section.studio-panel h2 {
-            font-size: 24px; font-weight: 900; letter-spacing: 2px; margin: 0 0 30px 0;
-            color: #fff; text-transform: uppercase; border-left: 4px solid var(--gold-flat); padding-left: 15px;
+            font-size: clamp(22px, 4vw, 36px); font-weight: 900; letter-spacing: -1px; margin: 0 0 35px 0;
+            color: #fff; text-transform: uppercase; text-align: center;
         }
 
-        .bio-text-layout { font-size: 16px; color: #ccc; line-height: 1.8; }
-        .bio-highlight { color: #fff; font-weight: 700; border-bottom: 1px dashed var(--gold-flat); }
+        .bio-text-layout { font-size: 17px; color: #888; line-height: 1.8; text-align: center; max-width: 750px; margin: 0 auto 40px auto; }
+        .bio-highlight { color: #fff; font-weight: 700; }
 
         /* ==========================================================================
-           SISTEMA RACK DE AUDIO CON MATRIZ DE TRIDENTES DESTELLANTES EN MOVIMIENTO
+           REPRODUCTOR CONSOLA MINIMALISTA (ESTILO PLATAFORMA DE LANZAMIENTO)
            ========================================================================== */
         .audio-rack-system {
-            width: 100%; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 15px; 
-            margin-top: 40px; 
-            margin-bottom: 30px;
-            box-sizing: border-box;
-            border: 2px solid var(--gold-flat);
-            padding: 30px;
-            background-color: #000000;
-            position: relative !important;
-            overflow: hidden !important;
-            box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.15);
+            width: 100%; display: flex; flex-direction: column; gap: 2px; margin-top: 40px; margin-bottom: 40px;
+            background: #111; padding: 2px; box-sizing: border-box; position: relative;
         }
 
-        /* ANIMACIÓN DE TRIDENTES MOVIMIENTO DIAGONAL CONTINUO + DESTELLO CROMÁTICO */
+        /* Matriz de fondo integrada sutil detrás de los tracks */
         .audio-rack-system::before {
-            content: "" !important;
-            position: absolute !important;
-            top: -100px !important; left: -100px !important;
-            width: 200% !important; height: 200% !important;
-            background-image: url('tridente.png') !important;
-            background-size: 50px 50px !important;
-            background-repeat: repeat !important;
-            z-index: 0 !important;
-            pointer-events: none !important;
-            animation: tridenteBrutalEngine 12s linear infinite !important;
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('tridente.png') repeat center; background-size: 60px 60px;
+            z-index: 0; animation: tridenteFloat 8s ease-in-out infinite; pointer-events: none;
         }
 
-        @keyframes tridenteBrutalEngine {
-            0% {
-                transform: translate(0, 0);
-                opacity: 0.15;
-                filter: hue-rotate(0deg) drop-shadow(0 0 2px rgba(214, 175, 55, 0.3));
-            }
-            35% {
-                opacity: 0.45;
-                filter: hue-rotate(60deg) drop-shadow(0 0 12px rgba(255, 255, 255, 0.6)); /* Destello platino brillante */
-            }
-            70% {
-                opacity: 0.25;
-                filter: hue-rotate(180deg) drop-shadow(0 0 8px rgba(186, 141, 40, 0.5)); /* Destello oro viejo */
-            }
-            100% {
-                transform: translate(50px, 50px); /* Movimiento infinito uniforme */
-                opacity: 0.15;
-                filter: hue-rotate(360deg) drop-shadow(0 0 2px rgba(214, 175, 55, 0.3));
-            }
-        }
-
-        /* Filas del rack con diseño de consola integrada */
         .rack-row {
-            width: 100%; 
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(212, 175, 55, 0.3); 
-            padding: 20px 25px;
-            display: grid; 
-            grid-template-columns: 80px 1fr 140px;
-            align-items: center; 
-            gap: 20px; 
-            box-sizing: border-box;
-            position: relative !important;
-            z-index: 1 !important;
-            transition: all 0.2s ease-in-out;
+            width: 100%; background: #000; padding: 25px 30px;
+            display: grid; grid-template-columns: 60px 1fr 120px; align-items: center; gap: 20px; 
+            box-sizing: border-box; position: relative; z-index: 1; transition: background 0.2s ease;
         }
-        .rack-row:hover {
-            border-color: var(--gold-flat);
-            background: rgba(18, 18, 18, 0.98);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
-        }
+        .rack-row:hover { background: #050505; }
 
-        .rack-idx { font-size: 11px; font-weight: 900; color: var(--gold-flat); letter-spacing: 2px; font-family: monospace; }
-        .rack-title { font-size: 14px; font-weight: 900; color: #ffffff; letter-spacing: 1.5px; text-transform: uppercase; }
+        .rack-idx { font-size: 11px; font-weight: 700; color: #444; font-family: monospace; }
+        .rack-title { font-size: 15px; font-weight: 700; color: #ffffff; letter-spacing: 1px; }
         
-        /* BOTÓN BRUTALISTA INTEGRADO AL HARDWARE */
         .rack-play-btn {
-            background: rgba(0,0,0,0.8);
-            border: 1px solid var(--border-gold);
-            color: var(--gold-flat);
-            padding: 10px 20px;
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.2s ease;
-            width: 100%;
-            box-sizing: border-box;
+            background: transparent; border: 1px solid rgba(255,255,255,0.15); color: #fff;
+            padding: 10px 15px; font-size: 11px; font-weight: 900; letter-spacing: 2px;
+            text-transform: uppercase; cursor: pointer; text-align: center; transition: all 0.2s ease;
         }
-        .rack-play-btn:hover {
-            background: var(--gold-gradient);
-            color: #000000;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
-        .rack-row.playing-now-style {
-            border-color: var(--gold-flat) !important;
-            background: rgba(20, 20, 20, 0.98) !important;
-        }
-        .rack-row.playing-now-style .rack-play-btn {
-            background: var(--gold-gradient) !important;
-            color: #000000 !important;
-            border-color: transparent !important;
-        }
+        .rack-play-btn:hover { background: #fff; color: #000; border-color: #fff; }
+        
+        .rack-row.playing-now-style { background: #080808; }
+        .rack-row.playing-now-style .rack-title { color: var(--gold-flat); }
+        .rack-row.playing-now-style .rack-play-btn { background: var(--gold-flat); color: #000; border-color: var(--gold-flat); }
 
-        /* Estilos multimedia adicionales */
-        .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 45px; }
-        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .product-media img { width: 100%; height: auto; display: block; border: 1px solid #222; margin-bottom: 30px; }
+        /* SECCIÓN MULTIMEDIA LIMPIA */
+        .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 50px; background: #000; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; filter: grayscale(0.2); }
+        .product-media img { width: 100%; height: auto; display: block; border: none; margin-bottom: 40px; }
 
-        footer { text-align: center; padding: 60px 20px; font-size: 11px; color: #444; letter-spacing: 1px; border-top: 1px solid #111; margin-top: 60px; }
+        footer { text-align: center; padding: 80px 20px; font-size: 11px; color: #333; letter-spacing: 2px; border-top: 1px solid #111; margin-top: 80px; }
 
         @media(max-width: 768px) {
-            .audio-rack-system { padding: 15px; }
-            .rack-row { grid-template-columns: 1fr; gap: 12px; text-align: center; padding: 15px; }
-            .rack-play-btn { width: 160px; margin: 0 auto; }
+            .brand-header { padding: 20px; }
+            .rack-row { grid-template-columns: 1fr; gap: 15px; text-align: center; padding: 20px; }
+            .rack-play-btn { width: 130px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -240,46 +195,53 @@
 
     <div id="preloader">
         <div class="manifesto-box">
-            <img src="tridente.png" alt="LÚCALE LOGO">
-            <h3>AVISO DE ACCESO MULTIMEDIA</h3>
-            <p>Estás por ingresar al archivo oficial de LUCALE. Este espacio contiene transmisiones de rap crudo de la periferia, propiedad intelectual de diseño industrial registrado y gestión cultural independiente.</p>
-            <button class="enter-btn" onclick="unlockSite()">INGRESAR AL ARCHIVO</button>
+            <img src="tridente.png" alt="LÚCALE TRIDENTE">
+            <h3>LUCALE ARCHIVE</h3>
+            <p>Transmisiones de rap crudo de la periferia, propiedad intelectual de diseño industrial registrado y gestión cultural independiente.</p>
+            <button class="enter-btn" onclick="unlockSite()">INGRESAR</button>
         </div>
     </div> 
+
+    <div class="brand-header">
+        <a href="#" class="nav-logo-left">LUCALE</a>
+        <div class="nav-logo-right">
+            <img src="tridente.png" alt="Tridente Logo">
+        </div>
+    </div>
 
     <header class="hero">
         <div class="hero-content">
             <h1>LUCALE</h1>
-            <p>Rap Crudo · Diseño Industrial · Gestión Cultural</p>
+            <p>Rap Crudo · Diseño Industrial · Don Torcuato</p>
             <div class="buttons-grid">
-                <a href="#music" class="btn-premium">ARCHIVO DE AUDIO</a>
-                <a href="#studio" class="btn-premium">DISEÑO DE AUTOR</a>
-                <a href="#bio" class="btn-premium">BIOGRAFÍA</a>
+                <a href="#music" class="btn-premium">AUDIO ARCHIVE</a>
+                <a href="#studio" class="btn-premium">DESIGN STUDIO</a>
+                <a href="#bio" class="btn-premium">BIOGRAPHY</a>
             </div>
         </div>
     </header>
     
     <div class="marquee-container">
         <div class="marquee-wrapper">
-            <span>RAP CRUDO</span><span>DON TORCUATO</span><span>LUCALE MUSIC PUBLISHING ™</span><span>MODELO INDUSTRIAL REGISTRADO ®</span><span>PREMIOS GARDEL</span><span>PREMIOS MIN (ESPAÑA)</span><span>HACIENDO RAP JUNTXS</span><span>TANGO URBANO</span><span>RAP CRUDO</span><span>DON TORCUATO</span><span>LUCALE MUSIC PUBLISHING ™</span>
+            <span>RAP CRUDO</span><span>DON TORCUATO</span><span>LUCALE MUSIC PUBLISHING ™</span><span>MODELO INDUSTRIAL REGISTRADO ®</span><span>PREMIOS GARDEL</span><span>PREMIOS MIN (ESPAÑA)</span><span>HACIENDO RAP JUNTXS</span><span>TANGO URBANO</span>
         </div>
     </div> 
 
     <div class="main-layout">
         
         <section id="bio" class="studio-panel">
-            <h2>IDENTIDAD MULTIDISCIPLINARIA // BIO</h2>
+            <h2>BIOGRAPHY</h2>
             <div class="bio-text-layout">
-                <p><span class="bio-highlight">Lucale</span> (Cristian Alexander Devincenzi Lemos) articula la narrativa explícita del rap de autor con la precisión milimétrica del diseño de objetos. Afincado firmemente como un referente del rap de la periferia en <span class="bio-highlight">Don Torcuato</span>, en la zona norte del Gran Buenos Aires, su obra cruza las borders tradicionales del circuito comercial musical.</p>
-                <p>Como diseñador industrial, es el creador intelectual y fabricante del <span class="bio-highlight">Sillón Octa ®</span> y la cancion  "Candelabro" Postulada a los Premios MIN 2026 y Premios Gardel 2026, cruzando la geometría pura con la manufactura nacional. Su trayectoria artística y cultural cuenta con un amplio respaldo documental en medios masivos, prensa escrita y registros académicos independientes de la región metropolitana.</p>
+                <p><span class="bio-highlight">Lucale</span> (Cristian Alexander Devincenzi Lemos) articula la narrativa explícita del rap de autor con la precisión milimétrica del diseño de objetos. Afincado firmemente como un referente del rap de la periferia en <span class="bio-highlight">Don Torcuato</span>, en la zona norte del Gran Buenos Aires, su obra cruza las fronteras tradicionales del circuito comercial musical.</p>
+                <p>Como diseñador industrial, es el creador intelectual y fabricante del <span class="bio-highlight">Sillón Octa ®</span> y la canción "Candelabro" Postulada a los Premios MIN 2026 y Premios Gardel 2026, cruzando la geometría pura con la manufactura nacional.</p>
             </div>
             <div class="buttons-grid">
-                <a href="https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale" target="_blank" class="btn-premium">FICHA BIOGRÁFICA CMTV</a>
+                <a href="https://www.cmtv.com.ar/biografia/show.php?bnid=3254&banda=Lucale" target="_blank" class="btn-premium">CMTV FICHA OFICIAL</a>
             </div>
         </section>
 
         <section id="music" class="studio-panel">
-            <h2>CANCIONES DE LUCALE</h2>
+            <h2>RELEASES</h2>
             
             <div class="video-box">
                 <iframe src="https://www.youtube.com/embed/5XYEefGguyw" title="YouTube video player" allowfullscreen loading="lazy"></iframe>
@@ -288,31 +250,31 @@
             <div class="audio-rack-system">
                 
                 <div class="rack-row" id="row-1">
-                    <div class="rack-idx">// CH 01</div>
+                    <div class="rack-idx">01</div>
                     <div class="rack-title">RUTINA ASESINA</div>
                     <button class="rack-play-btn" onclick="triggerStudioTrack('AUDIO/track-1.mp3', 'row-1')">PLAY</button>
                 </div>
 
                 <div class="rack-row" id="row-2">
-                    <div class="rack-idx">// CH 02</div>
+                    <div class="rack-idx">02</div>
                     <div class="rack-title">CANDELABRO</div>
                     <button class="rack-play-btn" onclick="triggerStudioTrack('AUDIO/track-2.mp3', 'row-2')">PLAY</button>
                 </div>
 
                 <div class="rack-row" id="row-3">
-                    <div class="rack-idx">// CH 03</div>
+                    <div class="rack-idx">03</div>
                     <div class="rack-title">TRACK 3</div>
                     <button class="rack-play-btn" onclick="triggerStudioTrack('AUDIO/track-3.mp3', 'row-3')">PLAY</button>
                 </div>
 
                 <div class="rack-row" id="row-4">
-                    <div class="rack-idx">// CH 04</div>
+                    <div class="rack-idx">04</div>
                     <div class="rack-title">TRACK 4</div>
                     <button class="rack-play-btn" onclick="triggerStudioTrack('AUDIO/track-4.mp3', 'row-4')">PLAY</button>
                 </div>
 
                 <div class="rack-row" id="row-5">
-                    <div class="rack-idx">// CH 05</div>
+                    <div class="rack-idx">05</div>
                     <div class="rack-title">TRACK 5</div>
                     <button class="rack-play-btn" onclick="triggerStudioTrack('AUDIO/track-5.mp3', 'row-5')">PLAY</button>
                 </div>
@@ -323,47 +285,48 @@
 
             <div class="buttons-grid">
                 <a class="btn-premium" href="https://open.spotify.com/artist/tu_id" target="_blank">SPOTIFY</a>
-                <a class="btn-premium" href="LINKS/">PLATAFORMAS GLOBALES</a>
+                <a class="btn-premium" href="LINKS/">GLOBAL LINKS</a>
             </div>
         </section>
 
         <section id="studio" class="studio-panel">
-            <h2>STUDIO | GEOMETRÍA APLICADA</h2>
-            <p>Sillón Octa ®. Modelo industrial de vanguardia registrado ante el Instituto Nacional de la Propiedad Industrial (INPI). Construcción estructural basada en paneles geométricos.</p>
+            <h2>DESIGN STUDIO</h2>
+            <div class="bio-text-layout">
+                <p>Sillón Octa ®. Modelo industrial de vanguardia registrado ante el Instituto Nacional de la Propiedad Industrial (INPI). Construcción estructural basada en paneles geométricos.</p>
+            </div>
             <div class="product-media">
-                <img src="img_octa.jpg" alt="Sillón Octa de Lucale - Diseño Industrial Argentino">
+                <img src="img_octa.jpg" alt="Sillón Octa de Lucale">
             </div>
             <div class="buttons-grid">
-                <a href="https://articulo.mercadolibre.com.ar/MLA-1682759613-sillon-moderno-octagonal-tela-1-m-x-1-m-directo-de-fabrica-_JM" target="_blank" class="btn-premium btn-action-green">ADQUIRIR EN MERCADO LIBRE</a>
-            </div>
-        </section>
-
-        <section class="studio-panel">
-            <h2>ARCHIVO DOCUMENTAL & PRENSA</h2>
-            <p>Acceso al registro histórico de publicaciones digitales, reseñas de lanzamientos y cobertura de prensa.</p>
-            <div class="buttons-grid">
-                <a href="prensa.html" class="btn-premium">ABRIR FOLIO DE PRENSA</a>
+                <a href="https://articulo.mercadolibre.com.ar/MLA-1682759613-sillon-moderno-octagonal-tela-1-m-x-1-m-directo-de-fabrica-_JM" target="_blank" class="btn-premium btn-action-green">MERCADO LIBRE SHOP</a>
             </div>
         </section>
 
         <section class="studio-panel">
-            <h2>CANAL DE COMUNICACIÓN</h2>
+            <h2>PRESS ROOM</h2>
             <div class="buttons-grid">
-                <a href="mailto:contacto@lucalemusic.com.ar" class="btn-premium">EMAIL DIRECTO</a>
-                <a href="https://wa.me/5491130157350" target="_blank" class="btn-premium">DESPACHO WHATSAPP</a>
+                <a href="prensa.html" class="btn-premium">OPEN PRESS FOLIO</a>
+            </div>
+        </section>
+
+        <section class="studio-panel">
+            <h2>BOOKING & CONTACT</h2>
+            <div class="buttons-grid">
+                <a href="mailto:contacto@lucalemusic.com.ar" class="btn-premium">EMAIL</a>
+                <a href="https://wa.me/5491130157350" target="_blank" class="btn-premium">WHATSAPP DESPACHO</a>
             </div>
         </section>
     </div>
 
     <footer>
-        2026 LUCALE ® · Lucale Music Publishing ™ · LE ® · Don Torcuato, Buenos Aires, Argentina. Todos los derechos reservados.
+        2026 LUCALE ® · Lucale Music Publishing ™ · Don Torcuato, Buenos Aires, Argentina.
     </footer>
 
     <script>
         function unlockSite() {
             const loader = document.getElementById('preloader');
             loader.style.opacity = '0';
-            setTimeout(() => { loader.style.display = 'none'; }, 400);
+            setTimeout(() => { loader.style.display = 'none'; }, 500);
         }
 
         let currentActiveRowId = null;
@@ -373,7 +336,6 @@
             const targetRow = document.getElementById(rowId);
             const targetBtn = targetRow.querySelector('.rack-play-btn');
 
-            // Si el usuario toca el mismo tema que ya está sonando, pausar
             if (currentActiveRowId === rowId) {
                 if (!player.paused) {
                     player.pause();
@@ -381,38 +343,34 @@
                     targetRow.classList.remove('playing-now-style');
                 } else {
                     player.play();
-                    targetBtn.innerText = 'PAUSA';
+                    targetBtn.innerText = 'PAUSE';
                     targetRow.classList.add('playing-now-style');
                 }
                 return;
             }
 
-            // Limpiar estados previos de toda la consola
             document.querySelectorAll('.rack-row').forEach(row => {
                 row.classList.remove('playing-now-style');
                 row.querySelector('.rack-play-btn').innerText = 'PLAY';
             });
 
-            // Inyectar el origen crudo y forzar al navegador a leer
             player.pause();
             player.src = trackSource;
             player.load();
             
-            // Disparar reproducción soberana
             player.play()
                 .then(() => {
-                    targetBtn.innerText = 'PAUSA';
+                    targetBtn.innerText = 'PAUSE';
                     targetRow.classList.add('playing-now-style');
                     currentActiveRowId = rowId;
                 })
                 .catch(err => {
-                    console.error("Fallo de lectura en servidor local. Intentando fallback alternativo minúscula...", err);
-                    // Fallback automático por si las carpetas se mezclaron en el hosting local
+                    console.error("Error cargando origen de audio local.", err);
                     if(trackSource.includes("AUDIO/")) {
                         player.src = trackSource.replace("AUDIO/", "audio/");
                         player.load();
                         player.play().then(() => {
-                            targetBtn.innerText = 'PAUSA';
+                            targetBtn.innerText = 'PAUSE';
                             targetRow.classList.add('playing-now-style');
                             currentActiveRowId = rowId;
                         });
