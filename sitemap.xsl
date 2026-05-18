@@ -29,6 +29,7 @@
                         border-radius: 14px;
                         border: 1px solid rgba(212, 175, 55, 0.3);
                         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.05);
+                        box-sizing: border-box;
                     }
                     
                     /* Cabecera Estratégica con Logo Alíneado */
@@ -103,9 +104,10 @@
                         box-shadow: 0 0 8px #00ff66;
                     }
                     
-                    /* Estructura de la Tabla */
+                    /* Estructura de la Tabla Responsiva */
                     table {
                         width: 100%;
+                        table-layout: fixed; /* Fuerza a respetar el ancho de pantalla asignado */
                         border-collapse: separate;
                         border-spacing: 0;
                         text-align: left;
@@ -130,7 +132,9 @@
                         font-size: 14px;
                         background-color: #111111;
                         border-bottom: 1px solid #1a1a1a;
-                        word-break: break-all;
+                        word-wrap: break-word;
+                        word-break: break-all; /* Rompe URLs masivas en celulares */
+                        overflow-wrap: break-word;
                         transition: all 0.25s ease;
                     }
                     
@@ -148,7 +152,9 @@
                         text-decoration: none;
                         font-weight: 500;
                         transition: all 0.2s ease;
-                        display: inline-block;
+                        display: block; /* Cambiado de inline-block para permitir break-all nativo */
+                        word-wrap: break-word;
+                        word-break: break-all;
                     }
                     
                     /* Flecha dorada animada */
@@ -190,6 +196,32 @@
                         color: #444;
                         text-transform: uppercase;
                         letter-spacing: 1px;
+                    }
+
+                    /* BREAKPOINT SEGURO PARA CELULARES */
+                    @media (max-width: 768px) {
+                        body {
+                            padding: 20px 10px;
+                        }
+                        .container {
+                            padding: 20px 15px;
+                        }
+                        .header-area {
+                            flex-direction: column;
+                            text-align: center;
+                            gap: 15px;
+                        }
+                        /* Oculta columnas secundarias en celus para enfocar el espacio 100% en las URLs */
+                        th:not(:first-child), 
+                        td:not(:first-child) {
+                            display: none;
+                        }
+                        th, td {
+                            padding: 12px 10px;
+                        }
+                        h1 {
+                            font-size: 20px;
+                        }
                     }
                 </style>
             </head>
