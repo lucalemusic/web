@@ -17,19 +17,21 @@
                         background-color: #0d0d0d;
                         background-image: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #0a0a0a 100%);
                         margin: 0;
-                        padding: 60px 20px;
+                        padding: 40px 15px; /* Reducido para evitar desbordes globales */
                     }
                     
                     /* Contenedor con Borde Dorado Elegante */
                     .container {
                         max-width: 1000px;
+                        width: 100%;
                         margin: 0 auto;
                         background: #121212;
-                        padding: 40px;
+                        padding: 30px 20px; /* Más compacto y responsivo */
                         border-radius: 14px;
                         border: 1px solid rgba(212, 175, 55, 0.3);
                         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.05);
                         box-sizing: border-box;
+                        overflow: hidden; /* Evita que cualquier hijo rompa el contenedor principal */
                     }
                     
                     /* Cabecera Estratégica con Logo Alíneado */
@@ -47,8 +49,8 @@
                         flex-shrink: 0;
                     }
                     .logo-wrapper img {
-                        width: 90px;
-                        height: 90px;
+                        width: 70px; /* Reducido un toque para balancear Chrome */
+                        height: 70px;
                         object-fit: contain;
                         filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
                     }
@@ -59,7 +61,7 @@
                     
                     /* Tipografía en Oro y Blanco */
                     h1 {
-                        font-size: 26px;
+                        font-size: 22px; /* Un toque más chico para que no rompa en Chrome Mobile */
                         color: #ffffff;
                         margin: 0 0 6px 0;
                         font-weight: 800;
@@ -104,14 +106,20 @@
                         box-shadow: 0 0 8px #00ff66;
                     }
                     
+                    /* CONTENEDOR ANTI-DESBORDE PARA CHROME MÓVIL */
+                    .table-responsive-wrapper {
+                        width: 100%;
+                        overflow-x: auto; /* Si Chrome se encapricha, activa scroll horizontal sutil solo para la tabla, manteniendo el contenedor intacto */
+                        -webkit-overflow-scrolling: touch;
+                        border-radius: 8px;
+                    }
+
                     /* Estructura de la Tabla Responsiva */
                     table {
                         width: 100%;
-                        table-layout: fixed; /* Fuerza a respetar el ancho de pantalla asignado */
                         border-collapse: separate;
                         border-spacing: 0;
                         text-align: left;
-                        border-radius: 8px;
                         overflow: hidden;
                         border: 1px solid rgba(212, 175, 55, 0.1);
                     }
@@ -119,7 +127,7 @@
                     th {
                         background-color: #161616;
                         color: #a6a6a6;
-                        padding: 16px 20px;
+                        padding: 12px 15px;
                         font-size: 11px;
                         font-weight: 700;
                         text-transform: uppercase;
@@ -128,21 +136,20 @@
                     }
                     
                     td {
-                        padding: 16px 20px;
-                        font-size: 14px;
+                        padding: 14px 15px;
+                        font-size: 13px;
                         background-color: #111111;
                         border-bottom: 1px solid #1a1a1a;
+                        white-space: normal; /* Permite saltos de línea obligatorios */
                         word-wrap: break-word;
-                        word-break: break-all; /* Rompe URLs masivas en celulares */
+                        word-break: break-all; /* Mutila la URL si es necesario para que entre en el ancho */
                         overflow-wrap: break-word;
-                        transition: all 0.25s ease;
                     }
                     
                     tr:last-child td {
                         border-bottom: none;
                     }
                     
-                    /* Efecto Iluminación Oro al pasar el mouse */
                     tr:hover td {
                         background-color: #171717;
                     }
@@ -151,37 +158,29 @@
                         color: #e5e5e5;
                         text-decoration: none;
                         font-weight: 500;
-                        transition: all 0.2s ease;
-                        display: block; /* Cambiado de inline-block para permitir break-all nativo */
+                        display: block;
+                        white-space: normal;
                         word-wrap: break-word;
                         word-break: break-all;
+                        overflow-wrap: break-word;
                     }
                     
-                    /* Flecha dorada animada */
+                    /* Flecha dorada */
                     td a::before {
                         content: "➔";
                         color: rgba(212, 175, 55, 0.4);
                         margin-right: 8px;
-                        opacity: 0;
-                        transform: translateX(-6px);
                         display: inline-block;
-                        transition: all 0.2s ease;
                     }
                     
                     tr:hover td a {
-                        color: #f3e5ab; /* Tono crema/oro suave */
+                        color: #f3e5ab;
                         text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-                    }
-                    
-                    tr:hover td a::before {
-                        opacity: 1;
-                        transform: translateX(0);
-                        color: #d4af37;
                     }
                     
                     .meta-cell {
                         color: #666;
-                        font-size: 13px;
+                        font-size: 12px;
                         font-weight: 500;
                     }
                     tr:hover .meta-cell {
@@ -198,29 +197,17 @@
                         letter-spacing: 1px;
                     }
 
-                    /* BREAKPOINT SEGURO PARA CELULARES */
+                    /* AJUSTES SEGUROS PARA PANTALLAS CHICAS */
                     @media (max-width: 768px) {
-                        body {
-                            padding: 20px 10px;
-                        }
-                        .container {
-                            padding: 20px 15px;
-                        }
                         .header-area {
                             flex-direction: column;
                             text-align: center;
                             gap: 15px;
                         }
-                        /* Oculta columnas secundarias en celus para enfocar el espacio 100% en las URLs */
+                        /* Chrome a veces no lee esto en XML, por eso agregamos el wrapper overflow arriba */
                         th:not(:first-child), 
                         td:not(:first-child) {
                             display: none;
-                        }
-                        th, td {
-                            padding: 12px 10px;
-                        }
-                        h1 {
-                            font-size: 20px;
                         }
                     }
                 </style>
@@ -243,30 +230,32 @@
                         <span/> URLS INDEXADAS EN TIEMPO REAL: <xsl:value-of select="count(sitemap:urlset/sitemap:url)"/>
                     </div>
                     
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Ruta de Navegación Oficial (URL)</th>
-                                <th style="width: 100px; text-align: center;">Prioridad</th>
-                                <th style="width: 130px; text-align: center;">Frecuencia</th>
-                                <th style="width: 150px; text-align: center;">Última Modif.</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <xsl:for-each select="sitemap:urlset/sitemap:url">
+                    <div class="table-responsive-wrapper">
+                        <table>
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <a href="{sitemap:loc}">
-                                            <xsl:value-of select="sitemap:loc"/>
-                                        </a>
-                                    </td>
-                                    <td class="meta-cell" style="text-align: center;"><xsl:value-of select="sitemap:priority"/></td>
-                                    <td class="meta-cell" style="text-align: center; text-transform: capitalize;"><xsl:value-of select="sitemap:changefreq"/></td>
-                                    <td class="meta-cell" style="text-align: center;"><xsl:value-of select="sitemap:lastmod"/></td>
+                                    <th>Ruta de Navegación Oficial (URL)</th>
+                                    <th style="text-align: center;">Prioridad</th>
+                                    <th style="text-align: center;">Frecuencia</th>
+                                    <th style="text-align: center;">Última Modif.</th>
                                 </tr>
-                            </xsl:for-each>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <xsl:for-each select="sitemap:urlset/sitemap:url">
+                                    <tr>
+                                        <td>
+                                            <a href="{sitemap:loc}">
+                                                <xsl:value-of select="sitemap:loc"/>
+                                            </a>
+                                        </td>
+                                        <td class="meta-cell" style="text-align: center;"><xsl:value-of select="sitemap:priority"/></td>
+                                        <td class="meta-cell" style="text-align: center; text-transform: capitalize;"><xsl:value-of select="sitemap:changefreq"/></td>
+                                        <td class="meta-cell" style="text-align: center;"><xsl:value-of select="sitemap:lastmod"/></td>
+                                    </tr>
+                                </xsl:for-each>
+                            </tbody>
+                        </table>
+                    </div>
                     
                     <div class="footer-brand">
                         © 2026 LUCALE MUSIC | OFFICIAL WEB ARCHIVE
