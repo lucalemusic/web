@@ -139,6 +139,70 @@
             .rack-row { grid-template-columns: 1fr; gap: 10px; text-align: center; padding: 15px; }
             .rack-row audio { margin-top: 5px; }
         }
+
+
+        /* ==========================================================================
+   MATRIZ DE TRIDENTES DINÁMICOS EN EL REPRODUCTOR
+   ========================================================================== */
+
+/* Animación uniforme de aparición y desaparición (pulsación) con cambio de color */
+@keyframes tridentePulse {
+    0% {
+        opacity: 0.15;
+        filter: hue-rotate(0deg) drop-shadow(0 0 2px rgba(214, 175, 55, 0.2));
+    }
+    33% {
+        opacity: 0.35;
+        filter: hue-rotate(45deg) drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)); /* Tono más platino/blanco */
+    }
+    66% {
+        opacity: 0.20;
+        filter: hue-rotate(180deg) drop-shadow(0 0 5px rgba(186, 141, 40, 0.3)); /* Oro viejo */
+    }
+    100% {
+        opacity: 0.15;
+        filter: hue-rotate(360deg) drop-shadow(0 0 2px rgba(214, 175, 55, 0.2));
+    }
+}
+
+/* Inyectamos la grilla de tridentes de fondo usando un pseudoelemento */
+.custom-audio-engine {
+    position: relative !important;
+    overflow: hidden !important; /* Evita que los tridentes se salgan del cuadro */
+}
+
+.custom-audio-engine::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* Usamos tu imagen tridente.png repetida como patrón de fondo en miniatura */
+    background-image: url('tridente.png') !important;
+    background-size: 45px 45px !important; /* Tamaño de cada tridente en la grilla */
+    background-repeat: repeat !important;
+    
+    /* Centrado y espaciado de la matriz */
+    background-position: center !important;
+    
+    /* Capa por detrás del texto y los botones para que no moleste la lectura */
+    z-index: 0 !important;
+    
+    /* Disparador de la animación uniforme */
+    animation: tridentePulse 8s ease-in-out infinite !important;
+    pointer-events: none !important; /* Para que puedas clickear los tracks sin problemas */
+}
+
+/* Forzamos a que todo el contenido real (tracks, banner, consola) quede por encima del fondo */
+.now-playing-banner,
+.playlist-holder,
+.master-console {
+    position: relative !important;
+    z-index: 1 !important;
+}
+        
     </style>
 </head>
 <body>
