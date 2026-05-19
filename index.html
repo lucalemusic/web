@@ -76,7 +76,7 @@
             "https://music.apple.com/artist/lucale/1521276479",
             "https://www.deezer.com/artist/99323142",
             "https://soundcloud.com/lucale-music",
-            "https://open.spotify.com/artist/1eWqXg1hM0X3fCclgS2wSg",
+            "https://open.spotify.com/artist/6S2gC9EdfVv5C89LwPZqsc",
             "https://wa.me/5491130157350"
           ]
         },
@@ -123,7 +123,7 @@
             { "@type": "NewsArticle", "headline": "Tigre Noticias", "description": "Lucale lanzó el tema Barrio Picado.", "url": "https://tigrenoticias.com.ar/tigre-lucale-de-don-torcuato-lanzo-el-tema-barrio-picado/" },
             { "@type": "NewsArticle", "headline": "Zona Norte Visión", "description": "Lucale, el rapero que dio un gran salto.", "url": "https://zonanortevision.com.ar/304369/lucale-el-rapero-uruguayo-que-dio-un-gran-salto-en-la-escena-urbana-argentina/" },
             { "@type": "NewsArticle", "headline": "El Bonaerense", "description": "Lucale, artista de música urbana con gran proyección.", "url": "https://www.elbonaerense.news/2023/09/22/exclusivo-lucale--artista-de-musica-urbana-en-zona-norte-con-gran-proyeccion" },
-            { "@type": "NewsArticle", "headline": "Noroeste Madrid", "description": "Salto de gigante al firmar con Universal Music.", "url": "https://www.noroestemadrid.com/2023/09/salto-de-gigante-del-rapero-lucale-en-su-carrera-musical-al-firmar-con-la-discografica-universal-music/" },
+            { "@type": "NewsArticle", "headline": "Noroeste Madrid", "description": "Salto de gigante al firmar con Universal Music.", "url": "https://www.noroestemadrid.com/2023/09/salto-de-giant-del-rapero-lucale-en-su-carrera-musical-al-firmar-con-la-discografica-universal-music/" },
             { "@type": "VideoObject", "name": "Conociendo a Lucale - Facebook Video", "description": "Conociendo a Lucale, artista desde Uruguay.", "url": "https://m.facebook.com/100063998112308/videos/conociendo-a-lucale-artista-desde-uruquay-08-09-2023/687223422898802/" },
             { "@type": "NewsArticle", "headline": "Nova Uruguay", "description": "Lucale, el rapero que dio un gran salto.", "url": "https://www.novauruguay.com/nota.asp?t=VIDEO-Lucale-el-rapero-uruguayo-que-dio-un-gran-salto-en-la-escena-urbana-argentina&id=27254&id tiponota=9" },
             { "@type": "NewsArticle", "headline": "Sudoeste BA", "description": "Lucale, rapero de Don Torcuato, ha dado un gran salto.", "url": "https://www.sudoesteba.com/2023-09-05/lucale-rapero-de-don-torcuato-ha-dado-un-gran-salto-en-su-carrera-musical-6739/" }
@@ -179,7 +179,6 @@
             font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 900; letter-spacing: 2px; color: #fff; text-decoration: none;
         }
         
-        /* Enlaces de navegación directos e integrados */
         .nav-links-center { display: flex; gap: 25px; }
         .nav-links-center a {
             font-family: 'Oswald', sans-serif; font-size: 12px; color: #fff; text-decoration: none; 
@@ -188,11 +187,11 @@
         .nav-links-center a:hover { color: var(--gold-flat); }
         .nav-logo-right img { width: 28px; height: 28px; object-fit: contain; }
 
-        /* HERO AJUSTADO */
+        /* HERO CORREGIDO (ENCUADRE VERTICAL BAJADO AL 15%) */
         header.hero {
             height: 100vh; width: 100%;
             background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%, #000 95%), 
-                        url('GALERIA/lucale-perfilweb.jpg') no-repeat center center;
+                        url('GALERIA/lucale-perfilweb.jpg') no-repeat center 15%;
             background-size: cover;
             display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
             text-align: center; padding-bottom: 7vh; box-sizing: border-box;
@@ -226,7 +225,7 @@
         .bio-text-layout { font-size: 16px; color: #999; line-height: 1.8; max-width: 700px; margin: 0 auto 40px auto; }
         .bio-highlight { color: #fff; font-weight: 700; }
 
-        /* BOTONES PREMIUM (BOTONERAS NETAS) */
+        /* BOTONES PREMIUM */
         .buttons-grid { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 500px; margin: 0 auto; }
         .btn-premium {
             font-family: 'Oswald', sans-serif; padding: 18px; font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
@@ -238,18 +237,14 @@
         .btn-action-green:hover { background: #00ff66; color: #000; border-color: #00ff66; }
 
         /* MULTIMEDIA */
-        .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 40px; background: #000; border: 1px solid #111; }
-        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        
         .spotify-rack-system { width: 100%; display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px; }
         .spotify-track-wrapper { width: 100%; background: #000; border: 1px solid #111; padding: 4px; box-sizing: border-box; }
-
         .product-media img { width: 100%; height: auto; display: block; border: 1px solid #111; margin-bottom: 40px; }
 
         footer { text-align: center; padding: 60px 20px; font-family: 'Oswald', sans-serif; font-size: 11px; color: #444; letter-spacing: 2px; }
 
         @media(max-width: 768px) {
-            .nav-links-center { display: none; } /* Oculta links centrales en celulares para no romper diseño */
+            .nav-links-center { display: none; }
             .brand-header { padding: 20px; }
         }
     </style>
@@ -259,7 +254,7 @@
     <div id="preloader">
         <div class="manifesto-box">
             <img src="tridente.png" alt="LÚCALE TRIDENTE">
-            <h3>LUCALE </h3>
+            <h3>LUCALE</h3>
             <p>Transmisiones de rap crudo de la periferia, propiedad intelectual de diseño industrial registrado y gestión cultural independiente.</p>
             <button class="enter-btn" onclick="unlockSite()">INGRESAR</button>
         </div>
@@ -299,7 +294,7 @@
             <div class="spotify-rack-system">
                 <div class="spotify-track-wrapper">
                     <iframe style="border-radius:12px;" 
-                            src="https://open.spotify.com/intl-es/track/4nbepghjPWlFzLtheMquDP?si=37a46928d3544616" 
+                            src="https://open.spotify.com/embed/track/4nbepghjPWlFzLtheMquDP?utm_source=generator&theme=0" 
                             width="100%" 
                             height="152" 
                             frameBorder="0" 
@@ -310,15 +305,10 @@
             </div>
 
             <div class="buttons-grid">
-                <a class="btn-premium" href="https://open.spotify.com/intl-es/artist/44Mmk92PgcbqGzO1oxVk6z" target="_blank">ESCUCHAR EN SPOTIFY</a>
+                <a class="btn-premium" href="https://open.spotify.com/track/4nbepghjPWlFzLtheMquDP" target="_blank">ESCUCHAR EN SPOTIFY</a>
                 <a class="btn-premium" href="LINKS/index.html">GLOBAL LINKS</a>
             </div>
         </section>
-    <div class="buttons-grid">
-        <a class="btn-premium" href="https://open.spotify.com/artist/6S2vV7T5xXnYwI6VbM4PzZ" target="_blank">ESCUCHAR EN SPOTIFY</a>
-        <a class="btn-premium" href="LINKS/">GLOBAL LINKS</a>
-    </div>
-</section> 
 
         <section id="studio" class="studio-panel">
             <h2>DESIGN STUDIO</h2>
@@ -373,4 +363,4 @@
     </script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
