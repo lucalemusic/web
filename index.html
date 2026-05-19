@@ -27,6 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Oswald:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=1.6">
 
     <script type="application/ld+json">
@@ -208,6 +209,38 @@
             margin: 15px 0 0 0; letter-spacing: 6px; text-transform: uppercase; 
         }
 
+        /* Asegura que el contenedor padre permita el posicionamiento de los elementos hijos */
+header.hero {
+    position: relative;
+}
+
+/* Contenedor de redes centrado abajo del texto */
+.hero-social-channels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;          /* Espaciado elegante entre íconos */
+    margin-top: 25px;   /* Separación respecto al párrafo de arriba */
+}
+
+/* Estilo base de los enlaces (Transparentes) */
+.hero-social-channels a {
+    color: rgba(255, 255, 255, 0.6); /* Blanco semitransparente de fondo */
+    font-size: 18px;                  /* Tamaño sutil y pequeño */
+    text-decoration: none;
+    transition: all 0.3s ease;        /* Transición suave para el efecto hover */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.hero-social-channels a:hover {
+    color: #ffffff;                  /* Pasa a blanco puro brillante */
+    transform: translateY(-2px);     /* Micro-movimiento hacia arriba */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)); /* Destello tenue */
+} 
+
         /* MARQUEE CONTINUO */
         .marquee-container { background: #000; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 18px 0; overflow: hidden; white-space: nowrap; }
         .marquee-wrapper { display: inline-block; animation: loop 30s linear infinite; }
@@ -273,12 +306,19 @@
         </div>
     </div>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>LUCALE</h1>
-            <p>Rap Crudo · Diseño Industrial · Don Torcuato</p>
+   <header class="hero">
+    <div class="hero-content">
+        <h1>LUCALE</h1>
+        <p>Rap Crudo · Diseño Industrial · Don Torcuato</p>
+        
+        <div class="hero-social-channels">
+            <a href="https://www.instagram.com/lucale.music" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@LucaleMusic" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://open.spotify.com/artist/41" target="_blank" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+            <a href="https://wa.me/5491130157350" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
-    </header>
+    </div>
+</header> 
     
     <div class="marquee-container">
         <div class="marquee-wrapper">
