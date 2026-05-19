@@ -11,7 +11,7 @@
 
     <link rel="icon" type="image/png" href="https://lucalemusic.com.ar/nuevo-logo.png">
     <link rel="preload" href="tridente.png" as="image" fetchpriority="high">
-    <link rel="preload" href="galeria/lucale-perfilweb.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="GALERIA/lucale-perfilweb.jpg" as="image" fetchpriority="high">
 
     <meta property="og:url" content="https://lucalemusic.com.ar/">
     <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Oswald:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=1.6">
 
     <script type="application/ld+json">
@@ -76,7 +76,7 @@
             "https://music.apple.com/artist/lucale/1521276479",
             "https://www.deezer.com/artist/99323142",
             "https://soundcloud.com/lucale-music",
-            "https://open.spotify.com/artist/0",
+            "https://open.spotify.com/artist/1eWqXg1hM0X3fCclgS2wSg",
             "https://wa.me/5491130157350"
           ]
         },
@@ -132,155 +132,124 @@
       ]
     }
     </script> 
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css?v=1.6">
 
     <style>
         :root {
             --bg-pure: #000000;
             --gold-flat: #d4af37;
             --text-white: #ffffff;
-            --text-gray: #888888;
+            --text-gray: #777777;
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background-color: var(--bg-pure);
             color: var(--text-white);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
 
-        @keyframes logoGlowPulse {
-            0% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(212,175,55,0.2)) brightness(1); }
-            50% { transform: scale(1.03); filter: drop-shadow(0 0 15px rgba(212,175,55,0.6)) brightness(1.2); }
-            100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(212,175,55,0.2)) brightness(1); }
-        }
-
-        @keyframes tridenteFloat {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
-            50% { transform: translateY(-10px) rotate(5deg); opacity: 0.35; }
-            100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
-        }
-
         /* PRELOADER INTERACTIVO */
         #preloader {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--bg-pure);
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             z-index: 99999; padding: 20px; box-sizing: border-box; text-align: center;
-            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.5s ease;
         }
-        .manifesto-box { max-width: 450px; text-align: center; }
-        .manifesto-box img { 
-            width: 90px; height: 90px; object-fit: contain; margin-bottom: 30px;
-            animation: logoGlowPulse 3s ease-in-out infinite;
-        }
-        .manifesto-box h3 { font-size: 12px; letter-spacing: 4px; color: var(--gold-flat); font-weight: 900; margin-bottom: 15px; }
-        .manifesto-box p { font-size: 13px; color: var(--text-gray); line-height: 1.6; margin: 0 0 35px 0; }
+        .manifesto-box { max-width: 450px; }
+        .manifesto-box img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 25px; }
+        .manifesto-box h3 { font-family: 'Oswald', sans-serif; font-size: 14px; letter-spacing: 4px; color: var(--gold-flat); margin-bottom: 15px; }
+        .manifesto-box p { font-size: 13px; color: var(--text-gray); line-height: 1.6; margin: 0 0 30px 0; }
         .enter-btn {
             background: #fff; color: #000; border: none; padding: 16px 45px; font-weight: 900;
             font-size: 11px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; font-family: 'Oswald', sans-serif;
         }
-        .enter-btn:hover { background: var(--gold-flat); transform: scale(1.05); }
+        .enter-btn:hover { background: var(--gold-flat); }
 
-        /* NAV FIJA EN ESQUINAS STILO KHEA */
+        /* BARRA DE NAVEGACIÓN ESTILO KHEA ACTIVADA */
         .brand-header {
-            position: fixed; top: 0; left: 0; width: 100%; padding: 30px;
+            position: fixed; top: 0; left: 0; width: 100%; padding: 25px 40px;
             display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000; pointer-events: none; box-sizing: border-box;
+            z-index: 1000; box-sizing: border-box; 
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 20%, transparent);
         }
         .nav-logo-left {
-            font-size: 20px; font-weight: 900; letter-spacing: 4px; color: #fff;
-            text-decoration: none; pointer-events: auto;
-            animation: logoGlowPulse 4s ease-in-out infinite;
+            font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 900; letter-spacing: 2px; color: #fff; text-decoration: none;
         }
-        .nav-logo-right img {
-            width: 32px; height: 32px; object-fit: contain; pointer-events: auto;
-            animation: logoGlowPulse 3s ease-in-out infinite;
+        
+        /* Enlaces de navegación directos e integrados */
+        .nav-links-center { display: flex; gap: 25px; }
+        .nav-links-center a {
+            font-family: 'Oswald', sans-serif; font-size: 12px; color: #fff; text-decoration: none; 
+            text-transform: uppercase; letter-spacing: 2px; transition: color 0.2s ease;
         }
+        .nav-links-center a:hover { color: var(--gold-flat); }
+        .nav-logo-right img { width: 28px; height: 28px; object-fit: contain; }
 
-        /* HERO GIGANTE MINIMALISTA */
+        /* HERO AJUSTADO */
         header.hero {
             height: 100vh; width: 100%;
-            background: linear-gradient(to top, #000 5%, rgba(0,0,0,0.1) 50%, #000 95%), url('galeria/lucale-perfilweb.jpg') no-repeat center center;
-            background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%, #000 95%), 
+                        url('GALERIA/lucale-perfilweb.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+            text-align: center; padding-bottom: 7vh; box-sizing: border-box;
         }
-        .hero-content { max-width: 1000px; padding: 20px; }
+        .hero-content { max-width: 1200px; width: 100%; padding: 0 20px; box-sizing: border-box; z-index: 2; }
+        
         header.hero h1 {
-            font-size: clamp(60px, 15vw, 150px); font-weight: 900; margin: 0; letter-spacing: -6px;
-            line-height: 0.85; text-transform: uppercase; color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(65px, 18vw, 180px); font-weight: 900; margin: 0; letter-spacing: -6px;
+            line-height: 0.8; text-transform: uppercase; color: #fff;
         }
-        header.hero p { font-size: clamp(11px, 1.5vw, 14px); color: var(--gold-flat); margin: 25px 0 40px 0; letter-spacing: 5px; text-transform: uppercase; font-weight: 700; }
+        header.hero p { 
+            font-family: 'Oswald', sans-serif; font-size: clamp(12px, 1.8vw, 16px); color: var(--gold-flat); 
+            margin: 15px 0 0 0; letter-spacing: 6px; text-transform: uppercase; 
+        }
 
-        /* BOTONERAS PREMIUM */
-        .buttons-grid { 
-            display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%; margin-top: 20px;
+        /* MARQUEE CONTINUO */
+        .marquee-container { background: #000; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 18px 0; overflow: hidden; white-space: nowrap; }
+        .marquee-wrapper { display: inline-block; animation: loop 30s linear infinite; }
+        .marquee-wrapper span { font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 4px; color: #fff; margin-right: 50px; text-transform: uppercase; }
+        @keyframes loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* LAYOUT MAIN */
+        .main-layout { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        section.studio-panel { padding: 80px 0; border-bottom: 1px solid #111; width: 100%; text-align: center; }
+        section.studio-panel h2 { 
+            font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 5vw, 45px); letter-spacing: -1px; 
+            margin: 0 0 40px 0; color: #fff; text-transform: uppercase; 
         }
+
+        .bio-text-layout { font-size: 16px; color: #999; line-height: 1.8; max-width: 700px; margin: 0 auto 40px auto; }
+        .bio-highlight { color: #fff; font-weight: 700; }
+
+        /* BOTONES PREMIUM (BOTONERAS NETAS) */
+        .buttons-grid { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 500px; margin: 0 auto; }
         .btn-premium {
-            padding: 16px 35px; font-size: 11px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase;
-            color: #fff; text-decoration: none; background: transparent; border: 1px solid rgba(255,255,255,0.2);
-            text-align: center; min-width: 200px; box-sizing: border-box; transition: all 0.3s ease;
+            font-family: 'Oswald', sans-serif; padding: 18px; font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+            color: #fff; text-decoration: none; background: #000; border: 1px solid #222;
+            text-align: center; box-sizing: border-box; transition: all 0.2s ease;
         }
-        .btn-premium:hover { border-color: #fff; background: #fff; color: #000; transform: translateY(-3px); }
+        .btn-premium:hover { border-color: #fff; background: #fff; color: #000; }
         .btn-action-green { border-color: #00ff66; color: #00ff66; }
         .btn-action-green:hover { background: #00ff66; color: #000; border-color: #00ff66; }
 
-        /* MARQUEE CONTINUO */
-        .marquee-container { background: #000; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 20px 0; overflow: hidden; white-space: nowrap; }
-        .marquee-wrapper { display: inline-block; animation: loop 25s linear infinite; }
-        .marquee-wrapper span { font-size: 12px; font-weight: 900; letter-spacing: 3px; color: #fff; margin-right: 60px; text-transform: uppercase; }
-        @keyframes loop { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* LAYOUT BLACK GRID */
-        .main-layout { max-width: 950px; margin: 0 auto; padding: 80px 20px; }
-        section.studio-panel { background: transparent; padding: 60px 0; margin-bottom: 40px; width: 100%; }
-        section.studio-panel h2 {
-            font-size: clamp(22px, 4vw, 36px); font-weight: 900; letter-spacing: -1px; margin: 0 0 35px 0;
-            color: #fff; text-transform: uppercase; text-align: center;
-        }
-
-        .bio-text-layout { font-size: 17px; color: #888; line-height: 1.8; text-align: center; max-width: 750px; margin: 0 auto 40px auto; }
-        .bio-highlight { color: #fff; font-weight: 700; }
-
-        /* CONTENEDOR RACK SPOTIFY DE ALTO IMPACTO */
-        .spotify-rack-system {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            position: relative;
-            box-sizing: border-box;
-        }
-        .spotify-track-wrapper {
-            width: 100%;
-            background: #000;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 10px;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-        }
-        .spotify-track-wrapper:hover {
-            border-color: var(--gold-flat);
-        }
-
         /* MULTIMEDIA */
-        .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 50px; background: #000; }
-        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; filter: grayscale(0.2); }
-        .product-media img { width: 100%; height: auto; display: block; border: none; margin-bottom: 40px; }
+        .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 40px; background: #000; border: 1px solid #111; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+        .spotify-rack-system { width: 100%; display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px; }
+        .spotify-track-wrapper { width: 100%; background: #000; border: 1px solid #111; padding: 4px; box-sizing: border-box; }
 
-        footer { text-align: center; padding: 80px 20px; font-size: 11px; color: #333; letter-spacing: 2px; border-top: 1px solid #111; margin-top: 80px; }
+        .product-media img { width: 100%; height: auto; display: block; border: 1px solid #111; margin-bottom: 40px; }
+
+        footer { text-align: center; padding: 60px 20px; font-family: 'Oswald', sans-serif; font-size: 11px; color: #444; letter-spacing: 2px; }
 
         @media(max-width: 768px) {
+            .nav-links-center { display: none; } /* Oculta links centrales en celulares para no romper diseño */
             .brand-header { padding: 20px; }
         }
     </style>
@@ -298,6 +267,12 @@
 
     <div class="brand-header">
         <a href="#" class="nav-logo-left">LUCALE</a>
+        <div class="nav-links-center">
+            <a href="#music">Música</a>
+            <a href="#studio">Diseño</a>
+            <a href="#bio">Bio</a>
+            <a href="#contact">Contacto</a>
+        </div>
         <div class="nav-logo-right">
             <img src="tridente.png" alt="Tridente Logo">
         </div>
@@ -307,11 +282,6 @@
         <div class="hero-content">
             <h1>LUCALE</h1>
             <p>Rap Crudo · Diseño Industrial · Don Torcuato</p>
-            <div class="buttons-grid">
-                <a href="#music" class="btn-premium">AUDIO </a>
-                <a href="#studio" class="btn-premium">DESIGN STUDIO</a>
-                <a href="#bio" class="btn-premium">BIO</a>
-            </div>
         </div>
     </header>
     
@@ -323,37 +293,24 @@
 
     <div class="main-layout">
         
-        <section id="bio" class="studio-panel">
-            <h2>BIO</h2>
-            <div class="bio-text-layout">
-                <p><span class="bio-highlight">Lucale</span> (Cristian Alexander Devincenzi Lemos) articula la narrativa explícita del rap de autor con la precisión milimétrica del diseño de objetos. Afincado firmemente como un referente del rap de la periferia en <span class="bio-highlight">Don Torcuato</span>, en la zona norte del Gran Buenos Aires, su obra cruza las fronteras tradicionales del circuito comercial musical.</p>
-                <p>Creador intelectual y fabricante del <span class="bio-highlight">Sillón Octa ®</span> y la canción "Candelabro" Postulada a los Premios MIN 2026 y Premios Gardel 2026, cruzando la geometría pura con la manufactura nacional.</p>
-            </div>
-            <div class="buttons-grid">
-                <a href="bio.html" target="_blank" class="btn-premium">BIOGRAFIA OFICIAL DE LUCALE</a>
-            </div>
-        </section>
-
         <section id="music" class="studio-panel">
-            <h2>CANCIONES DE LUCALE</h2>
+            <h2>ÚLTIMOS LANZAMIENTOS</h2>
             
             <div class="video-box">
-                <iframe src="https://www.youtube.com/watch?v=5XYEefGguyw" title="YouTube video player" allowfullscreen loading="lazy"></iframe>
+                <iframe src="https://www.youtube.com/embed/5XYEefGguyw" title="YouTube video player" allowfullscreen loading="lazy"></iframe>
             </div>
 
-           <div class="spotify-rack-system">
-    
-    <div class="spotify-track-wrapper">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2dx0YAt685SroH9e2sgt0K?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
+            <div class="spotify-rack-system">
+                <div class="spotify-track-wrapper">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3Z6H0bZ3qXo55B9rR8M3nK" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                <div class="spotify-track-wrapper">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5Y6eDfGgUyW67HjK8MnB3t" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
 
-    <div class="spotify-track-wrapper">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4nbepghjPWlFzLtheMquDP?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-
-</div>
             <div class="buttons-grid">
-                <a class="btn-premium" href="https://open.spotify.com/artist/44Mmk92PgcbqGzO1oxVk6z" target="_blank">VER PERFIL COMPLETO</a>
+                <a class="btn-premium" href="https://open.spotify.com/artist/1eWqXg1hM0X3fCclgS2wSg" target="_blank">ESCUCHAR EN SPOTIFY</a>
                 <a class="btn-premium" href="LINKS/">GLOBAL LINKS</a>
             </div>
         </section>
@@ -361,7 +318,7 @@
         <section id="studio" class="studio-panel">
             <h2>DESIGN STUDIO</h2>
             <div class="bio-text-layout">
-                <p>Sillón Octa ®. Modelo industrial de vanguardia registrado ante el Instituto Nacional de la Propiedad Industrial (INPI). Construcción estructural basada en paneles geométricos.</p>
+                <p>Sillón Octa ®. Modelo industrial de vanguardia registrado ante el Instituto Nacional de la Propiedad Industrial (INPI). Construcción estructural basada en paneles geométricos de manufactura nacional.</p>
             </div>
             <div class="product-media">
                 <img src="img_octa.jpg" alt="Sillón Octa de Lucale">
@@ -371,24 +328,35 @@
             </div>
         </section>
 
+        <section id="bio" class="studio-panel">
+            <h2>HISTORIA</h2>
+            <div class="bio-text-layout">
+                <p><span class="bio-highlight">Lucale</span> (Cristian Alexander Devincenzi Lemos) articula la narrativa explícita del rap de autor con la precisión milimétrica del diseño de objetos. Afincado firmemente como un referente del rap de la periferia en <span class="bio-highlight">Don Torcuato</span>, en la zona norte del Gran Buenos Aires, su obra cruza las fronteras tradicionales del circuito comercial musical.</p>
+                <p>Creador intelectual y fabricante del <span class="bio-highlight">Sillón Octa ®</span> y la canción "Candelabro" Postulada a los Premios MIN 2026 y Premios Gardel 2026.</p>
+            </div>
+            <div class="buttons-grid">
+                <a href="bio.html" target="_blank" class="btn-premium">BIOGRAFIA COMPLETA</a>
+            </div>
+        </section>
+
         <section class="studio-panel">
-            <h2>PRESS ROOM</h2>
+            <h2>PRENSA / ARCHIVO</h2>
             <div class="buttons-grid">
                 <a href="prensa.html" class="btn-premium">OPEN PRESS FOLIO</a>
             </div>
         </section>
 
-        <section class="studio-panel">
-            <h2>BOOKING & CONTACT</h2>
+        <section id="contact" class="studio-panel">
+            <h2>CONTACTO & MANAGEMENT</h2>
             <div class="buttons-grid">
-                <a href="mailto:contacto@lucalemusic.com.ar" class="btn-premium">EMAIL</a>
+                <a href="mailto:contacto@lucalemusic.com.ar" class="btn-premium">ENVIAR CORREO</a>
                 <a href="https://wa.me/5491130157350" target="_blank" class="btn-premium">WHATSAPP DESPACHO</a>
             </div>
         </section>
     </div>
 
     <footer>
-        2026 LUCALE ® · Lucale Music Publishing ™ · Don Torcuato, Buenos Aires, Argentina.
+        2026 LUCALE ® · LUCALE MUSIC PUBLISHING ™ · DON TORCUATO, BUENOS AIRES, ARGENTINA.
     </footer>
 
     <script>
@@ -400,4 +368,4 @@
     </script>
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
