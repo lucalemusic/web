@@ -285,6 +285,242 @@ header.hero {
             .nav-links-center { display: none; }
             .brand-header { padding: 20px; }
         }
+
+
+        /* =====================================================
+   KARMA EXISTE
+===================================================== */
+
+.karma-section {
+    position: relative;
+    width: 100%;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(212,175,55,0.07),
+            transparent 35%
+        ),
+        #050505;
+    border-top: 1px solid #151515;
+    border-bottom: 1px solid #151515;
+    padding: 120px 20px;
+    overflow: hidden;
+}
+
+.karma-inner {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.karma-label {
+    font-family: 'Oswald', sans-serif;
+    color: var(--gold-flat);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.karma-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(70px, 15vw, 160px);
+    line-height: 0.78;
+    letter-spacing: -8px;
+    margin: 0;
+    color: #fff;
+}
+
+.karma-title span {
+    color: var(--gold-flat);
+}
+
+.karma-line {
+    width: 80px;
+    height: 1px;
+    background: var(--gold-flat);
+    margin: 45px auto 35px;
+}
+
+.karma-intro {
+    max-width: 650px;
+    margin: 0 auto 60px;
+    color: #888;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* VIDEO */
+
+.karma-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto 80px;
+    background: #000;
+    border: 1px solid #1a1a1a;
+    overflow: hidden;
+}
+
+.karma-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* CONCEPTO */
+
+.karma-concept {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.karma-concept-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold-flat);
+    margin-bottom: 25px;
+}
+
+.karma-concept p {
+    color: #999;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.karma-concept strong {
+    color: #fff;
+}
+
+/* FRASE CENTRAL */
+
+.karma-quote {
+    margin: 90px auto;
+    padding: 45px 20px;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.karma-quote span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(22px, 5vw, 48px);
+    letter-spacing: -1px;
+    color: #fff;
+}
+
+/* FRAGMENTOS */
+
+.karma-fragments {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #222;
+    margin: 0 auto 70px;
+    border: 1px solid #222;
+}
+
+.karma-fragment {
+    background: #050505;
+    padding: 35px 25px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.karma-fragment span {
+    font-family: 'Oswald', sans-serif;
+    color: var(--gold-flat);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.karma-fragment p {
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 30px 0 0;
+}
+
+/* PLAYER */
+
+.karma-player {
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+/* BOTONES */
+
+.karma-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.karma-actions .btn-premium {
+    min-width: 210px;
+}
+
+/* FOOTER */
+
+.karma-footer {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #444;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .karma-section {
+        padding: 90px 18px;
+    }
+
+    .karma-title {
+        font-size: clamp(65px, 20vw, 110px);
+        letter-spacing: -5px;
+    }
+
+    .karma-intro {
+        font-size: 14px;
+    }
+
+    .karma-fragments {
+        grid-template-columns: 1fr;
+    }
+
+    .karma-fragment {
+        min-height: auto;
+    }
+
+    .karma-actions {
+        flex-direction: column;
+    }
+
+    .karma-actions .btn-premium {
+        width: 100%;
+    }
+
+    .karma-footer {
+        flex-wrap: wrap;
+        line-height: 2;
+    }
+}
+
+        
     </style>
 </head>
 <body>
