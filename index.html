@@ -520,6 +520,476 @@ header.hero {
     }
 }
 
+        /* =========================================================
+   LUCALE — DESIGN STUDIO
+   Editorial / Industrial / Author Design
+========================================================= */
+
+#studio {
+    position: relative;
+    padding-top: 110px;
+    padding-bottom: 120px;
+}
+
+
+/* ---------------------------------------------------------
+   INTRO DESIGN STUDIO
+--------------------------------------------------------- */
+
+#studio > h2 {
+    position: relative;
+    margin-bottom: 55px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(42px, 9vw, 88px);
+    line-height: .9;
+    letter-spacing: -4px;
+    color: #fff;
+}
+
+
+/* pequeña línea editorial */
+
+#studio > h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 1px;
+    margin-top: 28px;
+    background: var(--gold-flat);
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO INTRODUCTORIO
+--------------------------------------------------------- */
+
+#studio .bio-text-layout {
+    max-width: 720px;
+    margin: 0 auto 110px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+}
+
+#studio .bio-text-layout p {
+    margin: 0;
+    color: #777;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+#studio .bio-text-layout p:first-child {
+    color: #aaa;
+}
+
+#studio .bio-highlight {
+    color: #fff;
+}
+
+
+/* =========================================================
+   PROYECTOS
+========================================================= */
+
+.design-project {
+    position: relative;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 100px 0 115px;
+
+    border-top: 1px solid #181818;
+
+    text-align: center;
+}
+
+
+/* número / etiqueta */
+
+.design-project-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin-bottom: 22px;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: var(--gold-flat);
+}
+
+
+/* líneas laterales de la etiqueta */
+
+.design-project-label::before,
+.design-project-label::after {
+    content: "";
+    width: 35px;
+    height: 1px;
+    background: #292929;
+}
+
+
+/* ---------------------------------------------------------
+   TITULO DEL PRODUCTO
+--------------------------------------------------------- */
+
+.design-project h3 {
+    margin: 0 0 35px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+
+    font-size: clamp(38px, 8vw, 82px);
+
+    line-height: .9;
+
+    letter-spacing: -4px;
+
+    color: #fff;
+}
+
+
+/* número de registro */
+
+.design-project h3::first-line {
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPCIÓN
+--------------------------------------------------------- */
+
+.design-project > p {
+    max-width: 610px;
+
+    margin: 0 auto 60px;
+
+    color: #777;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGEN
+--------------------------------------------------------- */
+
+.design-project .product-media {
+
+    position: relative;
+
+    width: 100%;
+
+    margin: 0 auto 45px;
+
+    overflow: hidden;
+
+    background: #080808;
+
+}
+
+
+/* línea superior */
+
+.design-project .product-media::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #333,
+        transparent
+    );
+
+    z-index: 2;
+}
+
+
+.design-project .product-media img {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border: none;
+
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .8s ease;
+
+}
+
+
+/* efecto sutil */
+
+.design-project:hover .product-media img {
+
+    transform: scale(1.015);
+
+    filter: brightness(1.05);
+
+}
+
+
+/* ---------------------------------------------------------
+   BOTONES
+--------------------------------------------------------- */
+
+.design-project .buttons-grid {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.design-project .btn-premium {
+
+    min-width: 210px;
+
+}
+
+
+/* =========================================================
+   DIFERENCIAR OCTA Y FRACTURA
+========================================================= */
+
+
+/* OCTA */
+
+.design-project:first-of-type {
+
+    padding-top: 20px;
+
+}
+
+
+/* FRACTURA */
+
+.design-project:nth-of-type(3) {
+
+    padding-top: 130px;
+
+}
+
+
+/* =========================================================
+   FRACTURA — MÁS EDITORIAL
+========================================================= */
+
+.design-project:nth-of-type(3) h3 {
+
+    font-size: clamp(48px, 10vw, 105px);
+
+    letter-spacing: -6px;
+
+}
+
+
+.design-project:nth-of-type(3) .product-media {
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================================
+   DETALLE DECORATIVO
+========================================================= */
+
+.design-project::after {
+
+    content: "LUCALE / DESIGN";
+
+    position: absolute;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: 'Oswald', sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    color: #292929;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    #studio {
+
+        padding-top: 80px;
+        padding-bottom: 90px;
+
+    }
+
+
+    #studio > h2 {
+
+        font-size: clamp(42px, 13vw, 70px);
+
+        letter-spacing: -3px;
+
+        margin-bottom: 45px;
+
+    }
+
+
+    #studio .bio-text-layout {
+
+        display: block;
+
+        margin-bottom: 75px;
+
+    }
+
+
+    #studio .bio-text-layout p {
+
+        margin-bottom: 25px;
+
+        font-size: 14px;
+
+    }
+
+
+    .design-project {
+
+        padding: 75px 0 90px;
+
+    }
+
+
+    .design-project:first-of-type {
+
+        padding-top: 0;
+
+    }
+
+
+    .design-project:nth-of-type(3) {
+
+        padding-top: 90px;
+
+    }
+
+
+    .design-project h3 {
+
+        font-size: clamp(40px, 13vw, 70px);
+
+        letter-spacing: -3px;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .design-project:nth-of-type(3) h3 {
+
+        font-size: clamp(45px, 14vw, 80px);
+
+        letter-spacing: -4px;
+
+    }
+
+
+    .design-project > p {
+
+        font-size: 13px;
+
+        line-height: 1.85;
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .design-project-label {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .design-project-label::before,
+    .design-project-label::after {
+
+        width: 20px;
+
+    }
+
+
+    .design-project .buttons-grid {
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+
+    .design-project .btn-premium {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    .design-project::after {
+
+        bottom: 25px;
+
+    }
+
+}
+        
+
         
     </style>
 </head>
@@ -694,26 +1164,10 @@ header.hero {
         </div>
     </div> 
 
-         <!-- SPOTIFY -->
-        <div class="karma-player">
-
-            <iframe
-                style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/4nbepghjPWlFzLtheMquDP"
-                width="100%"
-                height="152"
-                frameborder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-            </iframe>
-
-        </div> 
-
     <div class="main-layout">
         
         <section id="music" class="studio-panel">
-            <h2>OUT NOW</h2>
+            <h2>SOLA - LUCALE</h2>
             
             <div class="spotify-rack-system">
                 <div class="spotify-track-wrapper">
