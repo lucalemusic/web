@@ -422,21 +422,16 @@ button {
 
 
 .hero-image img {
-
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
-    object-position: center;
+    object-position: center 15%;
 
     transform: scale(1.02);
 
-    animation:
-        heroImage 1.8s var(--ease) both;
-
+    animation: heroImage 1.8s var(--ease) both;
 }
-
 
 @keyframes heroImage {
 
