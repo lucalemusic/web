@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
+
+    <meta
+        name="author"
+        content="LUCALE"
+    >
+
+    <title>
+        LUCALE | Biografía Oficial | Cristian Alexander Devincenzi Lemos
+    </title>
+
+    <meta
+        name="description"
+        content="Biografía oficial de LUCALE, nombre artístico de Cristian Alexander Devincenzi Lemos. Rapero, compositor, músico y gestor cultural nacido en Montevideo y desarrollado artísticamente en Don Torcuato, Tigre, Buenos Aires."
+    >
+
+    <link
+        rel="canonical"
+        href="https://lucalemusic.com.ar/biografia/"
+    >
+
+    <!-- =========================================================
+         FAVICON
+    ========================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="/tridente.png"
+    >
+
+    <!-- =========================================================
+         OPEN GRAPH
+    ========================================================== -->
+
+    <meta
+        property="og:type"
+        content="profile"
+    >
+
+    <meta
+        property="og:title"
+        content="LUCALE | Biografía Oficial"
+    >
+
+    <meta
+        property="og:description"
+        content="Trayectoria artística, música, cultura, publishing y diseño de autor de LUCALE."
+    >
+
+    <meta
+        property="og:url"
+        content="https://lucalemusic.com.ar/biografia/"
+    >
+
+    <meta
+        property="og:site_name"
+        content="LUCALE"
+    >
+
+    <meta
+        property="og:locale"
+        content="es_AR"
+    >
+
+    <meta
+        property="og:image"
+        content="https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg"
+    >
+
+    <!-- =========================================================
+         TWITTER / X
+    ========================================================== -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="LUCALE | Biografía Oficial"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Trayectoria artística, música, cultura, publishing y diseño de autor de LUCALE."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg"
+    >
+
+    <!-- =========================================================
+         FUENTES
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =========================================================
+         CSS GENERAL
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
+    <!-- =========================================================
+         CSS ESPECÍFICO DE BIOGRAFÍA
+    ========================================================== -->
+
+    <style>
+
+        /* =====================================================
+           LUCALE — BIOGRAFÍA
+           Sistema visual editorial / archivo / autor
+        ===================================================== */
+
+        :root {
+            --bio-black: #070707;
+            --bio-black-2: #0c0c0c;
+            --bio-black-3: #111111;
+
+            --bio-white: #f3f1eb;
+            --bio-text: #a4a4a4;
+            --bio-dark-text: #5e5e5e;
+
+            --bio-gold: #c9a86a;
+            --bio-gold-light: #dfc58e;
+
+            --bio-line: rgba(255,255,255,.11);
+            --bio-line-dark: rgba(0,0,0,.12);
+
+            --bio-max: 1380px;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        .page-bio {
+            margin: 0;
+            background: var(--bio-black);
+            color: var(--bio-white);
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .page-bio *,
+        .page-bio *::before,
+        .page-bio *::after {
+            box-sizing: border-box;
+        }
+
+        .page-bio a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page-bio img {
+            max-width: 100%;
+        }
+
+        .page-bio ::selection {
+            background: var(--bio-gold);
+            color: #050505;
+        }
+
+        .page-bio .container {
+            width: min(
+                calc(100% - 48px),
+                var(--bio-max)
+            );
+
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
+           PRELOADER
+        ===================================================== */
+
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #050505;
+
+            transition:
+                opacity .55s ease,
+                visibility .55s ease;
+        }
+
+        #preloader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .logo-loader {
+            width: 92px;
+            height: 92px;
+            object-fit: contain;
+
+            opacity: .8;
+
+            animation:
+                bio-loader-pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bio-loader-pulse {
+
+            0%,
+            100% {
+                opacity: .35;
+                transform: scale(.94);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .page-bio .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 500;
+
+            background:
+                rgba(7,7,7,.88);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .page-bio .header-inner {
+            width: min(
+                calc(100% - 48px),
+                var(--bio-max)
+            );
+
+            min-height: 78px;
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .page-bio .brand {
+            font-size: 17px;
+            font-weight: 900;
+            letter-spacing: .18em;
+        }
+
+        .page-bio .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .page-bio .main-nav a {
+            position: relative;
+
+            color: #858585;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: .14em;
+            text-transform: uppercase;
+
+            transition:
+                color .25s ease;
+        }
+
+        .page-bio .main-nav a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -8px;
+
+            height: 1px;
+
+            background: var(--bio-gold);
+
+            transform:
+                scaleX(0);
+
+            transform-origin: right;
+
+            transition:
+                transform .3s ease;
+        }
+
+        .page-bio .main-nav a:hover,
+        .page-bio .main-nav a.active {
+            color: var(--bio-white);
+        }
+
+        .page-bio .main-nav a:hover::after,
+        .page-bio .main-nav a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .page-bio .menu-toggle {
+            display: none;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .page-bio .bio-hero {
+            position: relative;
+
+            min-height: 790px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            border-bottom:
+                1px solid
+                var(--bio-line);
+
+            background:
+
+                radial-gradient(
+                    circle at 78% 42%,
+                    rgba(201,168,106,.13),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 90% 90%,
+                    rgba(255,255,255,.035),
+                    transparent 30%
+                ),
+
+                var(--bio-black);
+        }
+
+        .page-bio .bio-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 620px;
+            height: 620px;
+
+            right: -150px;
+            top: 50%;
+
+            transform:
+                translateY(-50%)
+                rotate(45deg);
+
+            border:
+                1px solid
+                rgba(201,168,106,.15);
+
+            pointer-events: none;
+        }
+
+        .page-bio .bio-hero::after {
+            content: "LUCALE";
+
+            position: absolute;
+
+            right: -80px;
+            bottom: -35px;
+
+            color:
+                rgba(255,255,255,.018);
+
+            font-size: 220px;
+            font-weight: 900;
+
+            letter-spacing: -.08em;
+
+            pointer-events: none;
+        }
+
+        .page-bio .bio-hero-inner {
+            position: relative;
+            z-index: 2;
+
+            width: min(
+                calc(100% - 48px),
+                var(--bio-max)
+            );
+
+            margin: 0 auto;
+        }
+
+        .page-bio .bio-hero-meta {
+            position: absolute;
+
+            top: -260px;
+            right: 0;
+
+            width: 220px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            color: #666;
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .page-bio .bio-hero-meta span:first-child {
+            color: var(--bio-gold);
+        }
+
+        .page-bio .bio-hero-title {
+            max-width: 1100px;
+        }
+
+        .page-bio .eyebrow {
+            margin: 0 0 28px;
+
+            color: var(--bio-gold);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: .22em;
+        }
+
+        .page-bio .bio-hero h1 {
+            margin: 0;
+
+            font-size:
+                clamp(
+                    110px,
+                    19vw,
+                    275px
+                );
+
+            line-height: .78;
+
+            letter-spacing: -.095em;
+
+            font-weight: 900;
+        }
+
+        .page-bio .bio-hero-intro {
+            max-width: 720px;
+
+            margin:
+                58px 0 0;
+
+            color: #999;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(
+                    17px,
+                    2vw,
+                    23px
+                );
+
+            line-height: 1.55;
+        }
+
+
+        /* =====================================================
+           SECTION BASE
+        ===================================================== */
+
+        .page-bio .bio-section {
+            position: relative;
+
+            padding:
+                150px 0;
+
+            overflow: hidden;
+        }
+
+        .page-bio .bio-section-dark {
+            background: var(--bio-black);
+            color: var(--bio-white);
+        }
+
+        .page-bio .bio-section-light {
+            background: var(--bio-white);
+            color: #101010;
+        }
+
+        .page-bio .bio-section-grid {
+            display: grid;
+
+            grid-template-columns:
+                130px
+                minmax(0, 1fr);
+
+            gap: 70px;
+        }
+
+        .page-bio .bio-section-index {
+            padding-top: 7px;
+
+            color: var(--bio-gold);
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: .2em;
+        }
+
+        .page-bio .bio-section-content {
+            max-width: 1000px;
+        }
+
+        .page-bio .section-label {
+            margin: 0 0 30px;
+
+            color: var(--bio-gold);
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: .22em;
+        }
+
+        .page-bio .bio-section h2 {
+            max-width: 920px;
+
+            margin: 0 0 65px;
+
+            font-size:
+                clamp(
+                    48px,
+                    6.5vw,
+                    94px
+                );
+
+            line-height: .93;
+
+            letter-spacing: -.065em;
+
+            font-weight: 900;
+        }
+
+        .page-bio .bio-copy {
+            max-width: 700px;
+        }
+
+        .page-bio .bio-copy p {
+            margin: 0 0 28px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+        .page-bio .bio-section-dark .bio-copy p {
+            color: #999;
+        }
+
+        .page-bio .bio-section-light .bio-copy p {
+            color: #575757;
+        }
+
+        .page-bio .bio-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .page-bio .bio-copy strong {
+            color: inherit;
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           MEDIA / IMAGE SLOT
+        ===================================================== */
+
+        .page-bio .bio-media-placeholder {
+            position: relative;
+
+            padding: 30px 0;
+
+            background: #080808;
+        }
+
+        .page-bio .media-slot {
+            position: relative;
+
+            min-height: 570px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(201,168,106,.09),
+                    transparent 32%
+                ),
+
+                #0b0b0b;
+        }
+
+        .page-bio .media-slot::before {
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            border:
+                1px solid
+                rgba(201,168,106,.15);
+
+            transform: rotate(45deg);
+        }
+
+        .page-bio .media-slot::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 24px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.05);
+        }
+
+        .page-bio .media-slot span,
+        .page-bio .media-slot small {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-bio .media-slot span {
+            color: var(--bio-gold);
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: .22em;
+        }
+
+        .page-bio .media-slot small {
+            margin-top: 12px;
+
+            color: #555;
+
+            font-size: 10px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           FACTS
+        ===================================================== */
+
+        .page-bio .bio-facts {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            margin-top: 70px;
+
+            border-top:
+                1px solid
+                var(--bio-line-dark);
+
+            border-bottom:
+                1px solid
+                var(--bio-line-dark);
+        }
+
+        .page-bio .bio-fact {
+            padding: 28px 25px 28px 0;
+
+            border-right:
+                1px solid
+                var(--bio-line-dark);
+        }
+
+        .page-bio .bio-fact:not(:first-child) {
+            padding-left: 25px;
+        }
+
+        .page-bio .bio-fact:last-child {
+            border-right: 0;
+        }
+
+        .page-bio .bio-fact span {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #888;
+
+            font-size: 9px;
+            font-weight: 900;
+
+            letter-spacing: .18em;
+        }
+
+        .page-bio .bio-fact strong {
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .page-bio .bio-project {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                90px
+                1fr;
+
+            gap: 30px;
+
+            margin-top: 75px;
+
+            padding-top: 32px;
+
+            border-top:
+                1px solid
+                var(--bio-line);
+        }
+
+        .page-bio .bio-project-number {
+            color: var(--bio-gold);
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: .16em;
+        }
+
+        .page-bio .bio-project-content {
+            max-width: 650px;
+        }
+
+        .page-bio .project-kicker {
+            margin: 0 0 13px;
+
+            color: #666;
+
+            font-size: 9px;
+            font-weight: 900;
+
+            letter-spacing: .18em;
+        }
+
+        .page-bio .bio-project h3 {
+            margin: 0 0 22px;
+
+            font-size:
+                clamp(
+                    38px,
+                    5vw,
+                    70px
+                );
+
+            line-height: .9;
+
+            letter-spacing: -.06em;
+
+            font-weight: 900;
+        }
+
+        .page-bio .bio-project p:not(.project-kicker) {
+            margin: 0;
+
+            color: #929292;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =====================================================
+           REGISTER
+        ===================================================== */
+
+        .page-bio .bio-register {
+            display: inline-flex;
+            flex-direction: column;
+
+            margin-top: 32px;
+            padding-top: 15px;
+
+            border-top:
+                1px solid
+                var(--bio-gold);
+        }
+
+        .page-bio .bio-register span {
+            margin-bottom: 7px;
+
+            color: #666;
+
+            font-size: 8px;
+            font-weight: 900;
+
+            letter-spacing: .18em;
+        }
+
+        .page-bio .bio-register strong {
+            color: var(--bio-gold);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: .08em;
+        }
+
+
+        /* =====================================================
+           TEXT LINK
+        ===================================================== */
+
+        .page-bio .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+
+            margin-top: 50px;
+            padding-bottom: 9px;
+
+            border-bottom:
+                1px solid
+                var(--bio-gold);
+
+            color: inherit;
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: .16em;
+
+            transition:
+                color .25s ease,
+                gap .25s ease;
+        }
+
+        .page-bio .text-link:hover {
+            color: var(--bio-gold);
+            gap: 20px;
+        }
+
+
+        /* =====================================================
+           QUOTE
+        ===================================================== */
+
+        .page-bio .bio-quote {
+            position: relative;
+
+            padding: 150px 0;
+
+            background: #060606;
+
+            border-top:
+                1px solid
+                var(--bio-line);
+
+            border-bottom:
+                1px solid
+                var(--bio-line);
+        }
+
+        .page-bio .bio-quote blockquote {
+            max-width: 1050px;
+
+            margin: 0;
+
+            font-size:
+                clamp(
+                    38px,
+                    6vw,
+                    85px
+                );
+
+            line-height: .98;
+
+            letter-spacing: -.065em;
+
+            font-weight: 800;
+        }
+
+        .page-bio .bio-quote span {
+            display: block;
+
+            margin-top: 40px;
+
+            color: var(--bio-gold);
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: .2em;
+        }
+
+
+        /* =====================================================
+           END
+        ===================================================== */
+
+        .page-bio .bio-end {
+            padding: 150px 0;
+
+            background: var(--bio-white);
+            color: #080808;
+        }
+
+        .page-bio .bio-end p {
+            margin: 0;
+
+            font-size:
+                clamp(
+                    90px,
+                    17vw,
+                    250px
+                );
+
+            line-height: .75;
+
+            letter-spacing: -.1em;
+
+            font-weight: 900;
+        }
+
+        .page-bio .btn-back {
+            display: inline-flex;
+
+            margin-top: 65px;
+            padding-bottom: 10px;
+
+            border-bottom:
+                1px solid
+                #111;
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: .16em;
+
+            transition:
+                color .25s ease;
+        }
+
+        .page-bio .btn-back:hover {
+            color: #777;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .page-bio .site-footer {
+            background: #050505;
+            color: #555;
+        }
+
+        .page-bio .footer-top {
+            width: min(
+                calc(100% - 48px),
+                var(--bio-max)
+            );
+
+            margin: 0 auto;
+
+            min-height: 170px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .page-bio .footer-brand {
+            color: var(--bio-white);
+
+            font-size: 25px;
+            font-weight: 900;
+
+            letter-spacing: .17em;
+        }
+
+        .page-bio .footer-statement {
+            margin: 0;
+
+            color: #555;
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: .16em;
+        }
+
+        .page-bio .footer-bottom {
+            width: min(
+                calc(100% - 48px),
+                var(--bio-max)
+            );
+
+            min-height: 75px;
+
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            font-size: 8px;
+            font-weight: 800;
+
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .page-bio .footer-bottom a {
+            color: #777;
+
+            transition:
+                color .25s ease;
+        }
+
+        .page-bio .footer-bottom a:hover {
+            color: var(--bio-gold);
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .page-bio .main-nav {
+                gap: 17px;
+            }
+
+            .page-bio .bio-hero {
+                min-height: 680px;
+            }
+
+            .page-bio .bio-hero-meta {
+                top: -210px;
+            }
+
+            .page-bio .bio-section {
+                padding: 110px 0;
+            }
+
+            .page-bio .bio-section-grid {
+                grid-template-columns:
+                    70px
+                    1fr;
+
+                gap: 40px;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .page-bio .container,
+            .page-bio .header-inner,
+            .page-bio .bio-hero-inner,
+            .page-bio .footer-top,
+            .page-bio .footer-bottom {
+                width:
+                    calc(100% - 32px);
+            }
+
+
+            /* HEADER */
+
+            .page-bio .header-inner {
+                min-height: 68px;
+            }
+
+            .page-bio .main-nav {
+                display: none;
+            }
+
+            .page-bio .menu-toggle {
+                width: 35px;
+                height: 35px;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: flex-end;
+                justify-content: center;
+
+                gap: 5px;
+
+                background: none;
+                border: 0;
+
+                cursor: pointer;
+            }
+
+            .page-bio .menu-toggle span {
+                display: block;
+
+                width: 23px;
+                height: 1px;
+
+                background: var(--bio-white);
+            }
+
+
+            /* HERO */
+
+            .page-bio .bio-hero {
+                min-height: 650px;
+            }
+
+            .page-bio .bio-hero::before {
+                width: 360px;
+                height: 360px;
+
+                right: -190px;
+            }
+
+            .page-bio .bio-hero::after {
+                font-size: 100px;
+                right: -30px;
+            }
+
+            .page-bio .bio-hero h1 {
+                font-size:
+                    clamp(
+                        72px,
+                        23vw,
+                        130px
+                    );
+            }
+
+            .page-bio .bio-hero-intro {
+                margin-top: 38px;
+
+                font-size: 16px;
+            }
+
+            .page-bio .bio-hero-meta {
+                position: static;
+
+                margin-bottom: 45px;
+
+                width: auto;
+
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+
+            /* SECTIONS */
+
+            .page-bio .bio-section {
+                padding: 90px 0;
+            }
+
+            .page-bio .bio-section-grid {
+                display: block;
+            }
+
+            .page-bio .bio-section-index {
+                margin-bottom: 35px;
+            }
+
+            .page-bio .bio-section h2 {
+                margin-bottom: 45px;
+
+                font-size:
+                    clamp(
+                        43px,
+                        13vw,
+                        70px
+                    );
+            }
+
+            .page-bio .bio-copy p {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+
+            /* MEDIA */
+
+            .page-bio .bio-media-placeholder {
+                padding: 16px 0;
+            }
+
+            .page-bio .media-slot {
+                min-height: 390px;
+            }
+
+            .page-bio .media-slot::before {
+                width: 250px;
+                height: 250px;
+            }
+
+
+            /* FACTS */
+
+            .page-bio .bio-facts {
+                grid-template-columns: 1fr;
+            }
+
+            .page-bio .bio-fact,
+            .page-bio .bio-fact:not(:first-child) {
+                padding:
+                    22px 0;
+
+                border-right: 0;
+
+                border-bottom:
+                    1px solid
+                    var(--bio-line-dark);
+            }
+
+            .page-bio .bio-fact:last-child {
+                border-bottom: 0;
+            }
+
+
+            /* PROJECT */
+
+            .page-bio .bio-project {
+                grid-template-columns: 45px 1fr;
+
+                gap: 15px;
+
+                margin-top: 60px;
+            }
+
+            .page-bio .bio-project h3 {
+                font-size: 45px;
+            }
+
+
+            /* QUOTE */
+
+            .page-bio .bio-quote {
+                padding: 90px 0;
+            }
+
+            .page-bio .bio-quote blockquote {
+                font-size: 39px;
+            }
+
+
+            /* END */
+
+            .page-bio .bio-end {
+                padding: 100px 0;
+            }
+
+            .page-bio .bio-end p {
+                font-size:
+                    clamp(
+                        78px,
+                        23vw,
+                        125px
+                    );
+            }
+
+
+            /* FOOTER */
+
+            .page-bio .footer-top {
+                min-height: 130px;
+
+                align-items: flex-start;
+                justify-content: center;
+
+                flex-direction: column;
+
+                padding: 30px 0;
+            }
+
+            .page-bio .footer-bottom {
+                min-height: 100px;
+
+                align-items: flex-start;
+                justify-content: center;
+
+                flex-direction: column;
+
+                padding: 22px 0;
+            }
+
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .page-bio *,
+            .page-bio *::before,
+            .page-bio *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- =========================================================
+         SCHEMA.ORG
+    ========================================================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+
+        "@graph": [
+
+            {
+                "@type": [
+                    "Person",
+                    "MusicArtist"
+                ],
+
+                "@id": "https://lucalemusic.com.ar/#lucale",
+
+                "name": "LUCALE",
+
+                "legalName":
+                    "Cristian Alexander Devincenzi Lemos",
+
+                "alternateName": [
+                    "Lucale",
+                    "Lucale Music"
+                ],
+
+                "url":
+                    "https://lucalemusic.com.ar/",
+
+                "image":
+                    "https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg",
+
+                "description":
+                    "LUCALE, nombre artístico de Cristian Alexander Devincenzi Lemos, es rapero, compositor, músico y gestor cultural. Nacido en Montevideo, Uruguay, desarrolló su trayectoria artística en Don Torcuato, Tigre, Buenos Aires.",
+
+                "birthDate":
+                    "1991-02-22",
+
+                "birthPlace": {
+                    "@type": "Place",
+                    "name": "Montevideo, Uruguay"
+                },
+
+                "homeLocation": {
+                    "@type": "Place",
+                    "name": "Don Torcuato, Tigre, Buenos Aires, Argentina"
+                },
+
+                "jobTitle": [
+                    "Rapero",
+                    "Compositor",
+                    "Músico",
+                    "Intérprete",
+                    "Gestor cultural"
+                ],
+
+                "genre": [
+                    "Hip Hop",
+                    "Rap",
+                    "Música urbana"
+                ],
+
+                "knowsAbout": [
+                    "Rap",
+                    "Hip Hop",
+                    "Música urbana",
+                    "Composición musical",
+                    "Gestión cultural",
+                    "Cultura urbana",
+                    "Music Publishing",
+                    "Diseño industrial",
+                    "Diseño de autor",
+                    "Mobiliario de autor"
+                ],
+
+                "identifier": [
+
+                    {
+                        "@type": "PropertyValue",
+                        "propertyID": "Wikidata",
+                        "value": "Q117826469"
+                    },
+
+                    {
+                        "@type": "PropertyValue",
+                        "propertyID": "MusicBrainz",
+                        "value": "5cb221d2-823d-4d9b-8403-791446d239c6"
+                    }
+
+                ],
+
+                "sameAs": [
+
+                    "https://musicbrainz.org/artist/5cb221d2-823d-4d9b-8403-791446d239c6",
+
+                    "https://www.wikidata.org/wiki/Q117826469",
+
+                    "https://www.instagram.com/lucale.music",
+
+                    "https://www.youtube.com/@LucaleMusic",
+
+                    "https://www.tiktok.com/@lucale.music",
+
+                    "https://x.com/lucale_music",
+
+                    "https://www.facebook.com/Lucale777/",
+
+                    "https://www.threads.net/@lucale.music",
+
+                    "https://www.linkedin.com/in/lucalemusic/",
+
+                    "https://open.spotify.com/artist/44Mmk92PgcbqGzO1oxVk6z",
+
+                    "https://music.apple.com/artist/lucale/1521276479",
+
+                    "https://www.deezer.com/artist/99323142",
+
+                    "https://soundcloud.com/lucale-music"
+
+                ]
+
+            },
+
+
+            {
+                "@type": "WebSite",
+
+                "@id":
+                    "https://lucalemusic.com.ar/#website",
+
+                "url":
+                    "https://lucalemusic.com.ar/",
+
+                "name":
+                    "LUCALE",
+
+                "description":
+                    "Sitio oficial de LUCALE: música, cultura, publishing y diseño de autor.",
+
+                "publisher": {
+                    "@id":
+                        "https://lucalemusic.com.ar/#lucale"
+                }
+
+            },
+
+
+            {
+                "@type": "ProfilePage",
+
+                "@id":
+                    "https://lucalemusic.com.ar/biografia/#webpage",
+
+                "url":
+                    "https://lucalemusic.com.ar/biografia/",
+
+                "name":
+                    "Biografía Oficial de LUCALE",
+
+                "description":
+                    "Biografía oficial y trayectoria artística de LUCALE.",
+
+                "isPartOf": {
+                    "@id":
+                        "https://lucalemusic.com.ar/#website"
+                },
+
+                "mainEntity": {
+                    "@id":
+                        "https://lucalemusic.com.ar/#lucale"
+                },
+
+                "about": {
+                    "@id":
+                        "https://lucalemusic.com.ar/#lucale"
+                }
+
+            }
+
+        ]
+    }
+    </script>
+
+</head>
+
+
+<body class="page-bio">
+
+
+    <!-- =========================================================
+         PRELOADER
+    ========================================================== -->
+
+    <div
+        id="preloader"
+        aria-hidden="true"
+    >
+
+        <img
+            src="/tridente.png"
+            alt=""
+            class="logo-loader"
+            width="150"
+            height="150"
+            fetchpriority="high"
+        >
+
+    </div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="/"
+                class="brand"
+                aria-label="LUCALE — Inicio"
+            >
+                LUCALE
+            </a>
+
+
+            <nav
+                class="main-nav"
+                id="main-navigation"
+                aria-label="Navegación principal"
+            >
+
+                <a href="/">
+                    INICIO
+                </a>
+
+                <a
+                    href="/biografia/"
+                    class="active"
+                    aria-current="page"
+                >
+                    BIO
+                </a>
+
+                <a href="/musica/">
+                    MÚSICA
+                </a>
+
+                <a href="/diseno-de-autor/">
+                    OBRAS
+                </a>
+
+                <a href="/prensa/">
+                    PRENSA
+                </a>
+
+                <a href="/#contacto">
+                    CONTACTO
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section
+            class="bio-hero"
+            aria-labelledby="bio-title"
+        >
+
+            <div class="bio-hero-inner">
+
+                <div class="bio-hero-meta">
+
+                    <span>
+                        01 / BIOGRAFÍA
+                    </span>
+
+                    <span>
+                        LUCALE
+                    </span>
+
+                </div>
+
+
+                <div class="bio-hero-title">
+
+                    <p class="eyebrow">
+                        CRISTIAN ALEXANDER DEVINCENZI LEMOS
+                    </p>
+
+                    <h1 id="bio-title">
+                        LUCALE
+                    </h1>
+
+                    <p class="bio-hero-intro">
+                        Rapero. Compositor. Músico.
+                        Gestor cultural. Diseñador de autor.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             IDENTIDAD
+        ====================================================== -->
+
+        <section
+            class="bio-section bio-section-dark"
+            id="identidad"
+            aria-labelledby="identidad-title"
+        >
+
+            <div class="container">
+
+                <div class="bio-section-grid">
+
+                    <div class="bio-section-index">
+                        01
+                    </div>
+
+                    <div class="bio-section-content">
+
+                        <p class="section-label">
+                            IDENTIDAD
+                        </p>
+
+                        <h2 id="identidad-title">
+                            Una identidad construida
+                            entre dos orillas.
+                        </h2>
+
+                        <div class="bio-copy">
+
+                            <p>
+                                <strong>
+                                    Cristian Alexander Devincenzi Lemos
+                                </strong>,
+                                conocido artísticamente como
+                                <strong>LUCALE</strong>, nació el
+                                <strong>22 de febrero de 1991</strong>
+                                en Montevideo, Uruguay.
+                            </p>
+
+                            <p>
+                                Su desarrollo artístico se encuentra
+                                profundamente vinculado con
+                                <strong>
+                                    Don Torcuato, Tigre, Buenos Aires
+                                </strong>,
+                                territorio desde el cual construyó una
+                                identidad atravesada por el rap, el hip hop,
+                                la música urbana y la cultura del conurbano
+                                bonaerense.
+                            </p>
+
+                            <p>
+                                Su obra se caracteriza por una escritura
+                                directa, experiencias personales,
+                                observación de la vida cotidiana y una
+                                búsqueda permanente de identidad propia.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ARCHIVO VISUAL
+        ====================================================== -->
+
+        <section
+            class="bio-media-placeholder"
+            aria-label="Archivo visual de LUCALE"
+        >
+
+            <div class="container">
+
+                <div class="media-slot">
+
+                    <span>
+                        ARCHIVO VISUAL
+                    </span>
+
+                    <small>
+                        Fotografía oficial de LUCALE
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TRAYECTORIA
+        ====================================================== -->
+
+        <section
+            class="bio-section bio-section-light"
+            id="trayectoria"
+            aria-labelledby="trayectoria-title"
+        >
+
+            <div class="container">
+
+                <div class="bio-section-grid">
+
+                    <div class="bio-section-index">
+                        02
+                    </div>
+
+                    <div class="bio-section-content">
+
+                        <p class="section-label">
+                            TRAYECTORIA
+                        </p>
+
+                        <h2 id="trayectoria-title">
+                            Rap, escritura y
+                            experiencia territorial.
+                        </h2>
+
+                        <div class="bio-copy">
+
+                            <p>
+                                LUCALE desarrolla una propuesta vinculada
+                                al <strong>rap y al hip hop</strong>,
+                                incorporando elementos de la tradición
+                                rioplatense y una escritura basada en el
+                                relato personal, la observación y la
+                                experiencia.
+                            </p>
+
+                            <p>
+                                Su catálogo reúne más de
+                                <strong>50 canciones editadas</strong>,
+                                entre ellas
+                                <em>Candelabro</em>,
+                                <em>Sola</em>,
+                                <em>Sin Tanto Rollo</em>,
+                                <em>Rutina Asesina</em>,
+                                <em>Entre Hienas</em> y
+                                <em>Estoy Vivo</em>.
+                            </p>
+
+                            <p>
+                                A lo largo de su recorrido ha desarrollado
+                                colaboraciones con distintos artistas y
+                                productores, ampliando su trabajo hacia
+                                diferentes lenguajes de la música urbana.
+                            </p>
+
+                        </div>
+
+
+                        <div class="bio-facts">
+
+                            <div class="bio-fact">
+
+                                <span>
+                                    ORIGEN
+                                </span>
+
+                                <strong>
+                                    Montevideo
+                                </strong>
+
+                            </div>
+
+
+                            <div class="bio-fact">
+
+                                <span>
+                                    DESARROLLO
+                                </span>
+
+                                <strong>
+                                    Don Torcuato
+                                </strong>
+
+                            </div>
+
+
+                            <div class="bio-fact">
+
+                                <span>
+                                    LENGUAJE
+                                </span>
+
+                                <strong>
+                                    Rap / Hip Hop
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CULTURA
+        ====================================================== -->
+
+        <section
+            class="bio-section bio-section-dark"
+            id="haciendo-rap-juntxs"
+            aria-labelledby="hrj-title"
+        >
+
+            <div class="container">
+
+                <div class="bio-section-grid">
+
+                    <div class="bio-section-index">
+                        03
+                    </div>
+
+                    <div class="bio-section-content">
+
+                        <p class="section-label">
+                            CULTURA
+                        </p>
+
+                        <h2 id="hrj-title">
+                            Haciendo Rap Juntxs.
+                        </h2>
+
+                        <div class="bio-copy">
+
+                            <p>
+                                Más allá de la producción musical,
+                                LUCALE forma parte de proyectos vinculados
+                                con la documentación, circulación y
+                                construcción colectiva de la cultura hip hop
+                                del conurbano bonaerense.
+                            </p>
+
+                            <p>
+                                Su recorrido fue documentado en el libro
+                                fotográfico <em>5000 disparos</em>,
+                                realizado por
+                                <strong>Martin Biaggini</strong> y
+                                <strong>Ariel Puckaz</strong>.
+                            </p>
+
+                            <p>
+                                También participa de la antología
+                                <em>Haciendo Rap Juntxs</em>,
+                                proyecto surgido en la
+                                <strong>
+                                    Universidad Nacional Arturo Jauretche
+                                    (UNAJ)
+                                </strong>.
+                            </p>
+
+                            <p>
+                                La iniciativa amplía el intercambio cultural
+                                mediante colaboraciones entre artistas de
+                                distintos territorios de América Latina.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="/"
+                            class="text-link"
+                        >
+                            EXPLORAR PROYECTOS
+                            <span aria-hidden="true">
+                                ↗
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PUBLISHING
+        ====================================================== -->
+
+        <section
+            class="bio-section bio-section-light"
+            id="publishing"
+            aria-labelledby="publishing-title"
+        >
+
+            <div class="container">
+
+                <div class="bio-section-grid">
+
+                    <div class="bio-section-index">
+                        04
+                    </div>
+
+                    <div class="bio-section-content">
+
+                        <p class="section-label">
+                            PUBLISHING
+                        </p>
+
+                        <h2 id="publishing-title">
+                            LUCALE MUSIC
+                            PUBLISHING.
+                        </h2>
+
+                        <div class="bio-copy">
+
+                            <p>
+                                En el ámbito de la gestión editorial,
+                                LUCALE desarrolla
+                                <strong>
+                                    Lucale Music Publishing™
+                                </strong>,
+                                una estructura vinculada con la administración
+                                profesional de derechos y el desarrollo de
+                                proyectos relacionados con la creación musical.
+                            </p>
+
+                            <p>
+                                El proyecto representa una evolución de su
+                                modelo de autogestión, integrando creación,
+                                composición, publishing y administración
+                                de obra.
+                            </p>
+
+                            <p>
+                                La actividad editorial se encuentra respaldada
+                                por documentación y registros correspondientes
+                                a la actividad autoral.
+                            </p>
+
+                        </div>
+
+
+                        <div class="bio-register">
+
+                            <span>
+                                REGISTRO DNDA
+                            </span>
+
+                            <strong>
+                                RL-2025-144139357
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DISEÑO
+        ====================================================== -->
+
+        <section
+            class="bio-section bio-section-dark"
+            id="diseno"
+            aria-labelledby="diseno-title"
+        >
+
+            <div class="container">
+
+                <div class="bio-section-grid">
+
+                    <div class="bio-section-index">
+                        05
+                    </div>
+
+                    <div class="bio-section-content">
+
+                        <p class="section-label">
+                            DISEÑO DE AUTOR
+                        </p>
+
+                        <h2 id="diseno-title">
+                            Del lenguaje musical
+                            al objeto.
+                        </h2>
+
+                        <div class="bio-copy">
+
+                            <p>
+                                La actividad creativa de LUCALE también se
+                                extiende al diseño de autor, con desarrollos
+                                vinculados al mobiliario y al diseño industrial.
+                            </p>
+
+                        </div>
+
+
+                        <!-- FRACTURA -->
+
+                        <article class="bio-project">
+
+                            <div class="bio-project-number">
+                                05.1
+                            </div>
+
+                            <div class="bio-project-content">
+
+                                <p class="project-kicker">
+                                    DISEÑO / MOBILIARIO
+                                </p>
+
+                                <h3>
+                                    FRACTURA®
+                                </h3>
+
+                                <p>
+                                    Desarrollo de diseño de autor aplicado
+                                    al mobiliario y al interiorismo.
+                                    El concepto combina composición geométrica,
+                                    tapicería e iluminación LED en una pieza
+                                    concebida como elemento protagonista
+                                    del espacio.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- OCTA -->
+
+                        <article class="bio-project">
+
+                            <div class="bio-project-number">
+                                05.2
+                            </div>
+
+                            <div class="bio-project-content">
+
+                                <p class="project-kicker">
+                                    DISEÑO INDUSTRIAL
+                                </p>
+
+                                <h3>
+                                    OCTA
+                                </h3>
+
+                                <p>
+                                    Desarrollo de mobiliario basado en una
+                                    geometría octogonal, registrado como
+                                    modelo industrial ante el
+                                    <strong>
+                                        Instituto Nacional de la
+                                        Propiedad Industrial (INPI)
+                                    </strong>.
+                                </p>
+
+                                <div class="bio-register">
+
+                                    <span>
+                                        MODELO INDUSTRIAL
+                                    </span>
+
+                                    <strong>
+                                        N.º 111285
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ARCHIVO
+        ====================================================== -->
+
+        <section
+            class="bio-section bio-section-light"
+            id="archivo"
+            aria-labelledby="archivo-title"
+        >
+
+            <div class="container">
+
+                <div class="bio-section-grid">
+
+                    <div class="bio-section-index">
+                        06
+                    </div>
+
+                    <div class="bio-section-content">
+
+                        <p class="section-label">
+                            ARCHIVO
+                        </p>
+
+                        <h2 id="archivo-title">
+                            Un recorrido documentado.
+                        </h2>
+
+                        <div class="bio-copy">
+
+                            <p>
+                                La trayectoria de LUCALE cuenta con presencia
+                                en medios de comunicación, publicaciones
+                                culturales, plataformas musicales y archivos
+                                relacionados con la escena urbana.
+                            </p>
+
+                            <p>
+                                El sitio oficial conserva este material dentro
+                                de un archivo de prensa independiente,
+                                organizado por fecha y publicación.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="/prensa/"
+                            class="text-link"
+                        >
+                            VER ARCHIVO DE PRENSA
+                            <span aria-hidden="true">
+                                ↗
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FRASE
+        ====================================================== -->
+
+        <section
+            class="bio-quote"
+            aria-label="Frase de LUCALE"
+        >
+
+            <div class="container">
+
+                <blockquote>
+                    “NO HAY FRASE MÁS DAÑINA QUE:
+                    MAÑANA LO HAGO.”
+                </blockquote>
+
+                <span>
+                    — LUCALE
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CIERRE
+        ====================================================== -->
+
+        <section
+            class="bio-end"
+            aria-label="Fin de la biografía"
+        >
+
+            <div class="container">
+
+                <p>
+                    LUCALE
+                </p>
+
+                <a
+                    href="/"
+                    class="btn-back"
+                >
+                    VOLVER AL INICIO
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+                LUCALE
+            </div>
+
+            <p class="footer-statement">
+                MÚSICA · CULTURA · PUBLISHING ·
+                DISEÑO DE AUTOR
+            </p>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 LUCALE
+            </span>
+
+            <span>
+                Don Torcuato · Buenos Aires · Argentina
+            </span>
+
+            <a href="/">
+                LUCALemusic.com.ar
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const preloader =
+                    document.getElementById("preloader");
+
+                if (!preloader) {
+                    return;
+                }
+
+                const hidePreloader = function () {
+
+                    preloader.classList.add(
+                        "is-hidden"
+                    );
+
+                    setTimeout(
+                        function () {
+
+                            if (preloader) {
+                                preloader.remove();
+                            }
+
+                        },
+                        650
+                    );
+
+                };
+
+
+                if (
+                    document.readyState ===
+                    "complete"
+                ) {
+
+                    setTimeout(
+                        hidePreloader,
+                        450
+                    );
+
+                } else {
+
+                    window.addEventListener(
+                        "load",
+                        function () {
+
+                            setTimeout(
+                                hidePreloader,
+                                450
+                            );
+
+                        },
+                        {
+                            once: true
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const toggle =
+                    document.querySelector(
+                        ".page-bio .menu-toggle"
+                    );
+
+                const navigation =
+                    document.querySelector(
+                        ".page-bio .main-nav"
+                    );
+
+                if (
+                    !toggle ||
+                    !navigation
+                ) {
+                    return;
+                }
+
+                toggle.addEventListener(
+                    "click",
+                    function () {
+
+                        const expanded =
+                            toggle.getAttribute(
+                                "aria-expanded"
+                            ) === "true";
+
+                        toggle.setAttribute(
+                            "aria-expanded",
+                            String(!expanded)
+                        );
+
+                        navigation.classList.toggle(
+                            "mobile-open"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
