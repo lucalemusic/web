@@ -1,34 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://lucalemusic.com.ar/</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lucalemusic.com.ar/index.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lucalemusic.com.ar/prensa.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lucalemusic.com.ar/bio.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
- <url>
-    <loc>https://lucalemusic.com.ar/LINKS/index.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- =====================================================
+         LUCALE MUSIC — SITEMAP OFICIAL
+         ===================================================== -->
+
+    <!-- HOME -->
+    <url>
+        <loc>https://lucalemusic.com.ar/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+
+        <image:image>
+            <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
+            <image:title>Lucale — artista de rap y música urbana</image:title>
+        </image:image>
+    </url>
+
+    <!-- MÚSICA -->
+    <url>
+        <loc>https://lucalemusic.com.ar/musica/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- PRENSA -->
+    <url>
+        <loc>https://lucalemusic.com.ar/prensa/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+
+        <image:image>
+            <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
+            <image:title>Lucale — Prensa y Archivo de Medios</image:title>
+        </image:image>
+    </url>
+
+    <!-- BIOGRAFÍA -->
+    <url>
+        <loc>https://lucalemusic.com.ar/biografia/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+
+        <image:image>
+            <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
+            <image:title>Lucale — Biografía oficial</image:title>
+        </image:image>
+    </url>
+
+    <!-- DISEÑO DE AUTOR -->
+    <url>
+        <loc>https://lucalemusic.com.ar/diseno-de-autor/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- GALERÍA -->
+    <url>
+        <loc>https://lucalemusic.com.ar/galeria/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+
+        <image:image>
+            <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
+            <image:title>Lucale — Galería oficial</image:title>
+        </image:image>
+    </url>
+
+    <!-- LANDING -->
+    <url>
+        <loc>https://lucalemusic.com.ar/landing/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+
+        <image:image>
+            <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
+            <image:title>Lucale — Sitio oficial</image:title>
+        </image:image>
+    </url>
+
+    <!-- LINKS -->
+    <url>
+        <loc>https://lucalemusic.com.ar/links/</loc>
+        <lastmod>2026-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
