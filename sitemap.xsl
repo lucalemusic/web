@@ -1,267 +1,638 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" 
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+
+<xsl:stylesheet
+    version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+
+    <xsl:output
+        method="html"
+        version="1.0"
+        encoding="UTF-8"
+        indent="yes"
+    />
+
     <xsl:template match="/">
+
         <html lang="es">
+
             <head>
-                <title>LUCALE MUSIC | XML Sitemap Oficial</title>
+
+                <title>
+                    LUCALE MUSIC | XML Sitemap Oficial
+                </title>
+
                 <meta charset="UTF-8"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+
                 <style>
-                    /* Fondo Negro Mate / Textura de Estudio */
+
+                    /* =====================================================
+                       FONDO NEGRO MATE / TEXTURA DE ESTUDIO
+                       ===================================================== */
+
                     body {
-                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                        font-family:
+                            -apple-system,
+                            BlinkMacSystemFont,
+                            "Segoe UI",
+                            Roboto,
+                            Helvetica,
+                            Arial,
+                            sans-serif;
+
                         color: #e5e5e5;
+
                         background-color: #0d0d0d;
-                        background-image: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #0a0a0a 100%);
+
+                        background-image:
+                            radial-gradient(
+                                circle at 50% 30%,
+                                #1a1a1a 0%,
+                                #0a0a0a 100%
+                            );
+
                         margin: 0;
-                        padding: 40px 15px; /* Reducido para evitar desbordes globales */
+
+                        padding: 40px 15px;
                     }
-                    
-                    /* Contenedor con Borde Dorado Elegante */
+
+
+                    /* =====================================================
+                       CONTENEDOR PRINCIPAL
+                       ===================================================== */
+
                     .container {
+
                         max-width: 1000px;
+
                         width: 100%;
+
                         margin: 0 auto;
+
                         background: #121212;
-                        padding: 30px 20px; /* Más compacto y responsivo */
+
+                        padding: 30px 20px;
+
                         border-radius: 14px;
-                        border: 1px solid rgba(212, 175, 55, 0.3);
-                        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.05);
+
+                        border:
+                            1px solid
+                            rgba(212, 175, 55, 0.3);
+
+                        box-shadow:
+                            0 15px 40px rgba(0, 0, 0, 0.8),
+                            0 0 20px rgba(212, 175, 55, 0.05);
+
                         box-sizing: border-box;
-                        overflow: hidden; /* Evita que cualquier hijo rompa el contenedor principal */
+
+                        overflow: hidden;
                     }
-                    
-                    /* Cabecera Estratégica con Logo Alíneado */
+
+
+                    /* =====================================================
+                       CABECERA
+                       ===================================================== */
+
                     .header-area {
+
                         display: flex;
+
                         align-items: center;
+
                         gap: 25px;
+
                         margin-bottom: 40px;
-                        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+
+                        border-bottom:
+                            1px solid
+                            rgba(212, 175, 55, 0.15);
+
                         padding-bottom: 30px;
                     }
-                    
-                    /* Contenedor del Logo Tridente */
+
+
                     .logo-wrapper {
+
                         flex-shrink: 0;
                     }
+
+
                     .logo-wrapper img {
-                        width: 70px; /* Reducido un toque para balancear Chrome */
+
+                        width: 70px;
+
                         height: 70px;
+
                         object-fit: contain;
-                        filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
+
+                        filter:
+                            drop-shadow(
+                                0 0 8px
+                                rgba(212, 175, 55, 0.3)
+                            );
                     }
-                    
+
+
                     .brand-info {
+
                         flex-grow: 1;
                     }
-                    
-                    /* Tipografía en Oro y Blanco */
+
+
+                    /* =====================================================
+                       TITULACIÓN
+                       ===================================================== */
+
                     h1 {
-                        font-size: 22px; /* Un toque más chico para que no rompa en Chrome Mobile */
+
+                        font-size: 22px;
+
                         color: #ffffff;
+
                         margin: 0 0 6px 0;
+
                         font-weight: 800;
+
                         letter-spacing: -0.5px;
+
                         text-transform: uppercase;
                     }
+
+
                     h1 span {
-                        background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+
+                        background:
+                            linear-gradient(
+                                135deg,
+                                #bf953f 0%,
+                                #fcf6ba 25%,
+                                #b38728 50%,
+                                #fbf5b7 75%,
+                                #aa771c 100%
+                            );
+
                         -webkit-background-clip: text;
+
                         -webkit-text-fill-color: transparent;
+
                         font-weight: 900;
                     }
-                    
+
+
                     p.desc {
+
                         color: #8c8c8c;
+
                         font-size: 13px;
+
                         margin: 0;
+
                         line-height: 1.5;
                     }
-                    
-                    /* Medallón del Contador en Oro Viejo */
+
+
+                    /* =====================================================
+                       CONTADOR
+                       ===================================================== */
+
                     .counter {
+
                         display: inline-flex;
+
                         align-items: center;
+
                         gap: 8px;
-                        background: rgba(212, 175, 55, 0.07);
+
+                        background:
+                            rgba(212, 175, 55, 0.07);
+
                         color: #d4af37;
+
                         padding: 8px 18px;
+
                         border-radius: 50px;
+
                         font-size: 12px;
+
                         font-weight: 700;
-                        border: 1px solid rgba(212, 175, 55, 0.25);
+
+                        border:
+                            1px solid
+                            rgba(212, 175, 55, 0.25);
+
                         margin-bottom: 25px;
+
                         text-transform: uppercase;
+
                         letter-spacing: 0.5px;
                     }
+
+
                     .counter span {
+
                         width: 8px;
+
                         height: 8px;
+
                         background-color: #00ff66;
+
                         border-radius: 50%;
-                        box-shadow: 0 0 8px #00ff66;
+
+                        box-shadow:
+                            0 0 8px #00ff66;
                     }
-                    
-                    /* CONTENEDOR ANTI-DESBORDE PARA CHROME MÓVIL */
+
+
+                    /* =====================================================
+                       TABLA — CONTENEDOR RESPONSIVO
+                       ===================================================== */
+
                     .table-responsive-wrapper {
+
                         width: 100%;
-                        overflow-x: auto; /* Si Chrome se encapricha, activa scroll horizontal sutil solo para la tabla, manteniendo el contenedor intacto */
+
+                        overflow-x: auto;
+
                         -webkit-overflow-scrolling: touch;
+
                         border-radius: 8px;
                     }
 
-                    /* Estructura de la Tabla Responsiva */
+
+                    /* =====================================================
+                       TABLA
+                       ===================================================== */
+
                     table {
+
                         width: 100%;
+
                         border-collapse: separate;
+
                         border-spacing: 0;
+
                         text-align: left;
+
                         overflow: hidden;
-                        border: 1px solid rgba(212, 175, 55, 0.1);
+
+                        border:
+                            1px solid
+                            rgba(212, 175, 55, 0.1);
                     }
-                    
+
+
                     th {
+
                         background-color: #161616;
+
                         color: #a6a6a6;
+
                         padding: 12px 15px;
+
                         font-size: 11px;
+
                         font-weight: 700;
+
                         text-transform: uppercase;
+
                         letter-spacing: 1.5px;
-                        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+
+                        border-bottom:
+                            1px solid
+                            rgba(212, 175, 55, 0.2);
                     }
-                    
+
+
                     td {
+
                         padding: 14px 15px;
+
                         font-size: 13px;
+
                         background-color: #111111;
-                        border-bottom: 1px solid #1a1a1a;
-                        white-space: normal; /* Permite saltos de línea obligatorios */
+
+                        border-bottom:
+                            1px solid #1a1a1a;
+
+                        white-space: normal;
+
                         word-wrap: break-word;
-                        word-break: break-all; /* Mutila la URL si es necesario para que entre en el ancho */
+
+                        word-break: break-all;
+
                         overflow-wrap: break-word;
                     }
-                    
+
+
                     tr:last-child td {
+
                         border-bottom: none;
                     }
-                    
+
+
                     tr:hover td {
+
                         background-color: #171717;
                     }
-                    
+
+
                     td a {
+
                         color: #e5e5e5;
+
                         text-decoration: none;
+
                         font-weight: 500;
+
                         display: block;
+
                         white-space: normal;
+
                         word-wrap: break-word;
+
                         word-break: break-all;
+
                         overflow-wrap: break-word;
                     }
-                    
-                    /* Flecha dorada */
+
+
+                    /* =====================================================
+                       FLECHA DORADA
+                       ===================================================== */
+
                     td a::before {
+
                         content: "➔";
-                        color: rgba(212, 175, 55, 0.4);
+
+                        color:
+                            rgba(212, 175, 55, 0.4);
+
                         margin-right: 8px;
+
                         display: inline-block;
                     }
-                    
+
+
                     tr:hover td a {
+
                         color: #f3e5ab;
-                        text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+
+                        text-shadow:
+                            0 0 10px
+                            rgba(212, 175, 55, 0.2);
                     }
-                    
+
+
+                    /* =====================================================
+                       METADATOS
+                       ===================================================== */
+
                     .meta-cell {
+
                         color: #666;
+
                         font-size: 12px;
+
                         font-weight: 500;
                     }
+
+
                     tr:hover .meta-cell {
+
                         color: #d4af37;
                     }
-                    
-                    /* Footer de Marca */
+
+
+                    /* =====================================================
+                       FOOTER
+                       ===================================================== */
+
                     .footer-brand {
+
                         text-align: center;
+
                         margin-top: 40px;
+
                         font-size: 11px;
+
                         color: #444;
+
                         text-transform: uppercase;
+
                         letter-spacing: 1px;
                     }
 
-                    /* AJUSTES SEGUROS PARA PANTALLAS CHICAS */
+
+                    /* =====================================================
+                       RESPONSIVE
+                       ===================================================== */
+
                     @media (max-width: 768px) {
+
                         .header-area {
+
                             flex-direction: column;
+
                             text-align: center;
+
                             gap: 15px;
                         }
-                        /* Chrome a veces no lee esto en XML, por eso agregamos el wrapper overflow arriba */
-                        th:not(:first-child), 
+
+
+                        th:not(:first-child),
                         td:not(:first-child) {
+
                             display: none;
                         }
+
                     }
+
                 </style>
+
             </head>
+
+
             <body>
+
                 <div class="container">
+
+
+                    <!-- =================================================
+                         CABECERA
+                         ================================================= -->
+
                     <div class="header-area">
+
                         <div class="logo-wrapper">
-                            <img src="tridente.png" alt="LÚCALE Logo Oficial"/>
+
+                            <img
+                                src="https://lucalemusic.com.ar/tridente.png"
+                                alt="LUCALE Music — logo oficial"
+                            />
+
                         </div>
+
+
                         <div class="brand-info">
-                            <h1>XML SITEMAP // <span>LUCALE MUSIC</span></h1>
+
+                            <h1>
+                                XML SITEMAP //
+                                <span>LUCALE MUSIC</span>
+                            </h1>
+
+
                             <p class="desc">
-                                Índice digital de distribución y rastreo SEO. Optimizado para el mapeo automatizado de Google Core.
+                                Mapa XML oficial del sitio web de LUCALE.
+                                Estructura de URLs destinada al rastreo
+                                automatizado de los motores de búsqueda.
                             </p>
+
                         </div>
+
                     </div>
-                    
+
+
+                    <!-- =================================================
+                         CONTADOR DINÁMICO
+                         ================================================= -->
+
                     <div class="counter">
-                        <span/> URLS INDEXADAS EN TIEMPO REAL: <xsl:value-of select="count(sitemap:urlset/sitemap:url)"/>
+
+                        <span/>
+
+                        URLS EN EL SITEMAP:
+
+                        <xsl:value-of
+                            select="count(sitemap:urlset/sitemap:url)"
+                        />
+
                     </div>
-                    
+
+
+                    <!-- =================================================
+                         TABLA DINÁMICA
+                         ================================================= -->
+
                     <div class="table-responsive-wrapper">
+
                         <table>
+
                             <thead>
+
                                 <tr>
-                                    <th>Ruta de Navegación Oficial (URL)</th>
-                                    <th style="text-align: center;">Prioridad</th>
-                                    <th style="text-align: center;">Frecuencia</th>
-                                    <th style="text-align: center;">Última Modif.</th>
+
+                                    <th>
+                                        Ruta de Navegación Oficial (URL)
+                                    </th>
+
+                                    <th style="text-align: center;">
+                                        Prioridad
+                                    </th>
+
+                                    <th style="text-align: center;">
+                                        Frecuencia
+                                    </th>
+
+                                    <th style="text-align: center;">
+                                        Última Modif.
+                                    </th>
+
                                 </tr>
+
                             </thead>
+
+
                             <tbody>
-                                <xsl:for-each select="sitemap:urlset/sitemap:url">
+
+                                <xsl:for-each
+                                    select="sitemap:urlset/sitemap:url"
+                                >
+
                                     <tr>
+
                                         <td>
+
                                             <a href="{sitemap:loc}">
-                                                <xsl:value-of select="sitemap:loc"/>
+
+                                                <xsl:value-of
+                                                    select="sitemap:loc"
+                                                />
+
                                             </a>
+
                                         </td>
-                                        <td class="meta-cell" style="text-align: center;"><xsl:value-of select="sitemap:priority"/></td>
-                                        <td class="meta-cell" style="text-align: center; text-transform: capitalize;"><xsl:value-of select="sitemap:changefreq"/></td>
-                                        <td class="meta-cell" style="text-align: center;"><xsl:value-of select="sitemap:lastmod"/></td>
+
+
+                                        <td
+                                            class="meta-cell"
+                                            style="text-align: center;"
+                                        >
+
+                                            <xsl:value-of
+                                                select="sitemap:priority"
+                                            />
+
+                                        </td>
+
+
+                                        <td
+                                            class="meta-cell"
+                                            style="text-align: center; text-transform: capitalize;"
+                                        >
+
+                                            <xsl:value-of
+                                                select="sitemap:changefreq"
+                                            />
+
+                                        </td>
+
+
+                                        <td
+                                            class="meta-cell"
+                                            style="text-align: center;"
+                                        >
+
+                                            <xsl:value-of
+                                                select="sitemap:lastmod"
+                                            />
+
+                                        </td>
+
                                     </tr>
+
                                 </xsl:for-each>
+
                             </tbody>
+
                         </table>
+
                     </div>
-                    
+
+
+                    <!-- =================================================
+                         FOOTER
+                         ================================================= -->
+
                     <div class="footer-brand">
-                        © 2026 LUCALE MUSIC | OFFICIAL WEB ARCHIVE
+
+                        © 2026 LUCALE MUSIC |
+                        OFFICIAL WEB ARCHIVE
+
                     </div>
+
+
                 </div>
+
             </body>
+
         </html>
+
     </xsl:template>
+
 </xsl:stylesheet>
