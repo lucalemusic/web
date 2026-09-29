@@ -7,6 +7,7 @@
 
     <!-- =====================================================
          LUCALE MUSIC — SITEMAP OFICIAL
+         Última actualización: 2026-09-29
          ===================================================== -->
 
     <!-- HOME -->
@@ -18,7 +19,7 @@
 
         <image:image>
             <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
-            <image:title>Lucale — artista de rap y música urbana</image:title>
+            <image:title>LUCALE — artista de rap y música urbana</image:title>
         </image:image>
     </url>
 
@@ -39,7 +40,7 @@
 
         <image:image>
             <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
-            <image:title>Lucale — Prensa y Archivo de Medios</image:title>
+            <image:title>LUCALE — prensa y archivo de medios</image:title>
         </image:image>
     </url>
 
@@ -52,7 +53,7 @@
 
         <image:image>
             <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
-            <image:title>Lucale — Biografía oficial</image:title>
+            <image:title>LUCALE — biografía oficial</image:title>
         </image:image>
     </url>
 
@@ -73,11 +74,11 @@
 
         <image:image>
             <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
-            <image:title>Lucale — Galería oficial</image:title>
+            <image:title>LUCALE — galería oficial</image:title>
         </image:image>
     </url>
 
-    <!-- LANDING -->
+    <!-- LANDING / ENLACES OFICIALES -->
     <url>
         <loc>https://lucalemusic.com.ar/landing/</loc>
         <lastmod>2026-09-29</lastmod>
@@ -86,16 +87,8 @@
 
         <image:image>
             <image:loc>https://lucalemusic.com.ar/GALERIA/lucale-perfilweb.jpg</image:loc>
-            <image:title>Lucale — Sitio oficial</image:title>
+            <image:title>LUCALE — enlaces oficiales, música, redes y proyectos</image:title>
         </image:image>
-    </url>
-
-    <!-- LINKS -->
-    <url>
-        <loc>https://lucalemusic.com.ar/links/</loc>
-        <lastmod>2026-09-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
     </url>
 
 </urlset>
